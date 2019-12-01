@@ -12,12 +12,11 @@ import SDWebImage
 class NewsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subltitleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     
     var currentNews: News!
-    
 
     func set(_ news: News) {
         self.currentNews = news
@@ -25,7 +24,7 @@ class NewsTableViewCell: UITableViewCell {
         newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: #imageLiteral(resourceName: "Logo_1"))
         
         titleLabel.text = news.title
-        subltitleLabel.text = news.source.name + " / " + news.source.type
+        subtitleLabel.text = news.source.name + " / " + news.source.type
         dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat
     }
     

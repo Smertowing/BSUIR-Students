@@ -76,7 +76,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        let storyBoard = UIStoryboard(name: "News", bundle: nil)
+        let newsDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "newsDetailsVC") as! NewsDetailsViewController
+        newsDetailsViewController.set(viewModel.news(at: indexPath.row))
+        self.show(newsDetailsViewController, sender: self)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -47,6 +47,7 @@
 		FA3260F9239463CC004B1410 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260F8239463CC004B1410 /* DateExt.swift */; };
 		FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */; };
 		FA3260FE239466B9004B1410 /* EmptyBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */; };
+		FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3261022394789B004B1410 /* NewsDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		FA3260F8239463CC004B1410 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyBackgroundView.xib; sourceTree = "<group>"; };
+		FA3261022394789B004B1410 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				FA3260F223945C3D004B1410 /* NewsViewController.swift */,
 				FA3260F423945C46004B1410 /* NewsViewModel.swift */,
 				FA3260F623946085004B1410 /* NewsTableViewCell.swift */,
+				FA3261022394789B004B1410 /* NewsDetailsViewController.swift */,
 				FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */,
 				FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */,
 			);
@@ -438,6 +441,7 @@
 				FA3260EA23944B8C004B1410 /* LoginViewModel.swift in Sources */,
 				FA3260E4239449AA004B1410 /* LaunchViewController.swift in Sources */,
 				FA3260C523941455004B1410 /* Config.swift in Sources */,
+				FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */,
 				FA3260F9239463CC004B1410 /* DateExt.swift in Sources */,
 				FA3260D323942478004B1410 /* Building.swift in Sources */,
 				FA3260B3239412EB004B1410 /* AuditoriumsAdapter.swift in Sources */,
