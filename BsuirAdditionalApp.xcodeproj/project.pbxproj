@@ -39,6 +39,14 @@
 		FA3260E823944B81004B1410 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260E723944B81004B1410 /* LoginViewController.swift */; };
 		FA3260EA23944B8C004B1410 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260E923944B8C004B1410 /* LoginViewModel.swift */; };
 		FA3260EC239453EB004B1410 /* TextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260EB239453EB004B1410 /* TextFieldExt.swift */; };
+		FA3260EF23945C09004B1410 /* NewsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260EE23945C09004B1410 /* NewsNavigationController.swift */; };
+		FA3260F123945C32004B1410 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3260F023945C32004B1410 /* News.storyboard */; };
+		FA3260F323945C3D004B1410 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260F223945C3D004B1410 /* NewsViewController.swift */; };
+		FA3260F523945C46004B1410 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260F423945C46004B1410 /* NewsViewModel.swift */; };
+		FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260F623946085004B1410 /* NewsTableViewCell.swift */; };
+		FA3260F9239463CC004B1410 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260F8239463CC004B1410 /* DateExt.swift */; };
+		FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */; };
+		FA3260FE239466B9004B1410 /* EmptyBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +88,14 @@
 		FA3260E723944B81004B1410 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA3260E923944B8C004B1410 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FA3260EB239453EB004B1410 /* TextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExt.swift; sourceTree = "<group>"; };
+		FA3260EE23945C09004B1410 /* NewsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNavigationController.swift; sourceTree = "<group>"; };
+		FA3260F023945C32004B1410 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		FA3260F223945C3D004B1410 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		FA3260F423945C46004B1410 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		FA3260F623946085004B1410 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		FA3260F8239463CC004B1410 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
+		FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
+		FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyBackgroundView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +174,7 @@
 		FA3260A92394101D004B1410 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FA3260ED23945BD7004B1410 /* News */,
 				FA3260E02394497C004B1410 /* AppEntry */,
 			);
 			path = Scenes;
@@ -188,6 +205,7 @@
 			children = (
 				FA3260E523944A1D004B1410 /* ViewControllerExt.swift */,
 				FA3260EB239453EB004B1410 /* TextFieldExt.swift */,
+				FA3260F8239463CC004B1410 /* DateExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -274,6 +292,20 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		FA3260ED23945BD7004B1410 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				FA3260EE23945C09004B1410 /* NewsNavigationController.swift */,
+				FA3260F023945C32004B1410 /* News.storyboard */,
+				FA3260F223945C3D004B1410 /* NewsViewController.swift */,
+				FA3260F423945C46004B1410 /* NewsViewModel.swift */,
+				FA3260F623946085004B1410 /* NewsTableViewCell.swift */,
+				FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */,
+				FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +369,8 @@
 				FA32609F23940BF2004B1410 /* LaunchScreen.storyboard in Resources */,
 				FA32609C23940BF2004B1410 /* Assets.xcassets in Resources */,
 				FA32609A23940BF1004B1410 /* Main.storyboard in Resources */,
+				FA3260F123945C32004B1410 /* News.storyboard in Resources */,
+				FA3260FE239466B9004B1410 /* EmptyBackgroundView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,21 +423,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */,
 				FA3260C223941390004B1410 /* NewsAdapter.swift in Sources */,
 				FA3260B023941262004B1410 /* NetworkingManager.swift in Sources */,
 				FA3260B823941357004B1410 /* NewsProvider.swift in Sources */,
+				FA3260F323945C3D004B1410 /* NewsViewController.swift in Sources */,
 				FA3260D7239428F4004B1410 /* NewsList.swift in Sources */,
 				FA3260BE2394137A004B1410 /* FilesAdapter.swift in Sources */,
+				FA3260EF23945C09004B1410 /* NewsNavigationController.swift in Sources */,
 				FA3260E623944A1D004B1410 /* ViewControllerExt.swift in Sources */,
 				FA3260CD239416DE004B1410 /* Enums.swift in Sources */,
 				FA32609323940BF1004B1410 /* AppDelegate.swift in Sources */,
+				FA3260F523945C46004B1410 /* NewsViewModel.swift in Sources */,
 				FA3260EA23944B8C004B1410 /* LoginViewModel.swift in Sources */,
 				FA3260E4239449AA004B1410 /* LaunchViewController.swift in Sources */,
 				FA3260C523941455004B1410 /* Config.swift in Sources */,
+				FA3260F9239463CC004B1410 /* DateExt.swift in Sources */,
 				FA3260D323942478004B1410 /* Building.swift in Sources */,
 				FA3260B3239412EB004B1410 /* AuditoriumsAdapter.swift in Sources */,
 				FA3260BC2394136F004B1410 /* FilesProvider.swift in Sources */,
 				FA3260D923943B94004B1410 /* Token.swift in Sources */,
+				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA3260EC239453EB004B1410 /* TextFieldExt.swift in Sources */,
 				FA3260B62394133D004B1410 /* AuditoriumsProvider.swift in Sources */,
 				FA3260DD23943E31004B1410 /* RecordBook.swift in Sources */,
@@ -494,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -550,7 +590,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

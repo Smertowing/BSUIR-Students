@@ -10,6 +10,8 @@ import Foundation
 
 protocol LoginViewModelDelegate: class {
     
+    func loggedIn()
+    func showError(error: NetworkError)
     
 }
 
@@ -18,9 +20,15 @@ final class LoginViewModel {
     weak var delegate: LoginViewModelDelegate?
     
     func auth(login: String, password: String) {
-        
         NetworkingManager.iis.auth(login: login, password: password) { (answer) in
-            print(answer)
+            switch answer {
+            case .success(let response):
+                ProfileManager.shared.token = response.token
+                ProfileManager.shared.login()
+                self.delegate?.loggedIn()
+            case .failure(let error):
+                self.delegate?.showError(error: error)
+            }
         }
     }
     

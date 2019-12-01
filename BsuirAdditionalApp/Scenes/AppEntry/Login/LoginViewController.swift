@@ -10,7 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var viewModel = LoginViewModel()
+    private let viewModel = LoginViewModel()
     
     @IBOutlet weak var bottomOffset: NSLayoutConstraint!
     @IBOutlet weak var topOffset: NSLayoutConstraint!
@@ -28,10 +28,10 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         signinButton.layer.cornerRadius = 5
         setupViewModel()
-        loginField.addPaddingToTextField()
+        loginField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
         loginField.attributedPlaceholder = NSAttributedString(string: "Login",
                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
-        passwordField.addPaddingToTextField()
+        passwordField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
         passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                                  attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     }
@@ -41,14 +41,33 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signinClicked(_ sender: Any) {
+        signinButton.isEnabled = false
+        signinButton.backgroundColor = UIColor.gray
         if let username = loginField.text, let password = passwordField.text, (username.trimmingCharacters(in: .whitespacesAndNewlines) != "") && (password.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
             viewModel.auth(login: username, password: password)
+        } else {
+            showAlert(title: "Ошибка", message: "Некорректные данные в полях ввода") {
+                self.signinButton.isEnabled = true
+                self.signinButton.backgroundColor = AppColors.accentColor.uiColor()
+            }
         }
     }
     
 }
 
 extension LoginViewController: LoginViewModelDelegate {
+    
+    func loggedIn() {
+        signinButton.isEnabled = true
+        signinButton.backgroundColor = AppColors.accentColor.uiColor()
+        segueToAppllication()
+    }
+    
+    func showError(error: NetworkError) {
+        signinButton.isEnabled = true
+        signinButton.backgroundColor = AppColors.accentColor.uiColor()
+        showErrorAlert(error)
+    }
     
 }
 
