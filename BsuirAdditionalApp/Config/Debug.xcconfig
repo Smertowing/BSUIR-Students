@@ -1,0 +1,13 @@
+//
+//  Debug.xcconfig
+//  BsuirAdditionalApp
+//
+//  Created by Kiryl Holubeu on 12/1/19.
+//  Copyright © 2019 Kiryl Holubeu. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Server
+BASE_URL = http:/$()/54.91.104.127:9000/bsuir/api/v1

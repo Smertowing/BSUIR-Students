@@ -1,0 +1,15 @@
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "ChZ-Fw-nfb"; */
+"ChZ-Fw-nfb.placeholder" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "J0Y-kl-IBT"; */
+"J0Y-kl-IBT.normalTitle" = "Log In";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "XjF-RO-GMN"; */
+"XjF-RO-GMN.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "BrakhQueue"; ObjectID = "gew-WP-tAd"; */
+"gew-WP-tAd.text" = "BrakhQueue";
+
+/* Class = "UILabel"; text = "Студент БГУИР"; ObjectID = "tzy-D4-lZe"; */
+"tzy-D4-lZe.text" = "Студент БГУИР";
