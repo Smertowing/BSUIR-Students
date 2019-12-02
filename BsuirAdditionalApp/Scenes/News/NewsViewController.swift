@@ -54,7 +54,9 @@ class NewsViewController: UIViewController {
     }
     
     @objc func filterButtonClicked() {
-        
+        let storyBoard = UIStoryboard(name: "News", bundle: nil)
+        let filterNewsViewController = storyBoard.instantiateViewController(withIdentifier: "filterNewsVC")
+        self.show(filterNewsViewController, sender: self)
     }
 }
 

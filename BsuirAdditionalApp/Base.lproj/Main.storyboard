@@ -36,7 +36,7 @@
             <objects>
                 <navigationController id="w7X-Hi-CVC" customClass="NewsNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="feed_off" id="tPT-sL-hgW">
-                        <inset key="imageInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M88-Bw-sNg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -53,9 +53,7 @@
         <scene sceneID="FJ5-9z-g2U">
             <objects>
                 <navigationController id="fRF-Yy-x0h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profile_off" id="JNw-dy-4a8">
-                        <inset key="imageInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="profile_off" id="JNw-dy-4a8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z6A-Xk-YR4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,9 +69,7 @@
         <scene sceneID="TpN-98-ebg">
             <objects>
                 <navigationController id="XyF-7f-PDC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="zachetka_off" id="sdV-vY-xyx">
-                        <inset key="imageInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="zachetka_off" id="sdV-vY-xyx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E37-NE-UBf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,9 +260,7 @@
         <scene sceneID="qTM-Yp-ydy">
             <objects>
                 <navigationController id="JGB-1i-4Di" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="rating_off" id="fAR-Pu-v0s">
-                        <inset key="imageInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="rating_off" id="fAR-Pu-v0s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lkD-lO-JGu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
