@@ -33,6 +33,7 @@ final class NewsViewModel {
             }
         }
     }
+    
     private var news: [News] = []
     private var currentPage = 1
     private var perPage = 10
@@ -51,23 +52,28 @@ final class NewsViewModel {
         return news[index]
     }
     
+    var fetching: Bool {
+        return isFetchInProgress
+    }
+    
     func refresh(refresher: Bool) {
         guard !isFetchInProgress else {
             return
         }
         
-        news = []
         currentPage = 1
         total = 0
         
-        fetch()
+        fetchNews(page: 1, perPage: perPage) {
+            self.news = []
+        }
     }
     
     func fetch() {
         fetchNews(page: currentPage, perPage: perPage)
     }
     
-    private func fetchNews(page: Int, perPage: Int) {
+    private func fetchNews(page: Int, perPage: Int, completion: (() -> Void)? = nil) {
         
         guard !isFetchInProgress else {
             return
@@ -79,13 +85,17 @@ final class NewsViewModel {
             switch answer {
             case .success(let newsList):
                 DispatchQueue.main.async {
+                    completion?()
                     self.currentPage += 1
                     self.isFetchInProgress = false
                     self.newsList = newsList
                 }
             case .failure(let error):
-                self.isFetchInProgress = false
-                self.delegate?.onFetchFailed(with: error)
+                DispatchQueue.main.async {
+                    completion?()
+                    self.isFetchInProgress = false
+                    self.delegate?.onFetchFailed(with: error)
+                }
             }
         }
     }

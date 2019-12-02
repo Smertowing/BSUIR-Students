@@ -21,7 +21,7 @@ class NewsViewController: UIViewController {
         navigationController?.title = nil
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
-        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.filterButtonClicked)), animated: false)
+        self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "filter_off"), style: .plain, target: self, action: #selector(self.filterButtonClicked)), animated: false)
         setupViewModel()
         configureEventsTable()
     }
@@ -65,7 +65,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let number = viewModel.totalCount
+        
+        let number = viewModel.fetching ? (0) : (viewModel.totalCount)
         if number == 0 {
             tableView.backgroundView?.isHidden = false
         } else {
@@ -76,15 +77,22 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let storyBoard = UIStoryboard(name: "News", bundle: nil)
-        let newsDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "newsDetailsVC") as! NewsDetailsViewController
-        newsDetailsViewController.set(viewModel.news(at: indexPath.row))
-        self.show(newsDetailsViewController, sender: self)
+        if !isLoadingCell(for: indexPath) {
+            let storyBoard = UIStoryboard(name: "News", bundle: nil)
+            let newsDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "newsDetailsVC") as! NewsDetailsViewController
+            newsDetailsViewController.set(viewModel.news(at: indexPath.row))
+            self.show(newsDetailsViewController, sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! NewsTableViewCell
-        cell.set(viewModel.news(at: indexPath.row))
+        
+        if isLoadingCell(for: indexPath) {
+          cell.set(.none)
+        } else {
+          cell.set(viewModel.news(at: indexPath.row))
+        }
         
         cell.layer.borderColor = AppColors.barsColor.cgColor()
         cell.layer.borderWidth = 4.0
@@ -125,11 +133,12 @@ extension NewsViewController: NewsViewModelDelegate {
         }
         
         let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
-        newsTable.reloadRows(at: indexPathsToReload, with: .automatic)
+        newsTable.reloadRows(at: indexPathsToReload, with: .none)
     }
     
     func onFetchFailed(with reason: NetworkError) {
         newsTable.refreshControl?.endRefreshing()
+        newsTable.reloadData()
     }
     
     

@@ -18,10 +18,13 @@ class NewsTableViewCell: UITableViewCell {
     
     var currentNews: News!
 
-    func set(_ news: News) {
+    func set(_ news: News?) {
+        guard let news = news else {
+            return 
+        }
         self.currentNews = news
         
-        newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: #imageLiteral(resourceName: "Logo_1"))
+        newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage())
         
         titleLabel.text = news.title
         subtitleLabel.text = news.source.name + " / " + news.source.type
