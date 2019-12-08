@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MarkdownKit
+import Down
 
 class NewsDetailsViewController: UIViewController {
     
@@ -26,20 +26,11 @@ class NewsDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "№\(currentNews.id)"
         titleLabel.text = currentNews.title
-        subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type
+        subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type.rawValue
         dateLabel.text = Date(timeIntervalSince1970: currentNews.publishedAt).newsFormat
         
-        let markdownParser = MarkdownParser()
-        markdownParser.enabledElements = .all
-        markdownParser.bold.color = UIColor.white
-        markdownParser.italic.color = UIColor.white
-        markdownParser.list.color = UIColor.white
-        markdownParser.quote.color = UIColor.white
-        markdownParser.code.color = UIColor.white
-        markdownParser.link.color = AppColors.accentColor.uiColor()
-        markdownParser.automaticLink.color = AppColors.accentColor.uiColor()
-        markdownParser.header.color = AppColors.accentColor.uiColor()
-        contentView.attributedText = markdownParser.parse(currentNews.content)
+        let down = Down(markdownString: currentNews.content)
+        contentView.attributedText = try? down.toAttributedString()
         let attributedText = NSMutableAttributedString(attributedString: contentView.attributedText!)
         attributedText.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
             if (attribute as? UIColor) != nil {
@@ -53,7 +44,7 @@ class NewsDetailsViewController: UIViewController {
                 attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 22), range: range)
             }
         }
-        contentView.attributedText = attributedText
+        contentView.attributedText = attributedText.attributedStringWithResizedImages(with: self.view.bounds.width)
         
     }
     

@@ -40,6 +40,12 @@ final class NewsViewModel {
     private var total = 0
     private var isFetchInProgress = false
     
+    private var title: String?
+    private var content: String?
+    private var sources: [Int] = []
+    private var firstDate: Date?
+    private var secondDate: Date?
+    
     var totalCount: Int {
         return total
     }
@@ -61,6 +67,8 @@ final class NewsViewModel {
             return
         }
         
+        getSavedFilter()
+        
         currentPage = 1
         total = 0
         
@@ -81,7 +89,7 @@ final class NewsViewModel {
         
         isFetchInProgress = true
         
-        NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, title: nil, q: nil, url: nil, source: nil, sources: nil, loadedAfter: nil, loadedBefore: nil, publishedAfter: nil, publishedBefore: nil) { (answer) in
+        NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, title: title, q: content, url: nil, source: nil, sources: sources, loadedAfter: nil, loadedBefore: nil, publishedAfter: firstDate?.timeIntervalSince1970, publishedBefore: secondDate?.timeIntervalSince1970) { (answer) in
             switch answer {
             case .success(let newsList):
                 DispatchQueue.main.async {
@@ -104,6 +112,15 @@ final class NewsViewModel {
         let startIndex = news.count - newNews.count
         let endIndex = startIndex + newNews.count
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+    }
+    
+    func getSavedFilter() {
+        let savedFilter = DataManager.shared.filter
+        self.title = savedFilter.title
+        self.content = savedFilter.content
+        self.sources = savedFilter.sourcesInt
+        self.firstDate = savedFilter.firstDate
+        self.secondDate = savedFilter.secondDate
     }
     
 }

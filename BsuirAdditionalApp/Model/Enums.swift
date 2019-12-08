@@ -14,6 +14,18 @@ enum AuditoriumType: String, Codable {
     case practice = "LESSON_PRACTICE"
 }
 
+enum NewsSourceType: String, Codable {
+    case fksis = "FKSIS"
+    case bsuir = "BSUIR"
+    case fic = "FIC"
+    case fitu = "FITU"
+    case fre = "FRE"
+    case ief = "IEF"
+    case other = "OTHER"
+    
+    static let allValues = [fksis, bsuir, fic, fitu, fre, ief, other]
+}
+
 enum NetworkError: Error {
     case unknownError
     case connectionError
@@ -25,4 +37,8 @@ enum NetworkError: Error {
     case serverUnavailable
     case timeOut
     case unsuppotedURL
+}
+
+enum DataCacheKeys: String {
+    case filter = "filter"
 }

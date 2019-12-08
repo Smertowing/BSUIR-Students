@@ -15,7 +15,7 @@ class NewsNavigationController: UINavigationController {
         let storyBoard = UIStoryboard(name: "News", bundle: nil)
         let newsViewController = storyBoard.instantiateViewController(withIdentifier: "newsVC")
         self.pushViewController(newsViewController, animated: false)
-        var navigationBarAppearace = UINavigationBar.appearance()
+        let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = AppColors.accentColor.uiColor()
         navigationBarAppearace.barTintColor = AppColors.barsColor.uiColor()
     }

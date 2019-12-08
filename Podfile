@@ -13,5 +13,5 @@ target 'BsuirAdditionalApp' do
   pod 'KeychainSwift', '~> 16.0'
   pod 'SDWebImage'
   pod 'SnapKit'
-  pod "MarkdownKit"
+  pod 'Down'
 end

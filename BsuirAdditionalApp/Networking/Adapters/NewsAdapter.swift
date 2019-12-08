@@ -36,7 +36,7 @@ class NewsAdapter {
     }
     
     func getNewsList(page: Int?, newsAtPage: Int?, title: String?, q: String?, url: String?, source: Int?,
-    sources: [Int]?, loadedAfter: Int?, loadedBefore: Int?, publishedAfter: Int?, publishedBefore: Int?, completion: @escaping (Result<(NewsList), NetworkError>) -> Void) {
+    sources: [Int]?, loadedAfter: TimeInterval?, loadedBefore: TimeInterval?, publishedAfter: TimeInterval?, publishedBefore: TimeInterval?, completion: @escaping (Result<(NewsList), NetworkError>) -> Void) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         NewsAdapter.provider.request(.getNewsList(page: page, newsAtPage: newsAtPage, title: title, q: q, url: url, source: source,
         sources: sources, loadedAfter: loadedAfter, loadedBefore: loadedBefore, publishedAfter: publishedAfter, publishedBefore: publishedBefore)) { (result) in
@@ -60,7 +60,7 @@ class NewsAdapter {
         }
     }
     
-    func getSources(by type: String, completion: @escaping (Result<([Source]), NetworkError>) -> Void) {
+    func getSources(by type: NewsSourceType, completion: @escaping (Result<([Source]), NetworkError>) -> Void) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         NewsAdapter.provider.request(.getSources(type: type)) { (result) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false

@@ -11,8 +11,8 @@ import Moya
 enum NewsProvider {
     case getNews(id: Int)
     case getNewsList(page: Int?, newsAtPage: Int?, title: String?, q: String?, url: String?, source: Int?,
-        sources: [Int]?, loadedAfter: Int?, loadedBefore: Int?, publishedAfter: Int?, publishedBefore: Int?)
-    case getSources(type: String)
+        sources: [Int]?, loadedAfter: TimeInterval?, loadedBefore: TimeInterval?, publishedAfter: TimeInterval?, publishedBefore: TimeInterval?)
+    case getSources(type: NewsSourceType)
 }
 
 extension NewsProvider: TargetType {
@@ -96,7 +96,7 @@ extension NewsProvider: TargetType {
             )
         case .getSources(let type):
             return .requestParameters(
-                parameters: ["type":type],
+                parameters: ["type":type.rawValue],
                 encoding: URLEncoding.default
             )
         }

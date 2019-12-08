@@ -24,7 +24,7 @@ struct News: Codable {
 struct Source: Codable {
     
     let id: Int
-    let type: String
+    let type: NewsSourceType
     let name: String
     
 }

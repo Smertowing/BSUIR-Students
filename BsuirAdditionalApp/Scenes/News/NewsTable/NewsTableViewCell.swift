@@ -27,7 +27,7 @@ class NewsTableViewCell: UITableViewCell {
         newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage())
         
         titleLabel.text = news.title
-        subtitleLabel.text = news.source.name + " / " + news.source.type
+        subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue
         dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat
     }
     
