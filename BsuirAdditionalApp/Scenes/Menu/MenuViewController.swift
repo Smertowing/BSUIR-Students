@@ -15,8 +15,7 @@ class MenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        title = "Меню"
-        navigationController?.title = nil
+        navigationItem.title = "Меню"
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
         setupViewModel()
