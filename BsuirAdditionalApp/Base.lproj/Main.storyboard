@@ -49,11 +49,13 @@
             </objects>
             <point key="canvasLocation" x="-1299" y="1441"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Menu Navigation Controller-->
         <scene sceneID="FJ5-9z-g2U">
             <objects>
-                <navigationController id="fRF-Yy-x0h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="profile_off" id="JNw-dy-4a8"/>
+                <navigationController id="fRF-Yy-x0h" customClass="MenuNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="profile_off" id="JNw-dy-4a8">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z6A-Xk-YR4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
