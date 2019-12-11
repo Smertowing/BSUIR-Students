@@ -57,6 +57,8 @@
 		FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69F55D239D9652006A953E /* BuildingsCache.swift */; };
 		FA69F560239D9674006A953E /* BuildingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69F55F239D9674006A953E /* BuildingCache.swift */; };
 		FA69F563239DA059006A953E /* FreeAuditoriumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69F562239DA059006A953E /* FreeAuditoriumsViewController.swift */; };
+		FA6D4B6323A1B10E00390B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D4B6223A1B10E00390B9D /* SettingsViewController.swift */; };
+		FA6D4B6523A1B11900390B9D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6D4B6423A1B11900390B9D /* SettingsViewModel.swift */; };
 		FA765CFD23A17796001CC348 /* AllAuditoriumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765CFC23A17796001CC348 /* AllAuditoriumsViewController.swift */; };
 		FA765CFF23A177A0001CC348 /* AllAuditoriumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765CFE23A177A0001CC348 /* AllAuditoriumsViewModel.swift */; };
 		FA765D0223A18CE1001CC348 /* UserCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765D0123A18CE0001CC348 /* UserCache.swift */; };
@@ -143,6 +145,8 @@
 		FA69F55D239D9652006A953E /* BuildingsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsCache.swift; sourceTree = "<group>"; };
 		FA69F55F239D9674006A953E /* BuildingCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingCache.swift; sourceTree = "<group>"; };
 		FA69F562239DA059006A953E /* FreeAuditoriumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAuditoriumsViewController.swift; sourceTree = "<group>"; };
+		FA6D4B6223A1B10E00390B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FA6D4B6423A1B11900390B9D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		FA765CFC23A17796001CC348 /* AllAuditoriumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAuditoriumsViewController.swift; sourceTree = "<group>"; };
 		FA765CFE23A177A0001CC348 /* AllAuditoriumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAuditoriumsViewModel.swift; sourceTree = "<group>"; };
 		FA765D0123A18CE0001CC348 /* UserCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCache.swift; sourceTree = "<group>"; };
@@ -204,8 +208,9 @@
 		FA1AA73423950E1E0092559B /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				FA83A6C423A1A47900BF5ABD /* Group */,
 				FA765D0B23A19733001CC348 /* Profile */,
+				FA83A6C423A1A47900BF5ABD /* Group */,
+				FA6D4B6123A1B0B000390B9D /* Settings */,
 				FA1AA73523950E450092559B /* MenuNavigationController.swift */,
 				FA1AA73723950E550092559B /* Menu.storyboard */,
 				FA1AA73923950E680092559B /* MenuViewController.swift */,
@@ -424,6 +429,15 @@
 				FAB0590E239D57CB00664358 /* FreeAuditoriumsViewModel.swift */,
 			);
 			path = FreeAuditoriums;
+			sourceTree = "<group>";
+		};
+		FA6D4B6123A1B0B000390B9D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FA6D4B6223A1B10E00390B9D /* SettingsViewController.swift */,
+				FA6D4B6423A1B11900390B9D /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		FA765CFB23A1777C001CC348 /* AllAuditoriums */ = {
@@ -711,6 +725,7 @@
 				FA3260B3239412EB004B1410 /* AuditoriumsAdapter.swift in Sources */,
 				FA3260BC2394136F004B1410 /* FilesProvider.swift in Sources */,
 				FA3260D923943B94004B1410 /* Token.swift in Sources */,
+				FA6D4B6323A1B10E00390B9D /* SettingsViewController.swift in Sources */,
 				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA765D0423A18CF3001CC348 /* EducationCache.swift in Sources */,
 				FAB0590A239D471600664358 /* AttributedString.swift in Sources */,
@@ -727,6 +742,7 @@
 				FA3260C023941383004B1410 /* IISAdapter.swift in Sources */,
 				FA765D0F23A19751001CC348 /* ProfileViewModel.swift in Sources */,
 				FA3260D523942617004B1410 /* News.swift in Sources */,
+				FA6D4B6523A1B11900390B9D /* SettingsViewModel.swift in Sources */,
 				FA3260CA23941567004B1410 /* ProfileManager.swift in Sources */,
 				FAB05907239D103B00664358 /* DataManager.swift in Sources */,
 				FAB0591A239D5F8600664358 /* FilesNavigationController.swift in Sources */,

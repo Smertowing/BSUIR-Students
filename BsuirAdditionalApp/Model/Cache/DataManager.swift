@@ -58,6 +58,18 @@ final class DataManager {
         }
     }
     
+    var settings: SettingsCache? {
+        get {
+            return (DataCache.instance.readObject(forKey: DataCacheKeys.settings.rawValue) as? SettingsCache)
+        }
+        set {
+            DataCache.instance.clean(byKey: DataCacheKeys.settings.rawValue)
+            if let value = newValue {
+                DataCache.instance.write(object: value, forKey: DataCacheKeys.settings.rawValue)
+            }
+        }
+    }
+    
     func logout() {
         DataCache.instance.cleanAll()
     }
