@@ -41,6 +41,35 @@ class MenuViewController: UITableViewController {
         photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 2 {
+            showLogoutConfirmationAlert()
+        }
+    }
+    
+    func showLogoutConfirmationAlert() {
+        let alert = UIAlertController(title: nil, message: "Выйти из профиля?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ОК", style: .destructive) { _ in
+            alert.dismiss(animated: true, completion: nil)
+            self.logout()
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default) { _ in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func logout() {
+        DataManager.shared.logout()
+        ProfileManager.shared.logout()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let startViewController = storyboard.instantiateViewController(withIdentifier: "firstScreen")
+        UIApplication.shared.keyWindow?.rootViewController = startViewController
+    }
+    
 }
 
 extension MenuViewController: MenuViewModelDelegate {

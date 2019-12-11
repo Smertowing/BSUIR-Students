@@ -203,7 +203,7 @@
         <!--Launch View Controller-->
         <scene sceneID="ekP-bD-WEN">
             <objects>
-                <viewController id="aXL-id-0uw" customClass="LaunchViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstScreen" id="aXL-id-0uw" customClass="LaunchViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gIk-al-U6D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
