@@ -34,6 +34,18 @@ final class DataManager {
         }
     }
     
+    var user: UserCache? {
+        get {
+            return (DataCache.instance.readObject(forKey: DataCacheKeys.user.rawValue) as? UserCache)
+        }
+        set {
+            DataCache.instance.clean(byKey: DataCacheKeys.user.rawValue)
+            if let value = newValue {
+                DataCache.instance.write(object: value, forKey: DataCacheKeys.user.rawValue)
+            }
+        }
+    }
+    
     func logout() {
         DataCache.instance.cleanAll()
     }

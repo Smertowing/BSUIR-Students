@@ -1,18 +1,24 @@
 //
-//  MenuViewController.swift
+//  ProfileViewController.swift
 //  BsuirAdditionalApp
 //
-//  Created by Kiryl Holubeu on 12/2/19.
+//  Created by Kiryl Holubeu on 12/12/19.
 //  Copyright © 2019 Kiryl Holubeu. All rights reserved.
 //
 
 import UIKit
+import Cosmos
 
-class MenuViewController: UITableViewController {
+class ProfileViewController: UIViewController {
     
-    private let viewModel = MenuViewModel()
+    private let viewModel = ProfileViewModel()
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var mainInfoLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var skillsLabel: UILabel!
+    @IBOutlet weak var referencesTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +45,19 @@ class MenuViewController: UITableViewController {
     func setupValues() {
         nameLabel.text = viewModel.name
         photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
+        ratingView.rating = Double(viewModel.rating)
+        mainInfoLabel.text = viewModel.mainInfo
+        summaryLabel.text = viewModel.summary
+        skillsLabel.text = viewModel.skills
+        referencesTextView.text = ""
+        for reference in viewModel.references {
+            referencesTextView.text.append("\(reference) \n")
+        }
     }
     
 }
 
-extension MenuViewController: MenuViewModelDelegate {
+extension ProfileViewController: ProfileViewModelDelegate {
     
     func refresh() {
         setupValues()
@@ -54,4 +68,5 @@ extension MenuViewController: MenuViewModelDelegate {
     }
 
 }
+
 

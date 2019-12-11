@@ -46,7 +46,7 @@ extension FilesProvider: TargetType {
         switch self {
         default:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         }
     }
     

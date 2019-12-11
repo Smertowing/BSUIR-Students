@@ -109,22 +109,22 @@ extension IISProvider: TargetType {
             return ["Content-Type": "application/json"]
         case .getProfile:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         case .getRecordBook:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         case .getDiploma:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         case .getGroup:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         case .getSettings:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         case .updateSettings:
             return ["Content-Type": "application/json",
-            "access-token": ProfileManager.shared.token]
+            "Authorization": ProfileManager.shared.token]
         }
     }
     

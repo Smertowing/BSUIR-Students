@@ -44,6 +44,7 @@ enum NetworkError: Error {
 enum DataCacheKeys: String {
     case filter = "filter"
     case buildings = "buildings"
+    case user = "user"
 }
 
 enum ProfileKeys: String {
