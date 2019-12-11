@@ -45,6 +45,7 @@ enum DataCacheKeys: String {
     case filter = "filter"
     case buildings = "buildings"
     case user = "user"
+    case group = "group"
 }
 
 enum ProfileKeys: String {

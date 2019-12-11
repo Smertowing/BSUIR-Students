@@ -46,6 +46,18 @@ final class DataManager {
         }
     }
     
+    var group: GroupCache? {
+        get {
+            return (DataCache.instance.readObject(forKey: DataCacheKeys.group.rawValue) as? GroupCache)
+        }
+        set {
+            DataCache.instance.clean(byKey: DataCacheKeys.group.rawValue)
+            if let value = newValue {
+                DataCache.instance.write(object: value, forKey: DataCacheKeys.group.rawValue)
+            }
+        }
+    }
+    
     func logout() {
         DataCache.instance.cleanAll()
     }
