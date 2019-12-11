@@ -35,9 +35,9 @@ class AuditoriumsAdapter {
         }
     }
     
-    func getFreeAuditoriums(name: String?, building: Int, floor: Int?, type: AuditoriumType?, completion: @escaping (Result<([Auditorium]), NetworkError>) -> Void) {
+    func getFreeAuditoriums(building: Int, floor: Int?, date: String?, time: String?, completion: @escaping (Result<([Auditorium]), NetworkError>) -> Void) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        AuditoriumsAdapter.provider.request(.getFreeAuditoriums(name: name, building: building, floor: floor, type: type)) { (result) in
+        AuditoriumsAdapter.provider.request(.getFreeAuditoriums(building: building, floor: floor, date: date, time: time)) { (result) in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             switch result {
             case .success(let response):

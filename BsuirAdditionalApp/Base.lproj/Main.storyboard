@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="-2196" y="579"/>
         </scene>
-        <!--Ratings Navigation Controller-->
+        <!--Files Navigation Controller-->
         <scene sceneID="qTM-Yp-ydy">
             <objects>
-                <navigationController id="JGB-1i-4Di" customClass="RatingsNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="JGB-1i-4Di" customClass="FilesNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="" image="rating_off" id="fAR-Pu-v0s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lkD-lO-JGu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -24,7 +24,7 @@ class NewsTableViewCell: UITableViewCell {
         }
         self.currentNews = news
         
-        newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage())
+        newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage(), options: .progressiveLoad)
         
         titleLabel.text = news.title
         subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue

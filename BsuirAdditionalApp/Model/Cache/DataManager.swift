@@ -24,6 +24,16 @@ final class DataManager {
         }
     }
     
+    var buildings: BuildingsCache {
+        get {
+            return (DataCache.instance.readObject(forKey: DataCacheKeys.buildings.rawValue) as? BuildingsCache ?? BuildingsCache(buildings: []))
+        }
+        set {
+            DataCache.instance.clean(byKey: DataCacheKeys.buildings.rawValue)
+            DataCache.instance.write(object: newValue, forKey: DataCacheKeys.buildings.rawValue)
+        }
+    }
+    
     func logout() {
         DataCache.instance.cleanAll()
     }

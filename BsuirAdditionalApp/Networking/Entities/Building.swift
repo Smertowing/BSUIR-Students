@@ -10,7 +10,7 @@ import Foundation
 
 struct Building: Codable {
     
-    let name: String
-    let floor: [Int]
+    let name: Int
+    let floors: [Int]
 
 }

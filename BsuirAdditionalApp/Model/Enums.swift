@@ -12,6 +12,8 @@ enum AuditoriumType: String, Codable {
     case lecture = "LESSON_LECTURE"
     case lab = "LESSON_LAB"
     case practice = "LESSON_PRACTICE"
+    
+    static let allValues = [lecture, lab, practice]
 }
 
 enum NewsSourceType: String, Codable {
@@ -41,4 +43,10 @@ enum NetworkError: Error {
 
 enum DataCacheKeys: String {
     case filter = "filter"
+    case buildings = "buildings"
+}
+
+enum ProfileKeys: String {
+    case isLogged = "isLogged"
+    case token = "token"
 }

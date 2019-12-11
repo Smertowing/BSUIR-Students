@@ -1,5 +1,5 @@
 //
-//  RatingsViewModel.swift
+//  FilesViewModel.swift
 //  BsuirAdditionalApp
 //
 //  Created by Kiryl Holubeu on 12/8/19.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol RatingsViewModelDelegate: class {
+protocol FilesViewModelDelegate: class {
     
 }
 
-final class RatingsViewModel {
+final class FilesViewModel {
 
-    weak var delegate: RatingsViewModelDelegate!
+    weak var delegate: FilesViewModelDelegate!
     
     func refresh(refresher: Bool) {
         

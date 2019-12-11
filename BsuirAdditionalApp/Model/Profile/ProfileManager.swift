@@ -19,26 +19,26 @@ final class ProfileManager {
     
     var isAuthenticated: Bool {
         get {
-            return userdefaults.bool(forKey: "isLogged")
+            return userdefaults.bool(forKey: ProfileKeys.isLogged.rawValue)
         }
     }
     
     var token: String {
         get {
-            return defaults.get("token") ?? ""
+            return defaults.get(ProfileKeys.token.rawValue) ?? ""
         }
         set {
-            defaults.set(newValue, forKey: "token")
+            defaults.set(newValue, forKey: ProfileKeys.token.rawValue)
         }
     }
     
     func login() {
-        userdefaults.set(true, forKey: "isLogged")
+        userdefaults.set(true, forKey: ProfileKeys.isLogged.rawValue)
     }
     
     func logout() {
         defaults.clear()
-        userdefaults.set(false, forKey: "isLogged")
+        userdefaults.set(false, forKey: ProfileKeys.isLogged.rawValue)
     }
     
 }

@@ -28,24 +28,39 @@ class NewsDetailsViewController: UIViewController {
         titleLabel.text = currentNews.title
         subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type.rawValue
         dateLabel.text = Date(timeIntervalSince1970: currentNews.publishedAt).newsFormat
-        
-        let down = Down(markdownString: currentNews.content)
-        contentView.attributedText = try? down.toAttributedString()
-        let attributedText = NSMutableAttributedString(attributedString: contentView.attributedText!)
-        attributedText.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
-            if (attribute as? UIColor) != nil {
-                attributedText.removeAttribute(.foregroundColor, range: range)
-                attributedText.addAttribute(.foregroundColor, value: UIColor.white, range: range)
+        loadContent()
+    }
+    
+    func loadContent() {
+        DispatchQueue.global(qos: .background).async {
+            let down = Down(markdownString: self.currentNews.content)
+            
+            guard let markdown = try? down.toAttributedString() else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.contentView.attributedText = markdown
+            }
+            
+            let attributedText = NSMutableAttributedString(attributedString: markdown)
+            attributedText.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
+                if (attribute as? UIColor) != nil {
+                    attributedText.removeAttribute(.foregroundColor, range: range)
+                    attributedText.addAttribute(.foregroundColor, value: UIColor.white, range: range)
+                }
+            }
+            attributedText.enumerateAttribute(.font, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
+                if (attribute as? UIFont) != nil {
+                    attributedText.removeAttribute(.font, range: range)
+                    attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 22), range: range)
+                }
+            }
+            
+            DispatchQueue.main.async {
+                self.contentView.attributedText = attributedText.attributedStringWithResizedImages(with: self.view.bounds.width*0.9)
             }
         }
-        attributedText.enumerateAttribute(.font, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
-            if (attribute as? UIFont) != nil {
-                attributedText.removeAttribute(.font, range: range)
-                attributedText.addAttribute(.font, value: UIFont.systemFont(ofSize: 22), range: range)
-            }
-        }
-        contentView.attributedText = attributedText.attributedStringWithResizedImages(with: self.view.bounds.width)
-        
     }
     
 }

@@ -182,7 +182,7 @@ extension NewsFilterViewController: NewsFilterViewModelDelegate {
     }
     
     func refreshForm() {
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 
 }

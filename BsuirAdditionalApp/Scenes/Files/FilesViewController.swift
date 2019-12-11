@@ -1,5 +1,5 @@
 //
-//  RatingsViewController.swift
+//  FilesViewController.swift
 //  BsuirAdditionalApp
 //
 //  Created by Kiryl Holubeu on 12/8/19.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class RatingsViewController: UIViewController {
+class FilesViewController: UIViewController {
     
-    private let viewModel = RatingsViewModel()
+    private let viewModel = FilesViewModel()
     
     @IBOutlet weak var newsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        navigationItem.title = "Рейтинг"
+        navigationItem.title = "Файлы"
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
         
@@ -53,7 +53,7 @@ class RatingsViewController: UIViewController {
     
 }
 
-extension RatingsViewController: UITableViewDelegate, UITableViewDataSource {
+extension FilesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,7 +82,7 @@ extension RatingsViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension RatingsViewController: RatingsViewModelDelegate {
+extension FilesViewController: FilesViewModelDelegate {
     
 }
 

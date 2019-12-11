@@ -10,7 +10,7 @@ import Moya
 
 enum AuditoriumsProvider {
     case getAuditoriums(name: String?, building: Int?, floor: Int?, type: AuditoriumType?)
-    case getFreeAuditoriums(name: String?, building: Int, floor: Int?, type: AuditoriumType?)
+    case getFreeAuditoriums(building: Int, floor: Int?, date: String?, time: String?)
     case getBuildings
 }
 
@@ -66,16 +66,17 @@ extension AuditoriumsProvider: TargetType {
                 parameters: params,
                 encoding: URLEncoding.default
             )
-        case .getFreeAuditoriums(let name, let building, let floor, let type):
+        case .getFreeAuditoriums(let building, let floor, let date, let time):
             var params: [String:Any] = ["building":building]
-            if let name = name {
-                params["name"] = name
-            }
+     
             if let floor = floor {
                 params["floor"] = floor
             }
-            if let type = type {
-                params["type"] = type.rawValue
+            if let date = date {
+                params["date"] = date
+            }
+            if let time = time {
+                params["time"] = time
             }
             return .requestParameters(
                 parameters: params,
