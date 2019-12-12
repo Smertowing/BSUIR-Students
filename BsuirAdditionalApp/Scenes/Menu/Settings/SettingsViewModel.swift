@@ -33,6 +33,20 @@ final class SettingsViewModel {
         return currentSettings?.isSearchJob ?? false
     }
     
+    func setNewSettings(isProfile: Bool, isRatings: Bool, isWork: Bool) {
+        let newSettings = UserSettings(isPublicProfile: isProfile, isSearchJob: isWork, isShowRating: isRatings)
+        NetworkingManager.iis.updateSettings(newSettings: newSettings) { (answer) in
+            switch answer {
+            case .success(let settings):
+                DataManager.shared.settings = SettingsCache(settings: settings)
+                self.getSavedSettings()
+            case .failure(let error):
+                self.delegate.failed(with: error)
+            }
+        }
+    }
+    
+    
     func getSavedSettings() {
         if let savedSettings = DataManager.shared.settings {
             currentSettings = savedSettings

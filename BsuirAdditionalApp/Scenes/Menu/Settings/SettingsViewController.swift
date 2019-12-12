@@ -15,6 +15,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var ratingSwitch: UISwitch!
     @IBOutlet weak var profileSwitch: UISwitch!
     @IBOutlet weak var workSwitch: UISwitch!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +38,23 @@ class SettingsViewController: UIViewController {
     }
     
     func setupValues() {
+        ratingSwitch.isEnabled = true
+        profileSwitch.isEnabled = true
+        workSwitch.isEnabled = true
+        activityIndicator.stopAnimating()
         ratingSwitch.isOn = viewModel.isRating
         profileSwitch.isOn = viewModel.isProfile
         workSwitch.isOn = viewModel.isWork
     }
+    
+    @IBAction func switchChanged(_ sender: Any) {
+        ratingSwitch.isEnabled = false
+        profileSwitch.isEnabled = false
+        workSwitch.isEnabled = false
+        activityIndicator.startAnimating()
+        viewModel.setNewSettings(isProfile: profileSwitch.isOn, isRatings: ratingSwitch.isOn, isWork: workSwitch.isOn)
+    }
+    
     
 }
 
@@ -51,7 +65,9 @@ extension SettingsViewController: SettingsViewModelDelegate {
     }
     
     func failed(with reason: NetworkError) {
-        self.showErrorAlert(reason)
+        self.showErrorAlert(reason) {
+            self.setupValues()
+        }
     }
 
 }

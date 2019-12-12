@@ -50,7 +50,13 @@ extension AuditoriumsListViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return auditoriums.count
+        let number = auditoriums.count
+        if number == 0 {
+            tableView.backgroundView?.isHidden = false
+        } else {
+            tableView.backgroundView?.isHidden = true
+        }
+        return number
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
