@@ -16,6 +16,7 @@ class RecordBookViewController: UIViewController {
     @IBOutlet weak var averageMarkLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class RecordBookViewController: UIViewController {
         navigationItem.title = "Моя зачетка"
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
+        loadSpinner()
         setupViewModel()
         scrollView.delegate = self
     }
@@ -40,6 +42,15 @@ class RecordBookViewController: UIViewController {
 
     private func setupViewModel() {
         viewModel.delegate = self
+    }
+    
+    func loadSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.startAnimating()
     }
     
     func setupValues() {
@@ -82,10 +93,12 @@ extension RecordBookViewController: UIScrollViewDelegate {
 extension RecordBookViewController: RecordBookViewModelDelegate {
     
     func refresh() {
+        spinner.stopAnimating()
         setupValues()
     }
     
     func failed(with reason: NetworkError) {
+        spinner.stopAnimating()
         self.showErrorAlert(reason) {
             self.setupValues()
         }

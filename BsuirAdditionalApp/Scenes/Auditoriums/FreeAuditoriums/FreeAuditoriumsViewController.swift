@@ -157,13 +157,17 @@ class FreeAuditoriumsViewController: FormViewController {
 extension FreeAuditoriumsViewController: FreeAuditoriumsViewModelDelegate {
     
     func found(auditoriums: [Auditorium]) {
-        let storyBoard = UIStoryboard(name: "Auditoriums", bundle: nil)
-        let auditoriumsListViewController = storyBoard.instantiateViewController(withIdentifier: "auditoriumTableVC") as! AuditoriumsListViewController
-        auditoriumsListViewController.configure(with: auditoriums)
-        self.show(auditoriumsListViewController, sender: self)
-        let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = AppColors.accentColor.uiColor()
-        navigationBarAppearace.barTintColor = AppColors.barsColor.uiColor()
+        if auditoriums.isEmpty {
+            self.showAlert(title: "Неудача", message: "По выбранным параметрам не найдено ни одной аудитории")
+        } else {
+            let storyBoard = UIStoryboard(name: "Auditoriums", bundle: nil)
+            let auditoriumsListViewController = storyBoard.instantiateViewController(withIdentifier: "auditoriumTableVC") as! AuditoriumsListViewController
+            auditoriumsListViewController.configure(with: auditoriums)
+            self.show(auditoriumsListViewController, sender: self)
+            let navigationBarAppearace = UINavigationBar.appearance()
+            navigationBarAppearace.tintColor = AppColors.accentColor.uiColor()
+            navigationBarAppearace.barTintColor = AppColors.barsColor.uiColor()
+        }
     }
     
     func searchFailed(with reason: NetworkError) {

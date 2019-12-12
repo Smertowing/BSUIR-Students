@@ -13,6 +13,7 @@ class GroupViewController: UIViewController {
     private let viewModel = GroupViewModel()
     
     @IBOutlet weak var groupTable: UITableView!
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class GroupViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
         
+        loadSpinner()
         setupViewModel()
         configureGroupTable()
     }
@@ -40,11 +42,20 @@ class GroupViewController: UIViewController {
         viewModel.delegate = self
     }
     
+    func loadSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.startAnimating()
+    }
+    
     func configureGroupTable() {
         groupTable.delegate = self
         groupTable.dataSource = self
         groupTable.tableFooterView = UIView()
-        groupTable.backgroundView = EmptyBackgroundView.instanceFromNib()
+        groupTable.backgroundView = UIView()
         groupTable.separatorColor = AppColors.textFieldColor.uiColor()
     }
     
@@ -89,11 +100,14 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension GroupViewController: GroupViewModelDelegate {
+    
     func refresh() {
+        spinner.stopAnimating()
         self.groupTable.reloadData()
     }
     
     func failed(with reason: NetworkError) {
+        spinner.stopAnimating()
         self.showErrorAlert(reason)
     }
     

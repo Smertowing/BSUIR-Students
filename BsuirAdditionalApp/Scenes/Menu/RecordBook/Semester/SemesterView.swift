@@ -38,7 +38,7 @@ class SemesterView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        tableView.backgroundView = EmptyBackgroundView.instanceFromNib()
+        tableView.backgroundView = UIView()
         tableView.separatorColor = AppColors.textFieldColor.uiColor()
         
         let nib = UINib.init(nibName: "MarkCell", bundle: nil)

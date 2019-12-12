@@ -16,6 +16,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var profileSwitch: UISwitch!
     @IBOutlet weak var workSwitch: UISwitch!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class SettingsViewController: UIViewController {
         navigationItem.title = "Настройки"
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
+        loadSpinner()
         setupViewModel()
     }
     
@@ -35,6 +37,15 @@ class SettingsViewController: UIViewController {
     private func setupViewModel() {
         viewModel.delegate = self
         viewModel.getSavedSettings()
+    }
+    
+    func loadSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.startAnimating()
     }
     
     func setupValues() {
@@ -61,10 +72,12 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: SettingsViewModelDelegate {
     
     func refresh() {
+        spinner.stopAnimating()
         setupValues()
     }
     
     func failed(with reason: NetworkError) {
+        spinner.stopAnimating()
         self.showErrorAlert(reason) {
             self.setupValues()
         }

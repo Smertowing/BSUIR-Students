@@ -17,6 +17,7 @@ class NewsDetailsViewController: UIViewController {
     @IBOutlet weak var contentView: UITextView!
     
     var currentNews: News!
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     
     func set(_ news: News) {
         self.currentNews = news
@@ -28,7 +29,18 @@ class NewsDetailsViewController: UIViewController {
         titleLabel.text = currentNews.title
         subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type.rawValue
         dateLabel.text = Date(timeIntervalSince1970: currentNews.publishedAt).newsFormat
+        
+        loadSpinner()
         loadContent()
+    }
+    
+    func loadSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.startAnimating()
     }
     
     func loadContent() {
@@ -41,6 +53,7 @@ class NewsDetailsViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.contentView.attributedText = markdown
+                self.spinner.stopAnimating()
             }
             
             let attributedText = NSMutableAttributedString(attributedString: markdown)

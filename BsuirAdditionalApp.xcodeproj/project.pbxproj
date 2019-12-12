@@ -106,7 +106,7 @@
 		FA1AA73723950E550092559B /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		FA1AA73923950E680092559B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FA1AA73B23950E720092559B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		FA32608F23940BF1004B1410 /* Студент БГУИР.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Студент БГУИР.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA32608F23940BF1004B1410 /* Bsuir.Student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bsuir.Student.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA32609223940BF1004B1410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA32609923940BF1004B1410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA32609B23940BF2004B1410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		FA32609023940BF1004B1410 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA32608F23940BF1004B1410 /* Студент БГУИР.app */,
+				FA32608F23940BF1004B1410 /* Bsuir.Student.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -648,7 +648,7 @@
 			);
 			name = BsuirAdditionalApp;
 			productName = BsuirAdditionalApp;
-			productReference = FA32608F23940BF1004B1410 /* Студент БГУИР.app */;
+			productReference = FA32608F23940BF1004B1410 /* Bsuir.Student.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -986,7 +986,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
-				PRODUCT_NAME = "Студент БГУИР";
+				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1006,7 +1006,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
-				PRODUCT_NAME = "Студент БГУИР";
+				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

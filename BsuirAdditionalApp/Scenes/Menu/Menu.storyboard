@@ -11,7 +11,7 @@
         <!--Menu View Controller-->
         <scene sceneID="9ya-fc-fA4">
             <objects>
-                <tableViewController storyboardIdentifier="menuVC" id="A8G-bA-vHr" customClass="MenuViewController" customModule="Студент_БГУИР" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="menuVC" id="A8G-bA-vHr" customClass="MenuViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="IAQ-AZ-6j8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                                     <color key="textColor" red="0.58303942543661713" green="0.74995248893096444" blue="0.69398454528656084" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dK-QX-SHW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Студент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dK-QX-SHW">
                                                     <rect key="frame" x="110" y="28" width="288" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,7 +189,7 @@
         <!--Settings View Controller-->
         <scene sceneID="aBz-cZ-ic5">
             <objects>
-                <viewController storyboardIdentifier="settingsVC" id="eLI-sS-OVy" customClass="SettingsViewController" customModule="Студент_БГУИР" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsVC" id="eLI-sS-OVy" customClass="SettingsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jwd-Gh-pkO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,7 +333,7 @@
         <!--Profile View Controller-->
         <scene sceneID="rec-cO-93M">
             <objects>
-                <viewController id="6zu-5E-tJ0" customClass="ProfileViewController" customModule="Студент_БГУИР" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6zu-5E-tJ0" customClass="ProfileViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oBt-JA-yLH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,7 +556,7 @@
         <!--Group View Controller-->
         <scene sceneID="cZ6-bH-bU2">
             <objects>
-                <viewController storyboardIdentifier="groupVC" id="AYI-TM-woZ" customClass="GroupViewController" customModule="Студент_БГУИР" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="groupVC" id="AYI-TM-woZ" customClass="GroupViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jfe-Zq-9yh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -567,7 +567,7 @@
                                 <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberCell" rowHeight="159" id="tHS-fF-gv7" customClass="GroupMemberCell" customModule="Студент_БГУИР" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberCell" rowHeight="159" id="tHS-fF-gv7" customClass="GroupMemberCell" customModule="Bsuir_Student" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tHS-fF-gv7" id="gnD-Ar-ICF">
@@ -621,7 +621,7 @@
         <!--Record Book View Controller-->
         <scene sceneID="4fL-ve-Rrd">
             <objects>
-                <viewController storyboardIdentifier="recordVC" id="eiW-2B-74s" customClass="RecordBookViewController" customModule="Студент_БГУИР" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recordVC" id="eiW-2B-74s" customClass="RecordBookViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DVw-yX-5zL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

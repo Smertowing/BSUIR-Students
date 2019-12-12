@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var skillsLabel: UILabel!
     @IBOutlet weak var referencesTextView: UITextView!
+    var spinner = UIActivityIndicatorView(style: .whiteLarge)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,8 @@ class ProfileViewController: UIViewController {
         navigationItem.title = "Меню"
         navigationController?.navigationBar.isTranslucent = false
         tabBarController?.tabBar.isTranslucent = false
+        loadSpinner()
         setupViewModel()
-        
         photoImageView.layer.cornerRadius = photoImageView.bounds.width / 2
     }
     
@@ -40,6 +41,15 @@ class ProfileViewController: UIViewController {
     private func setupViewModel() {
         viewModel.delegate = self
         viewModel.getSavedUser()
+    }
+    
+    func loadSpinner() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.startAnimating()
     }
     
     func setupValues() {
@@ -60,10 +70,12 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: ProfileViewModelDelegate {
     
     func refresh() {
+        spinner.stopAnimating()
         setupValues()
     }
     
     func failed(with reason: NetworkError) {
+        spinner.stopAnimating()
         self.showErrorAlert(reason)
     }
 

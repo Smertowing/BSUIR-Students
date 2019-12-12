@@ -31,7 +31,7 @@ class AuditoriumsListViewController: UIViewController {
         auditoriumsTable.delegate = self
         auditoriumsTable.dataSource = self
         auditoriumsTable.tableFooterView = UIView()
-        auditoriumsTable.backgroundView = EmptyBackgroundView.instanceFromNib()
+        auditoriumsTable.backgroundView = UIView()
         auditoriumsTable.separatorColor = AppColors.textFieldColor.uiColor()
     }
     
