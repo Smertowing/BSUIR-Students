@@ -97,7 +97,8 @@ final class AllAuditoriumsViewModel {
                 break
             }
         }
-        NetworkingManager.auditoriums.getAuditoriums(name: name, building: Int(building ?? ""), floor: Int(floor ?? ""), type: recognisedType) { (answer) in
+        let nameParam = name?.isEmpty ?? true ? nil : name
+        NetworkingManager.auditoriums.getAuditoriums(name: nameParam, building: Int(building ?? ""), floor: Int(floor ?? ""), type: recognisedType) { (answer) in
             switch answer {
             case .success(let auditoriums):
                 self.delegate.found(auditoriums: auditoriums)
