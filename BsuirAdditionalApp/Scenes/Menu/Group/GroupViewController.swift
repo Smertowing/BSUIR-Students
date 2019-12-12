@@ -31,9 +31,13 @@ class GroupViewController: UIViewController {
         viewModel.fetchGroup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.getSavedGroup()
+    }
+    
     private func setupViewModel() {
         viewModel.delegate = self
-        viewModel.getSavedGroup()
     }
     
     func configureGroupTable() {

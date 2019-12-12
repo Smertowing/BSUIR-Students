@@ -18,7 +18,7 @@ struct RecordBook: Codable {
 
 struct Semester: Codable {
     
-    let number: String
+    let number: Int
     let averageMark: Double
     let marks: [Mark]
     

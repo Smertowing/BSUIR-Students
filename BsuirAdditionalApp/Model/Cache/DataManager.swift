@@ -70,6 +70,18 @@ final class DataManager {
         }
     }
     
+    var recordBook: RecordBookCache? {
+        get {
+            return (DataCache.instance.readObject(forKey: DataCacheKeys.recordBook.rawValue) as? RecordBookCache)
+        }
+        set {
+            DataCache.instance.clean(byKey: DataCacheKeys.recordBook.rawValue)
+            if let value = newValue {
+                DataCache.instance.write(object: value, forKey: DataCacheKeys.recordBook.rawValue)
+            }
+        }
+    }
+    
     func logout() {
         DataCache.instance.cleanAll()
     }

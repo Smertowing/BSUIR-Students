@@ -52,6 +52,8 @@
 		FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */; };
 		FA3260FE239466B9004B1410 /* EmptyBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */; };
 		FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3261022394789B004B1410 /* NewsDetailsViewController.swift */; };
+		FA36D6A823A248E700714FCF /* MarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA36D6A723A248E700714FCF /* MarkCell.xib */; };
+		FA36D6AC23A2492D00714FCF /* MarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36D6AB23A2492D00714FCF /* MarkCell.swift */; };
 		FA64D385239DC10700E96C11 /* AuditoriumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */; };
 		FA64D387239DC22E00E96C11 /* AuditoriumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D386239DC22E00E96C11 /* AuditoriumListTableViewCell.swift */; };
 		FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69F55D239D9652006A953E /* BuildingsCache.swift */; };
@@ -73,6 +75,14 @@
 		FA83A6CC23A1A4AE00BF5ABD /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83A6CB23A1A4AE00BF5ABD /* GroupMemberCell.swift */; };
 		FA83A6CF23A1A93000BF5ABD /* GroupMateCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83A6CE23A1A93000BF5ABD /* GroupMateCache.swift */; };
 		FA83A6D123A1A9C400BF5ABD /* GroupCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83A6D023A1A9C400BF5ABD /* GroupCache.swift */; };
+		FAA7F71A23A22D540095783E /* RecordBookCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71923A22D540095783E /* RecordBookCache.swift */; };
+		FAA7F71C23A22D760095783E /* SemesterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71B23A22D760095783E /* SemesterCache.swift */; };
+		FAA7F71E23A22DC40095783E /* MarkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71D23A22DC40095783E /* MarkCache.swift */; };
+		FAA7F72023A22DE80095783E /* SubjectStatisticsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71F23A22DE80095783E /* SubjectStatisticsCache.swift */; };
+		FAA7F72323A234160095783E /* RecordBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F72223A234160095783E /* RecordBookViewController.swift */; };
+		FAA7F72523A234200095783E /* RecordBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F72423A234200095783E /* RecordBookViewModel.swift */; };
+		FAA7F72723A23D270095783E /* SemesterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F72623A23D270095783E /* SemesterView.swift */; };
+		FAA7F72A23A23D440095783E /* Semester.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA7F72923A23D440095783E /* Semester.xib */; };
 		FAB058FE239CEFFF00664358 /* NewsFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB058FD239CEFFF00664358 /* NewsFilterViewController.swift */; };
 		FAB05900239CF00900664358 /* NewsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB058FF239CF00900664358 /* NewsFilterViewModel.swift */; };
 		FAB05905239D102C00664358 /* FilterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB05904239D102C00664358 /* FilterCache.swift */; };
@@ -96,7 +106,7 @@
 		FA1AA73723950E550092559B /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		FA1AA73923950E680092559B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FA1AA73B23950E720092559B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		FA32608F23940BF1004B1410 /* Bsuir Student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bsuir Student.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA32608F23940BF1004B1410 /* Студент БГУИР.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Студент БГУИР.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA32609223940BF1004B1410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA32609923940BF1004B1410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA32609B23940BF2004B1410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +150,8 @@
 		FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		FA3260FD239466B9004B1410 /* EmptyBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyBackgroundView.xib; sourceTree = "<group>"; };
 		FA3261022394789B004B1410 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		FA36D6A723A248E700714FCF /* MarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkCell.xib; sourceTree = "<group>"; };
+		FA36D6AB23A2492D00714FCF /* MarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCell.swift; sourceTree = "<group>"; };
 		FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsListViewController.swift; sourceTree = "<group>"; };
 		FA64D386239DC22E00E96C11 /* AuditoriumListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumListTableViewCell.swift; sourceTree = "<group>"; };
 		FA69F55D239D9652006A953E /* BuildingsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsCache.swift; sourceTree = "<group>"; };
@@ -161,6 +173,14 @@
 		FA83A6CB23A1A4AE00BF5ABD /* GroupMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
 		FA83A6CE23A1A93000BF5ABD /* GroupMateCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMateCache.swift; sourceTree = "<group>"; };
 		FA83A6D023A1A9C400BF5ABD /* GroupCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCache.swift; sourceTree = "<group>"; };
+		FAA7F71923A22D540095783E /* RecordBookCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBookCache.swift; sourceTree = "<group>"; };
+		FAA7F71B23A22D760095783E /* SemesterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterCache.swift; sourceTree = "<group>"; };
+		FAA7F71D23A22DC40095783E /* MarkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCache.swift; sourceTree = "<group>"; };
+		FAA7F71F23A22DE80095783E /* SubjectStatisticsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectStatisticsCache.swift; sourceTree = "<group>"; };
+		FAA7F72223A234160095783E /* RecordBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBookViewController.swift; sourceTree = "<group>"; };
+		FAA7F72423A234200095783E /* RecordBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBookViewModel.swift; sourceTree = "<group>"; };
+		FAA7F72623A23D270095783E /* SemesterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterView.swift; sourceTree = "<group>"; };
+		FAA7F72923A23D440095783E /* Semester.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Semester.xib; sourceTree = "<group>"; };
 		FAB058FD239CEFFF00664358 /* NewsFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilterViewController.swift; sourceTree = "<group>"; };
 		FAB058FF239CF00900664358 /* NewsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilterViewModel.swift; sourceTree = "<group>"; };
 		FAB05904239D102C00664358 /* FilterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCache.swift; sourceTree = "<group>"; };
@@ -211,6 +231,7 @@
 				FA765D0B23A19733001CC348 /* Profile */,
 				FA83A6C423A1A47900BF5ABD /* Group */,
 				FA6D4B6123A1B0B000390B9D /* Settings */,
+				FAA7F72123A234060095783E /* RecordBook */,
 				FA1AA73523950E450092559B /* MenuNavigationController.swift */,
 				FA1AA73723950E550092559B /* Menu.storyboard */,
 				FA1AA73923950E680092559B /* MenuViewController.swift */,
@@ -232,7 +253,7 @@
 		FA32609023940BF1004B1410 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA32608F23940BF1004B1410 /* Bsuir Student.app */,
+				FA32608F23940BF1004B1410 /* Студент БГУИР.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,6 +425,15 @@
 			path = News;
 			sourceTree = "<group>";
 		};
+		FA36D6A623A248DA00714FCF /* Mark */ = {
+			isa = PBXGroup;
+			children = (
+				FA36D6AB23A2492D00714FCF /* MarkCell.swift */,
+				FA36D6A723A248E700714FCF /* MarkCell.xib */,
+			);
+			path = Mark;
+			sourceTree = "<group>";
+		};
 		FA64D383239DC0E700E96C11 /* AuditoriumsList */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +528,37 @@
 			path = GroupCache;
 			sourceTree = "<group>";
 		};
+		FAA7F71823A22D400095783E /* RecordBookCache */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7F71F23A22DE80095783E /* SubjectStatisticsCache.swift */,
+				FAA7F71D23A22DC40095783E /* MarkCache.swift */,
+				FAA7F71B23A22D760095783E /* SemesterCache.swift */,
+				FAA7F71923A22D540095783E /* RecordBookCache.swift */,
+			);
+			path = RecordBookCache;
+			sourceTree = "<group>";
+		};
+		FAA7F72123A234060095783E /* RecordBook */ = {
+			isa = PBXGroup;
+			children = (
+				FA36D6A623A248DA00714FCF /* Mark */,
+				FAA7F72823A23D390095783E /* Semester */,
+				FAA7F72223A234160095783E /* RecordBookViewController.swift */,
+				FAA7F72423A234200095783E /* RecordBookViewModel.swift */,
+			);
+			path = RecordBook;
+			sourceTree = "<group>";
+		};
+		FAA7F72823A23D390095783E /* Semester */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7F72623A23D270095783E /* SemesterView.swift */,
+				FAA7F72923A23D440095783E /* Semester.xib */,
+			);
+			path = Semester;
+			sourceTree = "<group>";
+		};
 		FAB058FB239CEF1C00664358 /* NewsFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +591,7 @@
 				FAB05908239D103E00664358 /* NewsCache */,
 				FA765D0023A18CD1001CC348 /* UserCache */,
 				FA83A6D223A1A9C800BF5ABD /* GroupCache */,
+				FAA7F71823A22D400095783E /* RecordBookCache */,
 				FAB05906239D103B00664358 /* DataManager.swift */,
 			);
 			path = Cache;
@@ -586,7 +648,7 @@
 			);
 			name = BsuirAdditionalApp;
 			productName = BsuirAdditionalApp;
-			productReference = FA32608F23940BF1004B1410 /* Bsuir Student.app */;
+			productReference = FA32608F23940BF1004B1410 /* Студент БГУИР.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -631,7 +693,9 @@
 				FAB05918239D5F7600664358 /* Files.storyboard in Resources */,
 				FA32609C23940BF2004B1410 /* Assets.xcassets in Resources */,
 				FA32609A23940BF1004B1410 /* Main.storyboard in Resources */,
+				FAA7F72A23A23D440095783E /* Semester.xib in Resources */,
 				FA1AA73823950E550092559B /* Menu.storyboard in Resources */,
+				FA36D6A823A248E700714FCF /* MarkCell.xib in Resources */,
 				FA3260F123945C32004B1410 /* News.storyboard in Resources */,
 				FAB05911239D57DB00664358 /* Auditoriums.storyboard in Resources */,
 				FA3260FE239466B9004B1410 /* EmptyBackgroundView.xib in Resources */,
@@ -688,7 +752,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83A6C623A1A48800BF5ABD /* GroupViewController.swift in Sources */,
+				FAA7F71A23A22D540095783E /* RecordBookCache.swift in Sources */,
+				FAA7F72023A22DE80095783E /* SubjectStatisticsCache.swift in Sources */,
 				FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */,
+				FAA7F71E23A22DC40095783E /* MarkCache.swift in Sources */,
 				FAB0591C239D5F9100664358 /* FilesViewModel.swift in Sources */,
 				FA3260C223941390004B1410 /* NewsAdapter.swift in Sources */,
 				FA83A6D123A1A9C400BF5ABD /* GroupCache.swift in Sources */,
@@ -717,9 +784,11 @@
 				FA3260EA23944B8C004B1410 /* LoginViewModel.swift in Sources */,
 				FA3260E4239449AA004B1410 /* LaunchViewController.swift in Sources */,
 				FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */,
+				FAA7F72723A23D270095783E /* SemesterView.swift in Sources */,
 				FA3260C523941455004B1410 /* Config.swift in Sources */,
 				FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */,
 				FA64D385239DC10700E96C11 /* AuditoriumsListViewController.swift in Sources */,
+				FAA7F71C23A22D760095783E /* SemesterCache.swift in Sources */,
 				FA3260F9239463CC004B1410 /* DateExt.swift in Sources */,
 				FA3260D323942478004B1410 /* Building.swift in Sources */,
 				FA3260B3239412EB004B1410 /* AuditoriumsAdapter.swift in Sources */,
@@ -729,16 +798,19 @@
 				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA765D0423A18CF3001CC348 /* EducationCache.swift in Sources */,
 				FAB0590A239D471600664358 /* AttributedString.swift in Sources */,
+				FAA7F72523A234200095783E /* RecordBookViewModel.swift in Sources */,
 				FA83A6C823A1A49500BF5ABD /* GroupViewModel.swift in Sources */,
 				FAB0590D239D57C200664358 /* AuditoriumsViewController.swift in Sources */,
 				FA765D0823A18D0B001CC348 /* ReferenceCache.swift in Sources */,
 				FA1AA73623950E450092559B /* MenuNavigationController.swift in Sources */,
 				FA765D0D23A19740001CC348 /* ProfileViewController.swift in Sources */,
 				FA3260EC239453EB004B1410 /* TextFieldExt.swift in Sources */,
+				FA36D6AC23A2492D00714FCF /* MarkCell.swift in Sources */,
 				FA3260B62394133D004B1410 /* AuditoriumsProvider.swift in Sources */,
 				FA3260DD23943E31004B1410 /* RecordBook.swift in Sources */,
 				FA1AA73A23950E680092559B /* MenuViewController.swift in Sources */,
 				FAB0590F239D57CB00664358 /* FreeAuditoriumsViewModel.swift in Sources */,
+				FAA7F72323A234160095783E /* RecordBookViewController.swift in Sources */,
 				FA3260C023941383004B1410 /* IISAdapter.swift in Sources */,
 				FA765D0F23A19751001CC348 /* ProfileViewModel.swift in Sources */,
 				FA3260D523942617004B1410 /* News.swift in Sources */,
@@ -908,12 +980,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
-				PRODUCT_NAME = "Bsuir Student";
+				PRODUCT_NAME = "Студент БГУИР";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -927,12 +1000,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
-				PRODUCT_NAME = "Bsuir Student";
+				PRODUCT_NAME = "Студент БГУИР";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
