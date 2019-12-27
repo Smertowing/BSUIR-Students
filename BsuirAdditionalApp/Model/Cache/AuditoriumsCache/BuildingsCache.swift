@@ -9,23 +9,20 @@
 import Foundation
 
 open class BuildingsCache: NSObject, NSCoding {
+  open var buildings: [BuildingCache]
 
-    open var buildings: [BuildingCache]
-    
-    init(buildings: [Building]) {
-        self.buildings = []
-        for building in buildings {
-            self.buildings.append(BuildingCache(building: building))
-        }
+  init(buildings: [Building]) {
+    self.buildings = []
+    for building in buildings {
+      self.buildings.append(BuildingCache(building: building))
     }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        self.buildings = aDecoder.decodeObject(forKey: "buildings") as! [BuildingCache]
-    }
-    
-    open func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.buildings, forKey: "buildings")
-    }
+  }
+
+  public required init?(coder aDecoder: NSCoder) {
+    self.buildings = aDecoder.decodeObject(forKey: "buildings") as! [BuildingCache]
+  }
+
+  open func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.buildings, forKey: "buildings")
+  }
 }
-
-

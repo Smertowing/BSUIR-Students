@@ -9,11 +9,9 @@
 import UIKit
 
 extension UITextField {
-    
-    func addPaddingToTextField(rect: CGRect) {
-        let paddingView: UIView = UIView(frame: rect)
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    
+  func addPaddingToTextField(rect: CGRect) {
+    let paddingView: UIView = UIView(frame: rect)
+    self.leftView = paddingView
+    self.leftViewMode = .always
+  }
 }

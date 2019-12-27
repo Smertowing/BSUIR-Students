@@ -9,11 +9,9 @@
 import Foundation
 
 func infoPlistValue(for key: String) -> String {
-    return Bundle.main.infoDictionary![key]! as! String
+  return Bundle.main.infoDictionary![key]! as! String
 }
 
 struct Config {
-    
-    static let apiUrl = infoPlistValue(for: "BaseUrl")
-    
+  static let apiUrl = infoPlistValue(for: "BaseUrl")
 }

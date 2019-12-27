@@ -9,10 +9,8 @@
 import Foundation
 
 struct NewsList: Codable {
-    
-    let page: Int
-    let newsAtPage: Int
-    let count: Int
-    let news: [News]
-    
+  let page: Int
+  let newsAtPage: Int
+  let count: Int
+  let news: [News]
 }

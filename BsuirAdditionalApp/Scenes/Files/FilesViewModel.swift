@@ -9,17 +9,13 @@
 import UIKit
 
 protocol FilesViewModelDelegate: class {
-    
+
 }
 
 final class FilesViewModel {
+  weak var delegate: FilesViewModelDelegate!
 
-    weak var delegate: FilesViewModelDelegate!
-    
-    func refresh(refresher: Bool) {
-        
-    }
-    
+  func refresh(refresher: Bool) {
+
+  }
 }
-
-

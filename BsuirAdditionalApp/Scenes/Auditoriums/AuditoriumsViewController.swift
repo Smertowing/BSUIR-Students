@@ -9,18 +9,16 @@
 import UIKit
 
 class AuditoriumsViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideKeyboardWhenTappedAround()
-        navigationItem.title = "Аудитории"
-        navigationController?.navigationBar.isTranslucent = false
-        tabBarController?.tabBar.isTranslucent = false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.isUserInteractionEnabled = true
-    }
-    
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
+    navigationItem.title = "Аудитории"
+    navigationController?.navigationBar.isTranslucent = false
+    tabBarController?.tabBar.isTranslucent = false
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.isUserInteractionEnabled = true
+  }
 }

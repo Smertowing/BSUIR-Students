@@ -9,25 +9,18 @@
 import Foundation
 
 struct UserSkill: Codable {
-    
-    let id: Int
-    let name: String
-    
+  let id: Int
+  let name: String
 }
 
 struct UserReference: Codable {
-    
-    let id: Int
-    let name: String
-    let reference: String
-    
+  let id: Int
+  let name: String
+  let reference: String
 }
 
 struct UserSettings: Codable {
-    
-    let isPublicProfile: Bool
-    let isSearchJob: Bool
-    let isShowRating: Bool
-
+  let isPublicProfile: Bool
+  let isSearchJob: Bool
+  let isShowRating: Bool
 }
-

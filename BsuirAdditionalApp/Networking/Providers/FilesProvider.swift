@@ -12,49 +12,44 @@ enum FilesProvider {
 }
 
 extension FilesProvider: TargetType {
-    
-    var baseURL: URL {
-        return URL(string: Config.apiUrl)!
-    }
-    
-    var path: String {
-        switch self {
-        default:
-            return "/"
-        }
-    }
-    
-    var method: Method {
-        switch self {
-        default:
-            return .get
-        }
-    }
-    
-    var sampleData: Data {
-        return Data()
-    }
-    
-    var task: Task {
-        switch self {
-        default:
-            return .requestPlain
-        }
-    }
-    
-    var headers: [String : String]? {
-        switch self {
-        default:
-            return ["Content-Type": "application/json",
-            "Authorization": ProfileManager.shared.token]
-        }
-    }
-    
-    var validationType: ValidationType {
-        return .successCodes
-    }
+  var baseURL: URL {
+    return URL(string: Config.apiUrl)!
+  }
 
+  var path: String {
+    switch self {
+    default:
+      return "/"
+    }
+  }
+
+  var method: Method {
+    switch self {
+    default:
+      return .get
+    }
+  }
+
+  var sampleData: Data {
+    return Data()
+  }
+
+  var task: Task {
+    switch self {
+    default:
+      return .requestPlain
+    }
+  }
+
+  var headers: [String: String]? {
+    switch self {
+    default:
+      return ["Content-Type": "application/json",
+              "Authorization": ProfileManager.shared.token]
+    }
+  }
+
+  var validationType: ValidationType {
+    return .successCodes
+  }
 }
-
-
-

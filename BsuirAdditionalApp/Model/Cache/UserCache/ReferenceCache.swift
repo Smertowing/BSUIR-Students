@@ -9,27 +9,25 @@
 import Foundation
 
 open class ReferenceCache: NSObject, NSCoding {
+  open var id: Int
+  open var name: String
+  open var reference: String
 
-    open var id: Int
-    open var name: String
-    open var reference: String
-    
-    init(refer: UserReference) {
-        self.id = refer.id
-        self.name = refer.name
-        self.reference = refer.reference
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        self.id = aDecoder.decodeInteger(forKey: "id")
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-        self.reference = aDecoder.decodeObject(forKey: "reference") as! String
-    }
-    
-    open func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.id, forKey: "id")
-        aCoder.encode(self.name, forKey: "name")
-        aCoder.encode(self.reference, forKey: "reference")
-    }
+  init(refer: UserReference) {
+    self.id = refer.id
+    self.name = refer.name
+    self.reference = refer.reference
+  }
+
+  public required init?(coder aDecoder: NSCoder) {
+    self.id = aDecoder.decodeInteger(forKey: "id")
+    self.name = aDecoder.decodeObject(forKey: "name") as! String
+    self.reference = aDecoder.decodeObject(forKey: "reference") as! String
+  }
+
+  open func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.id, forKey: "id")
+    aCoder.encode(self.name, forKey: "name")
+    aCoder.encode(self.reference, forKey: "reference")
+  }
 }
-

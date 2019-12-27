@@ -6,12 +6,29 @@ target 'BsuirAdditionalApp' do
   use_frameworks!
 
   # Pods for BsuirAdditionalApp
+
+  # DI
+  pod 'Swinject', :git => 'https://github.com/Swinject/SwinjectStoryboard.git'
+  pod 'SwinjectStoryboard'
+
+  # Network
   pod 'Moya', '~> 13.0'
-  pod 'Cosmos', '~> 19.0'
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxOptional'
+
+  # UI
   pod 'Eureka'
+  pod 'Cosmos', '~> 19.0'
+  pod 'Down'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+
+  #Others
   pod 'DataCache'
   pod 'KeychainSwift', '~> 16.0'
   pod 'SDWebImage'
   pod 'SnapKit'
-  pod 'Down'
+  
 end

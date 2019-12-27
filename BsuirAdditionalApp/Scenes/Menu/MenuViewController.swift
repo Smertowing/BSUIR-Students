@@ -9,78 +9,73 @@
 import UIKit
 
 class MenuViewController: UITableViewController {
-    
-    private let viewModel = MenuViewModel()
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImageView: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideKeyboardWhenTappedAround()
-        navigationItem.title = "Меню"
-        navigationController?.navigationBar.isTranslucent = false
-        tabBarController?.tabBar.isTranslucent = false
-        setupViewModel()
-        
-        photoImageView.layer.cornerRadius = photoImageView.bounds.width / 2
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.isUserInteractionEnabled = true
-        viewModel.fetchUser()
-    }
+  private let viewModel = MenuViewModel()
 
-    private func setupViewModel() {
-        viewModel.delegate = self
-        viewModel.getSavedUser()
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var photoImageView: UIImageView!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
+    navigationItem.title = "Меню"
+    navigationController?.navigationBar.isTranslucent = false
+    tabBarController?.tabBar.isTranslucent = false
+    setupViewModel()
+    photoImageView.layer.cornerRadius = photoImageView.bounds.width / 2
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.isUserInteractionEnabled = true
+    viewModel.fetchUser()
+  }
+
+  private func setupViewModel() {
+    viewModel.delegate = self
+    viewModel.getSavedUser()
+  }
+
+  func setupValues() {
+    nameLabel.text = viewModel.name
+    photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
+  }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+    if indexPath.section == 2 {
+      showLogoutConfirmationAlert()
     }
-    
-    func setupValues() {
-        nameLabel.text = viewModel.name
-        photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
+  }
+
+  func showLogoutConfirmationAlert() {
+    let alert = UIAlertController(title: nil, message: "Выйти из профиля?", preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "ОК", style: .destructive) { _ in
+      alert.dismiss(animated: true, completion: nil)
+      self.logout()
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 2 {
-            showLogoutConfirmationAlert()
-        }
+    let cancelAction = UIAlertAction(title: "Отмена", style: .default) { _ in
+      alert.dismiss(animated: true, completion: nil)
     }
-    
-    func showLogoutConfirmationAlert() {
-        let alert = UIAlertController(title: nil, message: "Выйти из профиля?", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ОК", style: .destructive) { _ in
-            alert.dismiss(animated: true, completion: nil)
-            self.logout()
-        }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .default) { _ in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func logout() {
-        DataManager.shared.logout()
-        ProfileManager.shared.logout()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let startViewController = storyboard.instantiateViewController(withIdentifier: "firstScreen")
-        UIApplication.shared.keyWindow?.rootViewController = startViewController
-    }
-    
+    alert.addAction(cancelAction)
+    alert.addAction(okAction)
+    self.present(alert, animated: true, completion: nil)
+  }
+
+  func logout() {
+    DataManager.shared.logout()
+    ProfileManager.shared.logout()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let startViewController = storyboard.instantiateViewController(withIdentifier: "firstScreen")
+    UIApplication.shared.keyWindow?.rootViewController = startViewController
+  }
 }
 
 extension MenuViewController: MenuViewModelDelegate {
-    
-    func refresh() {
-        setupValues()
-    }
-    
-    func failed(with reason: NetworkError) {
-        self.showErrorAlert(reason)
-    }
+  func refresh() {
+    setupValues()
+  }
 
+  func failed(with reason: NetworkError) {
+    self.showErrorAlert(reason)
+  }
 }
-

@@ -10,36 +10,31 @@ import UIKit
 import SDWebImage
 
 class NewsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var newsImageView: UIImageView!
-    
-    var currentNews: News!
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var subtitleLabel: UILabel!
+  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet weak var newsImageView: UIImageView!
 
-    func set(_ news: News?) {
-        guard let news = news else {
-            return 
-        }
-        self.currentNews = news
-        
-        newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage(), options: .progressiveLoad)
-        
-        titleLabel.text = news.title
-        subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue
-        dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat
+  var currentNews: News!
+
+  func set(_ news: News?) {
+    guard let news = news else {
+      return
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
+    self.currentNews = news
+    newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage(), options: .progressiveLoad)
+    titleLabel.text = news.title
+    subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue
+    dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
+  }
 }

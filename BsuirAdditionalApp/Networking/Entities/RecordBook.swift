@@ -9,37 +9,29 @@
 import Foundation
 
 struct RecordBook: Codable {
-    
-    let number: String
-    let averageMark: Double
-    let semesters: [Semester]
-    
+  let number: String
+  let averageMark: Double
+  let semesters: [Semester]
 }
 
 struct Semester: Codable {
-    
-    let number: Int
-    let averageMark: Double
-    let marks: [Mark]
-    
+  let number: Int
+  let averageMark: Double
+  let marks: [Mark]
 }
 
 struct Mark: Codable {
-
-    let subject: String
-    let formOfControl: String
-    let hours: Int?
-    let mark: String?
-    let date: TimeInterval?
-    let teacher: String?
-    let retakesCount: Int
-    let statistic: SubjectStatistic?
-    
+  let subject: String
+  let formOfControl: String
+  let hours: Int?
+  let mark: String?
+  let date: TimeInterval?
+  let teacher: String?
+  let retakesCount: Int
+  let statistic: SubjectStatistic?
 }
 
 struct SubjectStatistic: Codable {
-    
-    let averageMark: Double?
-    let averageRetakes: Double?
-    
+  let averageMark: Double?
+  let averageRetakes: Double?
 }

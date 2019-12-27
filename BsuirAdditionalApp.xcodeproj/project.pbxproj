@@ -87,7 +87,7 @@
 		FAB05900239CF00900664358 /* NewsFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB058FF239CF00900664358 /* NewsFilterViewModel.swift */; };
 		FAB05905239D102C00664358 /* FilterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB05904239D102C00664358 /* FilterCache.swift */; };
 		FAB05907239D103B00664358 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB05906239D103B00664358 /* DataManager.swift */; };
-		FAB0590A239D471600664358 /* AttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB05909239D471600664358 /* AttributedString.swift */; };
+		FAB0590A239D471600664358 /* AttributedStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB05909239D471600664358 /* AttributedStringExt.swift */; };
 		FAB0590D239D57C200664358 /* AuditoriumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0590C239D57C200664358 /* AuditoriumsViewController.swift */; };
 		FAB0590F239D57CB00664358 /* FreeAuditoriumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0590E239D57CB00664358 /* FreeAuditoriumsViewModel.swift */; };
 		FAB05911239D57DB00664358 /* Auditoriums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB05910239D57DB00664358 /* Auditoriums.storyboard */; };
@@ -185,7 +185,7 @@
 		FAB058FF239CF00900664358 /* NewsFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilterViewModel.swift; sourceTree = "<group>"; };
 		FAB05904239D102C00664358 /* FilterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCache.swift; sourceTree = "<group>"; };
 		FAB05906239D103B00664358 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FAB05909239D471600664358 /* AttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedString.swift; sourceTree = "<group>"; };
+		FAB05909239D471600664358 /* AttributedStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringExt.swift; sourceTree = "<group>"; };
 		FAB0590C239D57C200664358 /* AuditoriumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsViewController.swift; sourceTree = "<group>"; };
 		FAB0590E239D57CB00664358 /* FreeAuditoriumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAuditoriumsViewModel.swift; sourceTree = "<group>"; };
 		FAB05910239D57DB00664358 /* Auditoriums.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auditoriums.storyboard; sourceTree = "<group>"; };
@@ -324,7 +324,7 @@
 				FA3260E523944A1D004B1410 /* ViewControllerExt.swift */,
 				FA3260EB239453EB004B1410 /* TextFieldExt.swift */,
 				FA3260F8239463CC004B1410 /* DateExt.swift */,
-				FAB05909239D471600664358 /* AttributedString.swift */,
+				FAB05909239D471600664358 /* AttributedStringExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -641,6 +641,7 @@
 				FA32608C23940BF1004B1410 /* Frameworks */,
 				FA32608D23940BF1004B1410 /* Resources */,
 				466EF417630C2CB9C3413B2A /* [CP] Embed Pods Frameworks */,
+				FA62C0C223B606FB0030B019 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -744,6 +745,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FA62C0C223B606FB0030B019 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -797,7 +815,7 @@
 				FA6D4B6323A1B10E00390B9D /* SettingsViewController.swift in Sources */,
 				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA765D0423A18CF3001CC348 /* EducationCache.swift in Sources */,
-				FAB0590A239D471600664358 /* AttributedString.swift in Sources */,
+				FAB0590A239D471600664358 /* AttributedStringExt.swift in Sources */,
 				FAA7F72523A234200095783E /* RecordBookViewModel.swift in Sources */,
 				FA83A6C823A1A49500BF5ABD /* GroupViewModel.swift in Sources */,
 				FAB0590D239D57C200664358 /* AuditoriumsViewController.swift in Sources */,
@@ -980,7 +998,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -988,7 +1006,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
 				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1000,7 +1018,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1008,7 +1026,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
 				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

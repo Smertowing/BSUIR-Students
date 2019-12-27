@@ -9,12 +9,10 @@
 import Moya
 
 final class NetworkingManager {
-    
-    private init() {}
-    
-    static let auditoriums = AuditoriumsAdapter()
-    static let news = NewsAdapter()
-    static let iis = IISAdapter()
-    static let files = FilesAdapter()
+  private init() {}
 
+  static let auditoriums = AuditoriumsAdapter()
+  static let news = NewsAdapter()
+  static let iis = IISAdapter()
+  static let files = FilesAdapter()
 }

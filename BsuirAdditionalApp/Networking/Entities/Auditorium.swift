@@ -9,10 +9,8 @@
 import Foundation
 
 struct Auditorium: Codable {
-    
-    let type: AuditoriumType
-    let floor: Int
-    let building: Int
-    let name: String
-
+  let type: AuditoriumType
+  let floor: Int
+  let building: Int
+  let name: String
 }

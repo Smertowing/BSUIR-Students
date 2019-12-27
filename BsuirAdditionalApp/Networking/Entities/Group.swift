@@ -9,17 +9,13 @@
 import Foundation
 
 struct Group: Codable {
-    
-    let name: String
-    let members: [GroupMate]
-    
+  let name: String
+  let members: [GroupMate]
 }
 
 struct GroupMate: Codable {
-    
-    let role: String?
-    let name: String
-    let email: String?
-    let phone: String?
-    
+  let role: String?
+  let name: String
+  let email: String?
+  let phone: String?
 }

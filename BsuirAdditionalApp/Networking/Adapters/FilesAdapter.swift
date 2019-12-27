@@ -9,11 +9,5 @@
 import Moya
 
 class FilesAdapter {
-    
-    private static let provider = MoyaProvider<FilesProvider>()
-    
-    
+  private static let provider = MoyaProvider<FilesProvider>()
 }
-
-
-

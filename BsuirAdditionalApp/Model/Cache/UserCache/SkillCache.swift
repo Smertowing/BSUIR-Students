@@ -9,22 +9,21 @@
 import Foundation
 
 open class SkillCache: NSObject, NSCoding {
+  open var id: Int
+  open var name: String
 
-    open var id: Int
-    open var name: String
-    
-    init(skill: UserSkill) {
-        self.id = skill.id
-        self.name = skill.name
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        self.id = aDecoder.decodeInteger(forKey: "id")
-        self.name = aDecoder.decodeObject(forKey: "name") as! String
-    }
-    
-    open func encode(with aCoder: NSCoder) {
-        aCoder.encode(self.id, forKey: "id")
-        aCoder.encode(self.name, forKey: "name")
-    }
+  init(skill: UserSkill) {
+    self.id = skill.id
+    self.name = skill.name
+  }
+
+  public required init?(coder aDecoder: NSCoder) {
+    self.id = aDecoder.decodeInteger(forKey: "id")
+    self.name = aDecoder.decodeObject(forKey: "name") as! String
+  }
+
+  open func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.id, forKey: "id")
+    aCoder.encode(self.name, forKey: "name")
+  }
 }

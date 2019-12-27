@@ -9,38 +9,35 @@
 import UIKit
 
 class GroupMemberCell: UITableViewCell {
-    
-    @IBOutlet weak var contentTextView: UITextView!
-    
-    var mate: GroupMateCache!
+  @IBOutlet weak var contentTextView: UITextView!
 
-    func set(_ mate: GroupMateCache?) {
-        guard let mate = mate else {
-            return
-        }
-        self.mate = mate
-        contentTextView.text = ""
-        contentTextView.text.append(mate.name)
-        if let phone = mate.phone {
-            contentTextView.text.append("\nТелефон: \(phone)")
-        }
-        if let email = mate.email {
-            contentTextView.text.append("\nEmail: \(email)")
-        }
-        if let role = mate.role {
-            contentTextView.text.append("\n\(role)")
-        }
+  var mate: GroupMateCache!
+
+  func set(_ mate: GroupMateCache?) {
+    guard let mate = mate else {
+      return
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    self.mate = mate
+    contentTextView.text = ""
+    contentTextView.text.append(mate.name)
+    if let phone = mate.phone {
+      contentTextView.text.append("\nТелефон: \(phone)")
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    if let email = mate.email {
+      contentTextView.text.append("\nEmail: \(email)")
     }
-    
+    if let role = mate.role {
+      contentTextView.text.append("\n\(role)")
+    }
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
+
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    // Configure the view for the selected state
+  }
 }

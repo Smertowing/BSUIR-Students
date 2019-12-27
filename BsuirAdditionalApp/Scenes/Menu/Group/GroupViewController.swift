@@ -9,109 +9,99 @@
 import UIKit
 
 class GroupViewController: UIViewController {
-    
-    private let viewModel = GroupViewModel()
-    
-    @IBOutlet weak var groupTable: UITableView!
-    var spinner = UIActivityIndicatorView(style: .whiteLarge)
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        hideKeyboardWhenTappedAround()
-        navigationItem.title = "Моя группа"
-        navigationController?.navigationBar.isTranslucent = false
-        tabBarController?.tabBar.isTranslucent = false
-        
-        loadSpinner()
-        setupViewModel()
-        configureGroupTable()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.isUserInteractionEnabled = true
-        viewModel.fetchGroup()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.getSavedGroup()
-    }
-    
-    private func setupViewModel() {
-        viewModel.delegate = self
-    }
-    
-    func loadSpinner() {
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.startAnimating()
-        view.addSubview(spinner)
-        spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        spinner.startAnimating()
-    }
-    
-    func configureGroupTable() {
-        groupTable.delegate = self
-        groupTable.dataSource = self
-        groupTable.tableFooterView = UIView()
-        groupTable.backgroundView = UIView()
-        groupTable.separatorColor = AppColors.textFieldColor.uiColor()
-    }
-    
+  private let viewModel = GroupViewModel()
+
+  @IBOutlet weak var groupTable: UITableView!
+  var spinner = UIActivityIndicatorView(style: .whiteLarge)
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    hideKeyboardWhenTappedAround()
+    navigationItem.title = "Моя группа"
+    navigationController?.navigationBar.isTranslucent = false
+    tabBarController?.tabBar.isTranslucent = false
+    loadSpinner()
+    setupViewModel()
+    configureGroupTable()
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.isUserInteractionEnabled = true
+    viewModel.fetchGroup()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    viewModel.getSavedGroup()
+  }
+
+  private func setupViewModel() {
+    viewModel.delegate = self
+  }
+
+  func loadSpinner() {
+    spinner.translatesAutoresizingMaskIntoConstraints = false
+    spinner.startAnimating()
+    view.addSubview(spinner)
+    spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    spinner.startAnimating()
+  }
+
+  func configureGroupTable() {
+    groupTable.delegate = self
+    groupTable.dataSource = self
+    groupTable.tableFooterView = UIView()
+    groupTable.backgroundView = UIView()
+    groupTable.separatorColor = AppColors.textFieldColor.uiColor()
+  }
 }
 
 extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    let number = viewModel.count
+    if number == 0 {
+      tableView.backgroundView?.isHidden = false
+    } else {
+      tableView.backgroundView?.isHidden = true
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let number = viewModel.count
-        if number == 0 {
-            tableView.backgroundView?.isHidden = false
-        } else {
-            tableView.backgroundView?.isHidden = true
-        }
-        return number
+    return number
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as! GroupMemberCell
+
+    if let mate = viewModel.mate(at: indexPath.row) {
+      cell.set(mate)
+    } else {
+      cell.set(.none)
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as! GroupMemberCell
-        
-        if let mate = viewModel.mate(at: indexPath.row) {
-            cell.set(mate)
-        } else {
-            cell.set(.none)
-        }
-        
-        cell.layer.borderColor = AppColors.barsColor.cgColor()
-        cell.layer.borderWidth = 4.0
-        cell.layer.masksToBounds = true
-        
-        return cell
-    }
-    
+
+    cell.layer.borderColor = AppColors.barsColor.cgColor()
+    cell.layer.borderWidth = 4.0
+    cell.layer.masksToBounds = true
+
+    return cell
+  }
 }
 
 extension GroupViewController: GroupViewModelDelegate {
-    
-    func refresh() {
-        spinner.stopAnimating()
-        self.groupTable.reloadData()
-    }
-    
-    func failed(with reason: NetworkError) {
-        spinner.stopAnimating()
-        self.showErrorAlert(reason)
-    }
-    
-    
+  func refresh() {
+    spinner.stopAnimating()
+    self.groupTable.reloadData()
+  }
+
+  func failed(with reason: NetworkError) {
+    spinner.stopAnimating()
+    self.showErrorAlert(reason)
+  }
 }
-
-

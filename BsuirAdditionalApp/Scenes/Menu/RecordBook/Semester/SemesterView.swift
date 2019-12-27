@@ -9,75 +9,71 @@
 import UIKit
 
 class SemesterView: UIView {
+  private let cellId = "MarkCellId"
 
-    private let cellId = "MarkCellId"
-    
-    class func instanceFromNib() -> SemesterView {
-        return UINib(nibName: "Semester", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SemesterView
-    }
-    
-    @IBOutlet weak var semesterNumberLabel: UILabel!
-    @IBOutlet weak var averageMarkLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+  class func instanceFromNib() -> SemesterView {
+    return UINib(nibName: "Semester", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! SemesterView
+  }
 
-    var currentSem: SemesterCache?
-    
-    func set(_ semester: SemesterCache?) {
-        guard let semester = semester else {
-            return
-        }
-        self.currentSem = semester
-        
-        semesterNumberLabel.text = "\(semester.number)"
-        averageMarkLabel.text = String(format: "%.2f", semester.averageMark)
-        tableView.reloadData()
+  @IBOutlet weak var semesterNumberLabel: UILabel!
+  @IBOutlet weak var averageMarkLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
+
+  var currentSem: SemesterCache?
+
+  func set(_ semester: SemesterCache?) {
+    guard let semester = semester else {
+      return
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
-        tableView.backgroundView = UIView()
-        tableView.separatorColor = AppColors.textFieldColor.uiColor()
-        
-        let nib = UINib.init(nibName: "MarkCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
-    }
-    
+    self.currentSem = semester
+
+    semesterNumberLabel.text = "\(semester.number)"
+    averageMarkLabel.text = String(format: "%.2f", semester.averageMark)
+    tableView.reloadData()
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.tableFooterView = UIView()
+    tableView.backgroundView = UIView()
+    tableView.separatorColor = AppColors.textFieldColor.uiColor()
+
+    let nib = UINib.init(nibName: "MarkCell", bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: cellId)
+  }
 }
 
 extension SemesterView: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    let number = currentSem?.marks.count ?? 0
+    if number == 0 {
+      tableView.backgroundView?.isHidden = false
+    } else {
+      tableView.backgroundView?.isHidden = true
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let number = currentSem?.marks.count ?? 0
-        if number == 0 {
-            tableView.backgroundView?.isHidden = false
-        } else {
-            tableView.backgroundView?.isHidden = true
-        }
-        return number
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MarkCell
-        
-        cell.set(currentSem?.marks[indexPath.row] ?? nil)
-        
-        cell.layer.borderColor = AppColors.primaryColor.cgColor()
-        cell.layer.borderWidth = 4.0
-        cell.layer.masksToBounds = true
-        
-        return cell
-    }
-    
+    return number
+  }
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MarkCell
+
+    cell.set(currentSem?.marks[indexPath.row] ?? nil)
+
+    cell.layer.borderColor = AppColors.primaryColor.cgColor()
+    cell.layer.borderWidth = 4.0
+    cell.layer.masksToBounds = true
+
+    return cell
+  }
 }

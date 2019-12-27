@@ -9,22 +9,18 @@
 import UIKit
 
 struct News: Codable {
-
-    let id: Int
-    let title: String
-    let source: Source
-    let content: String
-    let publishedAt: TimeInterval
-    let loadedAt: TimeInterval
-    let url: String
-    let urlToImage: String?
-    
+  let id: Int
+  let title: String
+  let source: Source
+  let content: String
+  let publishedAt: TimeInterval
+  let loadedAt: TimeInterval
+  let url: String
+  let urlToImage: String?
 }
 
 struct Source: Codable {
-    
-    let id: Int
-    let type: NewsSourceType
-    let name: String
-    
+  let id: Int
+  let type: NewsSourceType
+  let name: String
 }

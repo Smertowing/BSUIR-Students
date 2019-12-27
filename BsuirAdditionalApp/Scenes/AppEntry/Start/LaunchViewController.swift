@@ -9,19 +9,16 @@
 import UIKit
 
 class LaunchViewController: UIViewController {
-    
-    @IBOutlet weak var logoImageView: UIImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var logoImageView: UIImageView!
 
-        if ProfileManager.shared.isAuthenticated {
-            segueToAppllication()
-        } else {
-            ProfileManager.shared.logout()
-            segueToStartScreen()
-        }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    if ProfileManager.shared.isAuthenticated {
+      segueToAppllication()
+    } else {
+      ProfileManager.shared.logout()
+      segueToStartScreen()
     }
-
+  }
 }
-

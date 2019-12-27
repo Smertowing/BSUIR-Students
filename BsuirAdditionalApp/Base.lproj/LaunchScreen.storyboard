@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +23,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Студент БГУИР" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEA-En-LfV">
                                         <rect key="frame" x="32.5" y="323.5" width="255.5" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="p4U-Ns-dGq">
                                         <rect key="frame" x="80" y="163.5" width="160" height="160"/>
+                                        <color key="tintColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="aMk-K9-b4Z"/>
                                             <constraint firstAttribute="width" secondItem="p4U-Ns-dGq" secondAttribute="height" multiplier="1:1" id="o4B-N2-UEw"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="p4U-Ns-dGq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ugn-2c-wdD" secondAttribute="top" constant="48" id="7sf-1f-qGt"/>
                                     <constraint firstItem="fEA-En-LfV" firstAttribute="top" secondItem="p4U-Ns-dGq" secondAttribute="bottom" id="FER-fK-MFs"/>
@@ -45,7 +47,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="ugn-2c-wdD" firstAttribute="bottom" secondItem="qyb-dB-eA4" secondAttribute="bottom" id="6u4-v7-daV"/>
                             <constraint firstItem="ugn-2c-wdD" firstAttribute="top" secondItem="qyb-dB-eA4" secondAttribute="top" id="lex-Ye-uV0"/>
@@ -62,5 +65,8 @@
     </scenes>
     <resources>
         <image name="Logo" width="320" height="179"/>
+        <namedColor name="AccentColor">
+            <color red="0.26796054840087891" green="0.72777467966079712" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
