@@ -37,7 +37,7 @@ class MenuViewController: UITableViewController {
 
   func setupValues() {
     nameLabel.text = viewModel.name
-    photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
+    photoImageView.kf.setImage(with: URL(string: viewModel.image ?? ""), placeholder: #imageLiteral(resourceName: "photo_small"))
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

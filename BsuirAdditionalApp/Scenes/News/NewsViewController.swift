@@ -93,7 +93,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
       cell.set(viewModel.news(at: indexPath.row))
     }
 
-    cell.layer.borderColor = AppColors.barsColor.cgColor()
+    cell.layer.borderColor = AppColors.backgroundColor.cgColor()
     cell.layer.borderWidth = 4.0
     cell.layer.masksToBounds = true
 

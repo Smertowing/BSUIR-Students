@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 class AuditoriumListTableViewCell: UITableViewCell {
   @IBOutlet weak var nameLabel: UILabel!

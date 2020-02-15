@@ -7,17 +7,8 @@ target 'BsuirAdditionalApp' do
 
   # Pods for BsuirAdditionalApp
 
-  # DI
-  pod 'Swinject', :git => 'https://github.com/Swinject/SwinjectStoryboard.git'
-  pod 'SwinjectStoryboard'
-
   # Network
   pod 'Moya', '~> 13.0'
-
-  # Rx
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxOptional'
 
   # UI
   pod 'Eureka'
@@ -28,7 +19,7 @@ target 'BsuirAdditionalApp' do
   #Others
   pod 'DataCache'
   pod 'KeychainSwift', '~> 16.0'
-  pod 'SDWebImage'
+  pod 'Kingfisher'
   pod 'SnapKit'
   
 end

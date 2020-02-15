@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import Kingfisher
 
 class NewsTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
@@ -19,10 +19,24 @@ class NewsTableViewCell: UITableViewCell {
 
   func set(_ news: News?) {
     guard let news = news else {
+      titleLabel.text = ""
+      subtitleLabel.text = ""
+      dateLabel.text = ""
+      newsImageView.image = nil
       return
     }
     self.currentNews = news
-    newsImageView.sd_setImage(with: URL(string: news.urlToImage ?? ""), placeholderImage: UIImage(), options: .progressiveLoad)
+    newsImageView.kf.cancelDownloadTask()
+    let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
+    newsImageView.kf.indicatorType = .activity
+    newsImageView.kf.setImage(with: URL(string: news.urlToImage ?? ""),
+                              placeholder: UIImage(),
+                              options: [
+                                  .processor(processor),
+                                  .scaleFactor(UIScreen.main.scale),
+                                  .transition(.fade(1)),
+                                  .cacheOriginalImage
+                              ])
     titleLabel.text = news.title
     subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue
     dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat

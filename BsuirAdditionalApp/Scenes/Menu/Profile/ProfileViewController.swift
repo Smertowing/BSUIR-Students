@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
 
   func setupValues() {
     nameLabel.text = viewModel.name
-    photoImageView.sd_setImage(with: URL(string: viewModel.image ?? ""), placeholderImage: #imageLiteral(resourceName: "photo_small"))
+    photoImageView.kf.setImage(with: URL(string: viewModel.image ?? ""), placeholder: #imageLiteral(resourceName: "photo_small"))
     ratingView.rating = Double(viewModel.rating)
     mainInfoLabel.text = viewModel.mainInfo
     summaryLabel.text = viewModel.summary

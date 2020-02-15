@@ -59,7 +59,7 @@ class NewsDetailsViewController: UIViewController {
       attributedText.enumerateAttribute(.foregroundColor, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
         if (attribute as? UIColor) != nil {
           attributedText.removeAttribute(.foregroundColor, range: range)
-          attributedText.addAttribute(.foregroundColor, value: UIColor.white, range: range)
+          attributedText.addAttribute(.foregroundColor, value: AppColors.textColor.uiColor(), range: range)
         }
       }
       attributedText.enumerateAttribute(.font, in: .init(location: 0, length: attributedText.length), options: .longestEffectiveRangeNotRequired) { (attribute, range, _) in
