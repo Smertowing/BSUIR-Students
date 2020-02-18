@@ -37,8 +37,6 @@ final class AllAuditoriumsViewModel {
         result.append("ЛБ")
       case .practice:
         result.append("ПЗ")
-      @unknown default:
-        break
       }
     }
     return result

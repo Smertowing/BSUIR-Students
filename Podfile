@@ -8,17 +8,16 @@ target 'BsuirAdditionalApp' do
   # Pods for BsuirAdditionalApp
 
   # Network
-  pod 'Moya', '~> 13.0'
+  pod 'Moya', '~> 14.0'
 
   # UI
   pod 'Eureka'
-  pod 'Cosmos', '~> 19.0'
+  pod 'Cosmos', '~> 21.0'
   pod 'Down'
-  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   #Others
   pod 'DataCache'
-  pod 'KeychainSwift', '~> 16.0'
+  pod 'KeychainSwift', '~> 19.0'
   pod 'Kingfisher'
   pod 'SnapKit'
   

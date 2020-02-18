@@ -28,8 +28,6 @@ class AuditoriumListTableViewCell: UITableViewCell {
       subNameLabel.text = "Лабораторные занятия"
     case .practice:
       subNameLabel.text = "Практические занятия"
-    @unknown default:
-      subNameLabel.text = "Где я?"
     }
   }
 
