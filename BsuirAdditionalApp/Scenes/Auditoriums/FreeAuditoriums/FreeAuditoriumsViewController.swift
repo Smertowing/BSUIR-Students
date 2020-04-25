@@ -21,7 +21,7 @@ class FreeAuditoriumsViewController: FormViewController {
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     setupViewModel()
-    self.tableView?.backgroundColor = AppColors.barsColor.uiColor()
+    self.tableView?.backgroundColor = AppColors.backgroundColor.uiColor()
     initializeForm()
   }
 
@@ -49,7 +49,7 @@ class FreeAuditoriumsViewController: FormViewController {
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
         cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
+        cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
       }.onChange({ (row) in
         let secondRow = self.form.rowBy(tag: "Этаж") as? SegmentedRow<String>
@@ -67,57 +67,29 @@ class FreeAuditoriumsViewController: FormViewController {
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
         cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
+        cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
       }
 
       +++
       Section("Когда ")
-      <<< SwitchRow("Выбрать дату") {
+      <<< DateRow("Дата") {
         $0.title = $0.tag
-        $0.value = nil
-      }.cellSetup { cell, _ in
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
-        cell.tintColor = AppColors.accentColor.uiColor()
-      }
-
-      <<< DateInlineRow("Дата") {
-        $0.title = ""
         $0.value = Date()
-        $0.hidden = .function(["Выбрать дату"], { form -> Bool in
-          let row: RowOf<Bool>! = form.rowBy(tag: "Выбрать дату")
-          return row.value ?? false == false
-        })
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
         cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
+        cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
       }
 
-      <<< SwitchRow("Выбрать время") {
+      <<< TimeRow("Время") {
         $0.title = $0.tag
-        $0.value = nil
-      }.cellSetup { cell, _ in
-        cell.textLabel?.textColor = .white
-        cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
-        cell.tintColor = AppColors.accentColor.uiColor()
-      }
-
-      <<< TimeInlineRow("Время") {
-        $0.title = ""
         $0.value = Date()
-        $0.hidden = .function(["Выбрать время"], { form -> Bool in
-          let row: RowOf<Bool>! = form.rowBy(tag: "Выбрать время")
-          return row.value ?? false == false
-        })
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
         cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
+        cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
       }
 
@@ -131,7 +103,7 @@ class FreeAuditoriumsViewController: FormViewController {
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
         cell.textLabel?.tintColor = AppColors.accentColor.uiColor()
-        cell.backgroundColor = AppColors.textFieldColor.uiColor()
+        cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
     }
 
@@ -141,8 +113,8 @@ class FreeAuditoriumsViewController: FormViewController {
     if form.validate().isEmpty {
       let building: SegmentedRow<String>! = form.rowBy(tag: "Корпус") as? SegmentedRow<String>
       let floor: SegmentedRow<String>! = form.rowBy(tag: "Этаж") as? SegmentedRow<String>
-      let date: DateInlineRow! = form.rowBy(tag: "Дата")
-      let time: TimeInlineRow! = form.rowBy(tag: "Время")
+      let date: DateRow! = form.rowBy(tag: "Дата")
+      let time: TimeRow! = form.rowBy(tag: "Время")
       viewModel.findAuditories(building: building.value,
                                floor: floor.value,
                                date: date.value,

@@ -19,7 +19,7 @@ extension Date {
   var auditDateFormat: String {
     let dateFormatter = DateFormatter()
     dateFormatter.timeZone = .autoupdatingCurrent
-    dateFormatter.dateFormat = "dd.MM.yyyy"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
     return dateFormatter.string(from: self)
   }
 

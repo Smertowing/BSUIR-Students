@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="295-23-blH">
-                                <rect key="frame" x="0.0" y="44" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free_aud" translatesAutoresizingMaskIntoConstraints="NO" id="4fj-X6-dbt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free_aud" translatesAutoresizingMaskIntoConstraints="NO" id="4fj-X6-dbt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="tintColor" red="0.95294117649999999" green="0.54901960780000003" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Qrl-OQ-9sE">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -49,37 +49,6 @@
                                     <constraint firstItem="Qrl-OQ-9sE" firstAttribute="leading" secondItem="295-23-blH" secondAttribute="leading" id="p7q-k0-qlM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AA-lc-T5G">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aud" translatesAutoresizingMaskIntoConstraints="NO" id="6Kd-eF-78p">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                        <color key="tintColor" red="0.95294117649999999" green="0.54901960780000003" blue="0.14117647059999999" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LW-LA-8Hi">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Все аудитории">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Ums-oB-Xnw" kind="show" id="TJ0-I4-kWK"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="4LW-LA-8Hi" firstAttribute="top" secondItem="4AA-lc-T5G" secondAttribute="top" id="0yD-lA-64B"/>
-                                    <constraint firstAttribute="bottom" secondItem="6Kd-eF-78p" secondAttribute="bottom" id="5Yk-QV-JsU"/>
-                                    <constraint firstAttribute="trailing" secondItem="6Kd-eF-78p" secondAttribute="trailing" id="HXM-fe-ATa"/>
-                                    <constraint firstAttribute="bottom" secondItem="4LW-LA-8Hi" secondAttribute="bottom" id="NUp-hr-wed"/>
-                                    <constraint firstItem="6Kd-eF-78p" firstAttribute="leading" secondItem="4AA-lc-T5G" secondAttribute="leading" id="QhF-S8-dg2"/>
-                                    <constraint firstItem="6Kd-eF-78p" firstAttribute="top" secondItem="4AA-lc-T5G" secondAttribute="top" id="WYG-KR-0RR"/>
-                                    <constraint firstAttribute="trailing" secondItem="4LW-LA-8Hi" secondAttribute="trailing" id="mkK-kJ-YNH"/>
-                                    <constraint firstItem="4LW-LA-8Hi" firstAttribute="leading" secondItem="4AA-lc-T5G" secondAttribute="leading" id="rj0-dJ-Dke"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
@@ -87,13 +56,8 @@
                         <constraints>
                             <constraint firstItem="295-23-blH" firstAttribute="top" secondItem="tPk-MU-6hr" secondAttribute="top" id="CNH-Zf-8wS"/>
                             <constraint firstItem="295-23-blH" firstAttribute="leading" secondItem="tPk-MU-6hr" secondAttribute="leading" id="Kkw-ap-XBY"/>
-                            <constraint firstItem="4AA-lc-T5G" firstAttribute="height" secondItem="295-23-blH" secondAttribute="height" id="LGQ-n3-UxZ"/>
-                            <constraint firstItem="4AA-lc-T5G" firstAttribute="top" secondItem="295-23-blH" secondAttribute="bottom" id="RBP-Tk-5V9"/>
-                            <constraint firstItem="4AA-lc-T5G" firstAttribute="trailing" secondItem="tPk-MU-6hr" secondAttribute="trailing" id="Rhs-Sh-TNN"/>
-                            <constraint firstItem="4AA-lc-T5G" firstAttribute="leading" secondItem="tPk-MU-6hr" secondAttribute="leading" id="SB9-ao-5gX"/>
                             <constraint firstItem="295-23-blH" firstAttribute="trailing" secondItem="tPk-MU-6hr" secondAttribute="trailing" id="VAV-LI-0Iv"/>
-                            <constraint firstItem="tPk-MU-6hr" firstAttribute="bottom" secondItem="4AA-lc-T5G" secondAttribute="bottom" id="gJ6-1O-oCM"/>
-                            <constraint firstItem="4AA-lc-T5G" firstAttribute="top" secondItem="295-23-blH" secondAttribute="bottom" id="scC-up-3E8"/>
+                            <constraint firstItem="tPk-MU-6hr" firstAttribute="bottom" secondItem="295-23-blH" secondAttribute="bottom" id="cnJ-eV-ldi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tPk-MU-6hr"/>
                     </view>
@@ -107,7 +71,7 @@
             <objects>
                 <viewController storyboardIdentifier="searchAuditoriumsVC" id="Ums-oB-Xnw" customClass="AllAuditoriumsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ugE-qR-XzJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
@@ -144,9 +108,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-nH-pvK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rci-nH-pvK">
                                 <rect key="frame" x="0.0" y="52" width="414" height="810"/>
-                                <color key="backgroundColor" name="PrimaryColor"/>
                                 <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" name="PrimaryColor"/>
                                 <prototypes>
@@ -212,10 +175,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aud" width="1200" height="801"/>
-        <image name="free_aud" width="259" height="194"/>
+        <image name="free_aud" width="1600" height="1068"/>
         <namedColor name="AccentColor">
-            <color red="0.26796054840087891" green="0.72777467966079712" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.26800000667572021" green="0.7279999852180481" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="BackgroundColor">
             <color red="0.92100000381469727" green="0.92100000381469727" blue="0.92100000381469727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

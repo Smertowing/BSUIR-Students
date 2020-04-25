@@ -64,11 +64,11 @@ final class FreeAuditoriumsViewModel {
   }
 
   func findAuditories(building: String?, floor: String?, date: Date?, time: Date?) {
-    guard let building = building, let buildimgNumber = Int(building) else {
+    guard let building = building, let buildimgNumber = Int(building), let date = date, let time = time else {
       self.delegate.searchFailed(with: NetworkError.invalidRequest)
       return
     }
-    NetworkingManager.auditoriums.getFreeAuditoriums(building: buildimgNumber, floor: Int(floor ?? ""), date: date?.auditDateFormat, time: time?.auditTimeFormat) { (answer) in
+    NetworkingManager.auditoriums.getFreeAuditoriums(building: buildimgNumber, floor: (floor != nil) ? Int(floor!) : nil, date: date.auditDateFormat, time: time.auditTimeFormat) { (answer) in
       switch answer {
       case .success(let auditoriums):
         self.delegate.found(auditoriums: auditoriums)
