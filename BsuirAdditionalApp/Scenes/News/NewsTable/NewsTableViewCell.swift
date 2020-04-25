@@ -8,15 +8,18 @@
 
 import UIKit
 import Kingfisher
+import Down
 
 class NewsTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var subtitleLabel: UILabel!
+  @IBOutlet weak var shortContentView: UITextView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var newsImageView: UIImageView!
-
+  @IBOutlet weak var newsImageViewBackground: UIImageView!
+  
   var currentNews: News!
-
+  
   func set(_ news: News?) {
     guard let news = news else {
       titleLabel.text = ""
@@ -27,21 +30,32 @@ class NewsTableViewCell: UITableViewCell {
     }
     self.currentNews = news
     newsImageView.kf.cancelDownloadTask()
-    let processor = DownsamplingImageProcessor(size: newsImageView.bounds.size)
     newsImageView.kf.indicatorType = .activity
     newsImageView.kf.setImage(with: URL(string: news.urlToImage ?? ""),
                               placeholder: UIImage(),
                               options: [
-                                  .processor(processor),
-                                  .scaleFactor(UIScreen.main.scale),
-                                  .transition(.fade(1)),
-                                  .cacheOriginalImage
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(0.5)),
+                                .downloadPriority(1),
+                                .backgroundDecode,
+                              ])
+    newsImageViewBackground.kf.cancelDownloadTask()
+    let processor = BlurImageProcessor(blurRadius: 15)
+    newsImageViewBackground.kf.indicatorType = .activity
+    newsImageViewBackground.kf.setImage(with: URL(string: news.urlToImage ?? ""),
+                              placeholder: UIImage(),
+                              options: [
+                                .processor(processor),
+                                .scaleFactor(UIScreen.main.scale),
+                                .transition(.fade(0.5)),
+                                .downloadPriority(1),
+                                .backgroundDecode,
                               ])
     titleLabel.text = news.title
     subtitleLabel.text = news.source.name + " / " + news.source.type
     dateLabel.text = news.publishedAt.defaultDate()?.newsFormat
   }
-
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code

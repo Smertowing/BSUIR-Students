@@ -36,7 +36,7 @@ class NewsAdapter {
     }
   }
 
-  func getNewsList(page: Int?, newsAtPage: Int?, title: String?, sort: Sort?,
+  func getNewsList(page: Int?, newsAtPage: Int?, sort: Sort?,
                    filters: [Filter]?, completion: @escaping (Result<(NewsList), NetworkError>) -> Void) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     NewsAdapter.provider.request(.searchNews(page: page, newsAtPage: newsAtPage, sort: sort, filters: filters)) { (result) in

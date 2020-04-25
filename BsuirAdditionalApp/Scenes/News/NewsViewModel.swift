@@ -87,23 +87,23 @@ final class NewsViewModel {
 
     isFetchInProgress = true
 
-//    NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, title: title, q: content, url: nil, source: nil, sources: sources, loadedAfter: nil, loadedBefore: nil, publishedAfter: firstDate?.timeIntervalSince1970, publishedBefore: secondDate?.timeIntervalSince1970) { (answer) in
-//      switch answer {
-//      case .success(let newsList):
-//        DispatchQueue.main.async {
-//          completion?()
-//          self.currentPage += 1
-//          self.isFetchInProgress = false
-//          self.newsList = newsList
-//        }
-//      case .failure(let error):
-//        DispatchQueue.main.async {
-//          completion?()
-//          self.isFetchInProgress = false
-//          self.delegate?.onFetchFailed(with: error)
-//        }
-//      }
-//    }
+    NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, sort: nil, filters: []) { (answer) in
+      switch answer {
+      case .success(let newsList):
+        DispatchQueue.main.async {
+          completion?()
+          self.currentPage += 1
+          self.isFetchInProgress = false
+          self.newsList = newsList
+        }
+      case .failure(let error):
+        DispatchQueue.main.async {
+          completion?()
+          self.isFetchInProgress = false
+          self.delegate?.onFetchFailed(with: error)
+        }
+      }
+    }
   }
 
   private func calculateIndexPathsToReload(from newNews: [News]) -> [IndexPath] {

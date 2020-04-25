@@ -10,27 +10,33 @@ import UIKit
 import Down
 
 class NewsDetailsViewController: UIViewController {
+  private let viewModel = NewsDetailsViewModel()
+  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var subtitleLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var contentView: UITextView!
 
-  var currentNews: News!
   var spinner = UIActivityIndicatorView(style: .whiteLarge)
 
   func set(_ news: News) {
-    self.currentNews = news
+    self.viewModel.setCurrentNews(with: news)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationItem.title = "№\(currentNews.id)"
-    titleLabel.text = currentNews.title
-    subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type
-    dateLabel.text = currentNews.publishedAt.defaultDate()?.newsFormat
+    navigationItem.title = "№\(viewModel.id)"
+    setupViewModel()
+    titleLabel.text = viewModel.title
+    subtitleLabel.text = viewModel.source.name + " / " + viewModel.source.type
+    dateLabel.text = viewModel.date.defaultDate()?.newsFormat
 
     loadSpinner()
-    loadContent()
+    viewModel.loadContent()
+  }
+  
+  private func setupViewModel() {
+    viewModel.delegate = self
   }
 
   func loadSpinner() {
@@ -41,10 +47,25 @@ class NewsDetailsViewController: UIViewController {
     spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     spinner.startAnimating()
   }
-
+  
+  @IBAction func openSource(_ sender: Any) {
+    guard let url = viewModel.url else {
+      return
+    }
+    
+    if #available(iOS 10.0, *) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+      UIApplication.shared.openURL(url)
+    }
+  }
+  
   func loadContent() {
     DispatchQueue.global(qos: .background).async {
-      guard let markdown = try? Down(markdownString: self.currentNews.content ?? "").toAttributedString() else {
+      guard let markdown = try? Down(markdownString: self.viewModel.content ?? "").toAttributedString() else {
+        DispatchQueue.main.async {
+          self.spinner.stopAnimating()
+        }
         return
       }
 
@@ -71,5 +92,11 @@ class NewsDetailsViewController: UIViewController {
         self.contentView.attributedText = attributedText.attributedStringWithResizedImages(with: self.view.bounds.width*0.9)
       }
     }
+  }
+}
+
+extension NewsDetailsViewController: NewsDetailsViewModelDelegate {
+  func reloadContent() {
+    loadContent()
   }
 }
