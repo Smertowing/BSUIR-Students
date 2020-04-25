@@ -13,7 +13,7 @@ open class MarkCache: NSObject, NSCoding {
   open var formOfControl: String
   open var hours: Int?
   open var mark: String?
-  open var date: TimeInterval?
+  open var date: String?
   open var teacher: String?
   open var retakesCount: Int
   open var statistics: SubjectStatisticsCache?
@@ -36,7 +36,7 @@ open class MarkCache: NSObject, NSCoding {
     self.formOfControl = aDecoder.decodeObject(forKey: "formOfControl") as! String
     self.hours = aDecoder.decodeObject(forKey: "hours") as? Int
     self.mark = aDecoder.decodeObject(forKey: "mark") as? String
-    self.date = aDecoder.decodeObject(forKey: "date") as? TimeInterval
+    self.date = aDecoder.decodeObject(forKey: "date") as? String
     self.teacher = aDecoder.decodeObject(forKey: "teacher") as? String
     self.retakesCount = aDecoder.decodeInteger(forKey: "retakesCount")
     self.statistics = aDecoder.decodeObject(forKey: "statistics") as? SubjectStatisticsCache

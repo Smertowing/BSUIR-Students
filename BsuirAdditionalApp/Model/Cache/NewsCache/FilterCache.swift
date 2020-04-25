@@ -16,7 +16,7 @@ open class FilterCache: NSObject, NSCoding {
   open var firstDate: Date?
   open var secondDate: Date?
 
-  init(title: String?, content: String?, sources: [NewsSourceType], sourcesInt: [Int], firstDate: Date?, secondDate: Date?) {
+  init(title: String?, content: String?, sources: [String], sourcesInt: [Int], firstDate: Date?, secondDate: Date?) {
     if title?.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
       self.title = title
     } else {
@@ -29,7 +29,7 @@ open class FilterCache: NSObject, NSCoding {
     }
     self.sources = []
     for source in sources {
-      self.sources.append(source.rawValue)
+      self.sources.append(source)
     }
     self.sourcesInt = []
     for sourceInt in sourcesInt {

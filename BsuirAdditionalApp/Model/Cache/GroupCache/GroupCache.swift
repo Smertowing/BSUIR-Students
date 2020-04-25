@@ -13,7 +13,7 @@ open class GroupCache: NSObject, NSCoding {
   open var members: [GroupMateCache]
 
   init(group: Group) {
-    self.name = group.name
+    self.name = group.number
     self.members = []
     for member in group.members {
       self.members.append(GroupMateCache(mate: member))

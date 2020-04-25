@@ -26,8 +26,8 @@ class NewsDetailsViewController: UIViewController {
     super.viewDidLoad()
     navigationItem.title = "№\(currentNews.id)"
     titleLabel.text = currentNews.title
-    subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type.rawValue
-    dateLabel.text = Date(timeIntervalSince1970: currentNews.publishedAt).newsFormat
+    subtitleLabel.text = currentNews.source.name + " / " + currentNews.source.type
+    dateLabel.text = currentNews.publishedAt.defaultDate()?.newsFormat
 
     loadSpinner()
     loadContent()
@@ -44,9 +44,7 @@ class NewsDetailsViewController: UIViewController {
 
   func loadContent() {
     DispatchQueue.global(qos: .background).async {
-      let down = Down(markdownString: self.currentNews.content)
-
-      guard let markdown = try? down.toAttributedString() else {
+      guard let markdown = try? Down(markdownString: self.currentNews.content ?? "").toAttributedString() else {
         return
       }
 

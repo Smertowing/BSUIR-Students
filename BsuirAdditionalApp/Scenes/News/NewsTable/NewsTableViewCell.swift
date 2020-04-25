@@ -38,8 +38,8 @@ class NewsTableViewCell: UITableViewCell {
                                   .cacheOriginalImage
                               ])
     titleLabel.text = news.title
-    subtitleLabel.text = news.source.name + " / " + news.source.type.rawValue
-    dateLabel.text = Date(timeIntervalSince1970: news.publishedAt).newsFormat
+    subtitleLabel.text = news.source.name + " / " + news.source.type
+    dateLabel.text = news.publishedAt.defaultDate()?.newsFormat
   }
 
   override func awakeFromNib() {

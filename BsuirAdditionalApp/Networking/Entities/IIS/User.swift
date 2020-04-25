@@ -13,11 +13,11 @@ struct User: Codable {
   let firstName: String
   let lastName: String
   let middleName: String
-  let birthDay: TimeInterval
+  let birthDay: String
   let photo: String?
   let summary: String?
   let rating: Int
-  let education: Education
+  let educationInfo: Education
   let skills: [UserSkill]
   let references: [UserReference]
   let settings: UserSettings

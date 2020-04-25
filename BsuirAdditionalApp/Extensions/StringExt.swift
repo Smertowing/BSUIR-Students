@@ -8,6 +8,14 @@
 
 import UIKit
 
+extension String {
+  func defaultDate()-> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+    return dateFormatter.date(from: self)
+  }
+}
+
 extension NSAttributedString {
   func attributedStringWithResizedImages(with maxWidth: CGFloat) -> NSAttributedString {
     let text = NSMutableAttributedString(attributedString: self)
@@ -23,17 +31,5 @@ extension NSAttributedString {
       }
     })
     return text
-  }
-}
-
-extension UIImage {
-  func resizeImage(scale: CGFloat) -> UIImage {
-    let newSize = CGSize(width: self.size.width*scale, height: self.size.height*scale)
-    let rect = CGRect(origin: CGPoint.zero, size: newSize)
-    UIGraphicsBeginImageContext(newSize)
-    self.draw(in: rect)
-    let newImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return newImage!
   }
 }

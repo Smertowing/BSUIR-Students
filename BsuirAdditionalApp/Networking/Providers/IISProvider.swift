@@ -13,7 +13,6 @@ enum IISProvider {
   case getUser(id: Int)
   case getProfile
   case getRecordBook
-  case getDiploma
   case getGroup
   case getSettings
   case updateSettings(settings: UserSettings)
@@ -29,33 +28,29 @@ extension IISProvider: TargetType {
     case .auth:
       return "/auth"
     case .getUser(let id):
-      return "/users/\(id)"
+      return "/students/\(id)"
     case .getProfile:
-      return "/user"
+      return "/students/me"
     case .getRecordBook:
-      return "/user/record-book"
-    case .getDiploma:
-      return "/user/record-book/diploma"
+      return "/students/me/record-book"
     case .getGroup:
-      return "/user/group"
+      return "/students/me/group"
     case .getSettings:
-      return "/user/settings"
+      return "/students/me/settings"
     case .updateSettings:
-      return "/user/settings"
+      return "/students/me/settings"
     }
   }
 
   var method: Method {
     switch self {
     case .auth:
-      return .get
+      return .post
     case .getUser:
       return .get
     case .getProfile:
       return .get
     case .getRecordBook:
-      return .get
-    case .getDiploma:
       return .get
     case .getGroup:
       return .get
@@ -74,17 +69,15 @@ extension IISProvider: TargetType {
     switch self {
     case .auth(let login, let password):
       return .requestParameters(
-        parameters: ["login": login,
+        parameters: ["username": login,
                      "password": password],
-        encoding: URLEncoding.default
+        encoding: JSONEncoding.default
       )
     case .getUser:
       return .requestPlain
     case .getProfile:
       return .requestPlain
     case .getRecordBook:
-      return .requestPlain
-    case .getDiploma:
       return .requestPlain
     case .getGroup:
       return .requestPlain
@@ -108,22 +101,19 @@ extension IISProvider: TargetType {
       return ["Content-Type": "application/json"]
     case .getProfile:
       return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     case .getRecordBook:
       return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
-    case .getDiploma:
-      return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     case .getGroup:
       return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     case .getSettings:
       return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     case .updateSettings:
       return ["Content-Type": "application/json",
-              "Authorization": ProfileManager.shared.token]
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     }
   }
 

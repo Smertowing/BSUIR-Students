@@ -68,11 +68,12 @@ class NewsFilterViewController: FormViewController {
       +++
     selectableSection
 
-    let types = NewsSourceType.allValues
+    
+    let types = ["ФКСиС", "БГУИР", "ФИК", "ИЭФ", "ФРЭ", "ФИТУ", "Другое"]
     for type in types {
-      form.last! <<< ListCheckRow<String>(type.rawValue) { listRow in
-        listRow.title = type.rawValue
-        listRow.selectableValue = type.rawValue
+      form.last! <<< ListCheckRow<String>(type) { listRow in
+        listRow.title = type
+        listRow.selectableValue = type
         listRow.value = viewModel.selectedSources.contains(type) ? "selected" : nil
       }.cellSetup { cell, _ in
         cell.textLabel?.textColor = .white
@@ -155,9 +156,9 @@ class NewsFilterViewController: FormViewController {
       let sources: SelectableSection<ListCheckRow>! = selectableSection
       let firstDate: DateTimeInlineRow! = form.rowBy(tag: "Начальная")
       let secondDate: DateTimeInlineRow! = form.rowBy(tag: "Конечная")
-      var types: [NewsSourceType] = []
+      var types: [String] = []
       for source in sources.selectedRows() {
-        types.append(NewsSourceType(rawValue: source.selectableValue!)!)
+        types.append(source.selectableValue!)
       }
       viewModel.updateFilter(title: title.value,
                              content: content.value,

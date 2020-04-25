@@ -16,16 +16,23 @@ enum AuditoriumType: String, Codable {
   static let allValues = [lecture, lab, practice]
 }
 
-enum NewsSourceType: String, Codable {
-  case fksis = "FKSIS"
-  case bsuir = "BSUIR"
-  case fic = "FIC"
-  case fitu = "FITU"
-  case fre = "FRE"
-  case ief = "IEF"
-  case other = "OTHER"
+enum SortType: String {
+  case asc = "ASC"
+  case desc = "DESC"
+}
 
-  static let allValues = [fksis, bsuir, fic, fitu, fre, ief, other]
+enum FilterType: String {
+  case numberic = "numberic"
+  case string = "string"
+  case date = "date"
+}
+
+enum ComparisonType: String {
+  case equels = "EQ"
+  case contains = "CT"
+  case lessThan = "LT"
+  case graterThan = "GT"
+  case includes = "IN"
 }
 
 enum NetworkError: Error {

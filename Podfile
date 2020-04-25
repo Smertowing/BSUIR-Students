@@ -17,7 +17,6 @@ target 'BsuirAdditionalApp' do
 
   #Others
   pod 'DataCache'
-  pod 'KeychainSwift', '~> 19.0'
   pod 'Kingfisher'
   pod 'SnapKit'
   

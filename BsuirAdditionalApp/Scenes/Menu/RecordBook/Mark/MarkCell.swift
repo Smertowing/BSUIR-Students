@@ -47,7 +47,7 @@ class MarkCell: UITableViewCell {
       markLabel.text = "–"
     }
     if let dateInterval = mark.date {
-      dateLabel.text = Date(timeIntervalSince1970: dateInterval).auditDateFormat
+      dateLabel.text = dateInterval
     } else {
       dateLabel.text = "–"
     }

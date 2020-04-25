@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.0.2)
+  - Cosmos (21.0.0)
+  - DataCache (1.5)
+  - Down (0.9.0)
+  - Eureka (5.2.0)
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - Cosmos (~> 21.0)
+  - DataCache
+  - Down
+  - Eureka
+  - Kingfisher
+  - Moya (~> 14.0)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Cosmos
+    - DataCache
+    - Down
+    - Eureka
+    - Kingfisher
+    - Moya
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  Cosmos: 3dfb6e4ba48bd48b8c9aa2a77048ae11ed114f96
+  DataCache: 8099e01aa35c2fd30f3410aae14ef5a130f6524b
+  Down: 1cdbca4963b542d0ef34ebb3e10ff48382bdf761
+  Eureka: 820a761c700f6eaab3b60758f138e0d9b99072b3
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 161cbb96b8d00cdff82f3a19fff64f859ff2ce60
+
+COCOAPODS: 1.9.1

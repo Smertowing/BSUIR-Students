@@ -13,7 +13,7 @@ open class UserCache: NSObject, NSCoding {
   open var firstName: String
   open var lastName: String
   open var middleName: String
-  open var birthDay: TimeInterval
+  open var birthDay: String
   open var photo: String?
   open var summary: String?
   open var rating: Int
@@ -31,7 +31,7 @@ open class UserCache: NSObject, NSCoding {
     self.photo = user.photo
     self.summary = user.summary
     self.rating = user.rating
-    self.education = EducationCache(education: user.education)
+    self.education = EducationCache(education: user.educationInfo)
     self.skills = []
     for skill in user.skills {
       self.skills.append(SkillCache(skill: skill))
@@ -48,7 +48,7 @@ open class UserCache: NSObject, NSCoding {
     self.firstName = aDecoder.decodeObject(forKey: "firstName") as! String
     self.lastName = aDecoder.decodeObject(forKey: "lastName") as! String
     self.middleName = aDecoder.decodeObject(forKey: "middleName") as! String
-    self.birthDay = aDecoder.decodeDouble(forKey: "birthDay")
+    self.birthDay = aDecoder.decodeObject(forKey: "birthDay") as! String
     self.photo = aDecoder.decodeObject(forKey: "photo") as? String
     self.summary = aDecoder.decodeObject(forKey: "summary") as? String
     self.rating = aDecoder.decodeInteger(forKey: "rating")

@@ -9,7 +9,7 @@
 import Foundation
 
 struct Group: Codable {
-  let name: String
+  let number: String
   let members: [GroupMate]
 }
 

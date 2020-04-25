@@ -10,4 +10,4 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 // Server
-BASE_URL = http:/$()/3.14.152.99:9000/bsuir/api/v1
+BASE_URL = http:/$()/134.209.177.96:8000/api/v2

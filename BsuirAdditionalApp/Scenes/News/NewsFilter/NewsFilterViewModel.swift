@@ -19,7 +19,7 @@ final class NewsFilterViewModel {
 
   private var title: String = ""
   private var content: String = ""
-  private var sources: [NewsSourceType] = []
+  private var sources: [String] = []
   private var firstDate: Date?
   private var secondDate: Date?
 
@@ -31,7 +31,7 @@ final class NewsFilterViewModel {
     return content
   }
 
-  var selectedSources: [NewsSourceType] {
+  var selectedSources: [String] {
     return sources
   }
 
@@ -49,20 +49,20 @@ final class NewsFilterViewModel {
     self.content = savedFilter.content ?? ""
     self.sources = []
     for source in savedFilter.sources {
-      self.sources.append(NewsSourceType(rawValue: source)!)
+      self.sources.append(source)
     }
     self.firstDate = savedFilter.firstDate
     self.secondDate = savedFilter.secondDate
     self.delegate?.refreshForm()
   }
 
-  func updateFilter(title: String?, content: String?, sources: [NewsSourceType], startDate: Date?, endDate: Date?) {
+  func updateFilter(title: String?, content: String?, sources: [String], startDate: Date?, endDate: Date?) {
     var sourcesInt: [Int] = []
     let group = DispatchGroup()
 
     for source in sources {
       group.enter()
-      NetworkingManager.news.getSources(by: source) { (answer) in
+      NetworkingManager.news.getSources() { (answer) in
         group.leave()
         switch answer {
         case .success(let sources):
@@ -83,7 +83,7 @@ final class NewsFilterViewModel {
     }
   }
 
-  private func saveFilter(title: String?, content: String?, sources: [NewsSourceType], sourcesInt: [Int], startDate: Date?, endDate: Date?) {
+  private func saveFilter(title: String?, content: String?, sources: [String], sourcesInt: [Int], startDate: Date?, endDate: Date?) {
     let newFilter = FilterCache(title: title, content: content, sources: sources, sourcesInt: sourcesInt, firstDate: startDate, secondDate: endDate)
     DataManager.shared.filter = newFilter
     self.delegate?.filterSaved()

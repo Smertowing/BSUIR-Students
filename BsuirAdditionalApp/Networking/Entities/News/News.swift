@@ -12,15 +12,17 @@ struct News: Codable {
   let id: Int
   let title: String
   let source: Source
-  let content: String
-  let publishedAt: TimeInterval
-  let loadedAt: TimeInterval
+  let shortContent: String
+  let content: String?
+  let publishedAt: String
+  let loadedAt: String
   let url: String
   let urlToImage: String?
 }
 
 struct Source: Codable {
   let id: Int
-  let type: NewsSourceType
+  let alias: String
+  let type: String
   let name: String
 }

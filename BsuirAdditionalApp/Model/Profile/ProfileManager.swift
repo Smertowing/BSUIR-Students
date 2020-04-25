@@ -7,12 +7,10 @@
 //
 
 import Foundation
-import KeychainSwift
 
 final class ProfileManager {
   static let shared = ProfileManager()
 
-  private let defaults = KeychainSwift()
   private let userdefaults = UserDefaults.standard
 
   private init() { }
@@ -25,10 +23,10 @@ final class ProfileManager {
 
   var token: String {
     get {
-      return defaults.get(ProfileKeys.token.rawValue) ?? ""
+      return userdefaults.string(forKey: ProfileKeys.token.rawValue) ?? ""
     }
     set {
-      defaults.set(newValue, forKey: ProfileKeys.token.rawValue)
+      userdefaults.set(newValue, forKey: ProfileKeys.token.rawValue)
     }
   }
 
@@ -37,7 +35,7 @@ final class ProfileManager {
   }
 
   func logout() {
-    defaults.clear()
+    userdefaults.set(nil, forKey: ProfileKeys.token.rawValue)
     userdefaults.set(false, forKey: ProfileKeys.isLogged.rawValue)
   }
 }

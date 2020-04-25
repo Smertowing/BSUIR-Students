@@ -34,7 +34,7 @@ class IISAdapter {
     }
   }
 
-  func getUserInfor(by id: Int, completion: @escaping (Result<(User), NetworkError>) -> Void) {
+  func getUserInfo(by id: Int, completion: @escaping (Result<(User), NetworkError>) -> Void) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     IISAdapter.provider.request(.getUser(id: id)) { (result) in
       UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -48,6 +48,8 @@ class IISAdapter {
         switch error.response?.statusCode {
         case 400:
           return completion(.failure(.invalidRequest))
+        case 404:
+          return completion(.failure(.notFound))
         case 500:
           return completion(.failure(.serverError))
         default:
@@ -85,31 +87,6 @@ class IISAdapter {
   func getRecordBook(completion: @escaping (Result<(RecordBook), NetworkError>) -> Void) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     IISAdapter.provider.request(.getRecordBook) { (result) in
-      UIApplication.shared.isNetworkActivityIndicatorVisible = false
-      switch result {
-      case .success(let response):
-        guard let answer = try? response.map(RecordBook.self) else {
-          return completion(.failure(.invalidResponse))
-        }
-        return completion(.success(answer))
-      case .failure(let error):
-        switch error.response?.statusCode {
-        case 400:
-          return completion(.failure(.invalidRequest))
-        case 401:
-          return completion(.failure(.invalidCredentials))
-        case 500:
-          return completion(.failure(.serverError))
-        default:
-          return completion(.failure(.unknownError))
-        }
-      }
-    }
-  }
-
-  func getDiploma(completion: @escaping (Result<(RecordBook), NetworkError>) -> Void) {
-    UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    IISAdapter.provider.request(.getDiploma) { (result) in
       UIApplication.shared.isNetworkActivityIndicatorVisible = false
       switch result {
       case .success(let response):

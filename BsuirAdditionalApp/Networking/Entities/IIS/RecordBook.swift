@@ -12,6 +12,7 @@ struct RecordBook: Codable {
   let number: String
   let averageMark: Double
   let semesters: [Semester]
+  let diploma: DiplomaInfo?
 }
 
 struct Semester: Codable {
@@ -25,7 +26,7 @@ struct Mark: Codable {
   let formOfControl: String
   let hours: Int?
   let mark: String?
-  let date: TimeInterval?
+  let date: String?
   let teacher: String?
   let retakesCount: Int
   let statistic: SubjectStatistic?
@@ -34,4 +35,9 @@ struct Mark: Codable {
 struct SubjectStatistic: Codable {
   let averageMark: Double?
   let averageRetakes: Double?
+}
+
+struct DiplomaInfo: Codable {
+  let topic: String
+  let teacher: String
 }

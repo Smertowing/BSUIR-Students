@@ -29,9 +29,11 @@ class LoginViewController: UIViewController {
     loginField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
     loginField.attributedPlaceholder = NSAttributedString(string: "Login",
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    loginField.addTarget(self, action: #selector(loginPrimaryAction), for: UIControl.Event.primaryActionTriggered)
     passwordField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
     passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+    passwordField.addTarget(self, action: #selector(passwordPrimaryAction), for: UIControl.Event.primaryActionTriggered)
   }
 
   private func setupViewModel() {
@@ -49,6 +51,14 @@ class LoginViewController: UIViewController {
         self.signinButton.backgroundColor = AppColors.accentColor.uiColor()
       }
     }
+  }
+  
+  @objc func loginPrimaryAction(textField: UITextField) {
+    passwordField.becomeFirstResponder()
+  }
+  
+  @objc func passwordPrimaryAction(textField: UITextField) {
+    signinClicked(self)
   }
 }
 

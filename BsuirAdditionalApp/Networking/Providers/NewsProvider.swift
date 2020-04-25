@@ -10,9 +10,10 @@ import Moya
 
 enum NewsProvider {
   case getNews(id: Int)
-  case getNewsList(page: Int?, newsAtPage: Int?, title: String?, q: String?, url: String?, source: Int?,
-    sources: [Int]?, loadedAfter: TimeInterval?, loadedBefore: TimeInterval?, publishedAfter: TimeInterval?, publishedBefore: TimeInterval?)
-  case getSources(type: NewsSourceType)
+  case searchNews(page: Int?, newsAtPage: Int?, sort: Sort?, filters: [Filter]?)
+  case getSources
+  case getSubscriptions
+  case subscribe(to: [Source])
 }
 
 extension NewsProvider: TargetType {
@@ -22,12 +23,16 @@ extension NewsProvider: TargetType {
 
   var path: String {
     switch self {
-    case .getNews:
-      return "/news"
-    case .getNewsList:
-      return "/newsList"
+    case .getNews(let id):
+      return "/news/\(id)"
+    case .searchNews:
+      return "/news/search"
     case .getSources:
       return "/sources"
+    case .getSubscriptions:
+      return "/news/sources/subscriptions"
+    case .subscribe:
+      return "/news/sources/subscriptions"
     }
   }
 
@@ -35,10 +40,14 @@ extension NewsProvider: TargetType {
     switch self {
     case .getNews:
       return .get
-    case .getNewsList:
-      return .get
+    case .searchNews:
+      return .post
     case .getSources:
       return .get
+    case .getSubscriptions:
+      return .get
+    case .subscribe:
+      return .put
     }
   }
 
@@ -48,54 +57,45 @@ extension NewsProvider: TargetType {
 
   var task: Task {
     switch self {
-    case .getNews(let id):
-      return .requestParameters(
-        parameters: ["id": id],
-        encoding: URLEncoding.default
-      )
-    case .getNewsList(let page, let newsAtPage, let title, let q, let url, let source, let sources, let loadedAfter,
-                      let loadedBefore, let publishedAfter, let publishedBefore):
+    case .getNews:
+      return .requestPlain
+    case .searchNews(let page, let newsAtPage, let sort, let filters):
       var params: [String: Any] = [:]
       if let page = page {
         params["page"] = page
       }
       if let newsAtPage = newsAtPage {
-        params["newsAtPage"] = newsAtPage
+        params["pageSize"] = newsAtPage
       }
-      if let title = title {
-        params["title"] = title
+      if let sort = sort {
+        var sorting: [String: Any] = [:]
+        sorting["field"] = sort.field
+        sorting["type"] = sort.type.rawValue
+        params["sort"] = sorting
       }
-      if let q = q {
-        params["q"] = q
-      }
-      if let url = url {
-        params["url"] = url
-      }
-      if let source = source {
-        params["source"] = source
-      }
-      if let sources = sources {
-        params["sources"] = sources
-      }
-      if let loadedAfter = loadedAfter {
-        params["loadedAfter"] = loadedAfter
-      }
-      if let loadedBefore = loadedBefore {
-        params["loadedBefore"] = loadedBefore
-      }
-      if let publishedAfter = publishedAfter {
-        params["publishedAfter"] = publishedAfter
-      }
-      if let publishedBefore = publishedBefore {
-        params["publishedBefore"] = publishedBefore
+      if let filters = filters {
+        var filtersArray: [[String: Any]] = []
+        for filter in filters {
+          var filterDict: [String: Any] = [:]
+          filterDict["type"] = filter.type.rawValue
+          filterDict["comparison"] = filter.comparison.rawValue
+          filterDict["value"] = filter.value
+          filterDict["field"] = filter.field
+          filtersArray.append(filterDict)
+        }
+        params["filters"] = filtersArray
       }
       return .requestParameters(
         parameters: params,
-        encoding: URLEncoding.default
+        encoding: JSONEncoding.default
       )
-    case .getSources(let type):
+    case .getSources:
+      return .requestPlain
+    case .getSubscriptions:
+      return .requestPlain
+    case .subscribe(let to):
       return .requestParameters(
-        parameters: ["type": type.rawValue],
+        parameters: ["newsSourcesAliases": to],
         encoding: URLEncoding.default
       )
     }
@@ -105,10 +105,16 @@ extension NewsProvider: TargetType {
     switch self {
     case .getNews:
       return ["Content-Type": "application/json"]
-    case .getNewsList:
+    case .searchNews:
       return ["Content-Type": "application/json"]
     case .getSources:
       return ["Content-Type": "application/json"]
+    case .getSubscriptions:
+      return ["Content-Type": "application/json",
+              "Authorization": "Bearer " + ProfileManager.shared.token]
+    case .subscribe:
+      return ["Content-Type": "application/json",
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     }
   }
 
