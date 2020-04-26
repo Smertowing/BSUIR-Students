@@ -635,16 +635,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7en-eI-Tgf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Средний балл" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XJ-5y-273">
-                                        <rect key="frame" x="24" y="20" width="114" height="21"/>
+                                        <rect key="frame" x="24" y="16" width="114" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCZ-J6-OkT">
-                                        <rect key="frame" x="382" y="20" width="8" height="21"/>
+                                        <rect key="frame" x="382" y="16" width="8" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="TextColor"/>
                                         <nil key="highlightedColor"/>
@@ -655,11 +655,11 @@
                                 <constraints>
                                     <constraint firstItem="pCZ-J6-OkT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6XJ-5y-273" secondAttribute="trailing" constant="8" id="5fl-Wh-czF"/>
                                     <constraint firstAttribute="trailing" secondItem="pCZ-J6-OkT" secondAttribute="trailing" constant="24" id="KoH-Bv-WWY"/>
-                                    <constraint firstAttribute="bottom" secondItem="6XJ-5y-273" secondAttribute="bottom" constant="20" id="LEl-bZ-xQG"/>
+                                    <constraint firstAttribute="bottom" secondItem="6XJ-5y-273" secondAttribute="bottom" constant="16" id="LEl-bZ-xQG"/>
                                     <constraint firstItem="6XJ-5y-273" firstAttribute="leading" secondItem="7en-eI-Tgf" secondAttribute="leading" constant="24" id="Wh8-x2-SPQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="pCZ-J6-OkT" secondAttribute="bottom" constant="20" id="q1U-Uc-cfe"/>
-                                    <constraint firstItem="pCZ-J6-OkT" firstAttribute="top" secondItem="7en-eI-Tgf" secondAttribute="top" constant="20" id="u2w-O1-teY"/>
-                                    <constraint firstItem="6XJ-5y-273" firstAttribute="top" secondItem="7en-eI-Tgf" secondAttribute="top" constant="20" id="yZB-Xz-xoB"/>
+                                    <constraint firstAttribute="bottom" secondItem="pCZ-J6-OkT" secondAttribute="bottom" constant="16" id="q1U-Uc-cfe"/>
+                                    <constraint firstItem="pCZ-J6-OkT" firstAttribute="top" secondItem="7en-eI-Tgf" secondAttribute="top" constant="16" id="u2w-O1-teY"/>
+                                    <constraint firstItem="6XJ-5y-273" firstAttribute="top" secondItem="7en-eI-Tgf" secondAttribute="top" constant="16" id="yZB-Xz-xoB"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCh-iJ-ft1">
@@ -668,7 +668,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="6nN-WU-OuG"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="1" translatesAutoresizingMaskIntoConstraints="NO" id="tmw-7a-Moh">
-                                <rect key="frame" x="207" y="61" width="0.0" height="0.0"/>
+                                <rect key="frame" x="207" y="53" width="0.0" height="0.0"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>

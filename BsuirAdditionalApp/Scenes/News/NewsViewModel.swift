@@ -11,6 +11,7 @@ import UIKit
 protocol NewsViewModelDelegate: class {
   func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?)
   func onFetchFailed(with reason: NetworkError)
+  func reloadTabs()
 }
 
 final class NewsViewModel {
@@ -56,7 +57,27 @@ final class NewsViewModel {
   func news(at index: Int) -> News {
     return news[index]
   }
+  
+  private var tabs: [Source] = []
+  private var currentTabNumber = 0
 
+  var numberOfTabs: Int {
+    return tabs.count
+  }
+  
+  var currentTab: Int {
+    return currentTabNumber
+  }
+  
+  func tab(at index: Int) -> Source {
+    return tabs[index]
+  }
+  
+  func updateTab(to index: Int) {
+    currentTabNumber = index
+    delegate?.reloadTabs()
+  }
+  
   var fetching: Bool {
     return isFetchInProgress
   }

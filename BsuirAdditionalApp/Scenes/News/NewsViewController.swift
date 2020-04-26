@@ -12,7 +12,8 @@ class NewsViewController: UIViewController {
   private let viewModel = NewsViewModel()
 
   @IBOutlet weak var newsTable: UITableView!
-
+  @IBOutlet weak var newsTabCollection: UICollectionView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
@@ -22,6 +23,7 @@ class NewsViewController: UIViewController {
     //self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "filter_off"), style: .plain, target: self, action: #selector(self.filterButtonClicked)), animated: false)
     setupViewModel()
     configureEventsTable()
+    configureTabCollection()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +47,11 @@ class NewsViewController: UIViewController {
     newsTable.refreshControl = UIRefreshControl()
     newsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...")
     newsTable.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+  }
+  
+  func configureTabCollection() {
+    newsTabCollection.delegate = self
+    newsTabCollection.dataSource = self
   }
 
   @objc func refresh(sender: AnyObject) {
@@ -109,6 +116,43 @@ extension NewsViewController: UITableViewDataSourcePrefetching {
   }
 }
 
+extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return viewModel.numberOfTabs + 2
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    viewModel.updateTab(to: indexPath.row)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tabCell", for: indexPath) as! NewsCollectionViewCell
+    
+    if indexPath.row == 0 {
+      cell.tabNameLabel.text = "Подписки"
+    } else if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 {
+      cell.tabNameLabel.text = "Все новости"
+    } else {
+      cell.tabNameLabel.text = viewModel.tab(at: indexPath.row - 1).name
+    }
+    
+    if indexPath.row == viewModel.currentTab {
+      cell.accentView.backgroundColor = AppColors.accentColor.uiColor()
+    } else {
+      cell.accentView.backgroundColor = UIColor.clear
+    }
+    
+//    cell.layer.borderColor = UIColor.clear.cgColor
+//    cell.layer.borderWidth = 4.0
+    cell.layer.masksToBounds = true
+    return cell
+  }
+}
+
 private extension NewsViewController {
   func isLoadingCell(for indexPath: IndexPath) -> Bool {
     return indexPath.row >= viewModel.currentCount
@@ -122,6 +166,11 @@ private extension NewsViewController {
 }
 
 extension NewsViewController: NewsViewModelDelegate {
+  func reloadTabs() {
+    newsTabCollection.reloadData()
+    newsTable.reloadData()
+  }
+  
   func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
     newsTable.refreshControl?.endRefreshing()
     guard let newIndexPathsToReload = newIndexPathsToReload else {

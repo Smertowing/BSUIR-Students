@@ -79,6 +79,9 @@
 		FA83A6D123A1A9C400BF5ABD /* GroupCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83A6D023A1A9C400BF5ABD /* GroupCache.swift */; };
 		FA9922B92415713500796EDC /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9922B82415713500796EDC /* Sort.swift */; };
 		FA9922BB241571E800796EDC /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9922BA241571E800796EDC /* Filter.swift */; };
+		FAA6A2F524561AFA0015B9B5 /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2F424561AFA0015B9B5 /* NewsCollectionViewCell.swift */; };
+		FAA6A2F8245635870015B9B5 /* NewsSubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2F7245635870015B9B5 /* NewsSubscriptionsViewController.swift */; };
+		FAA6A2FA245635900015B9B5 /* NewsSubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2F9245635900015B9B5 /* NewsSubscriptionsViewModel.swift */; };
 		FAA7F71A23A22D540095783E /* RecordBookCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71923A22D540095783E /* RecordBookCache.swift */; };
 		FAA7F71C23A22D760095783E /* SemesterCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71B23A22D760095783E /* SemesterCache.swift */; };
 		FAA7F71E23A22DC40095783E /* MarkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F71D23A22DC40095783E /* MarkCache.swift */; };
@@ -181,6 +184,9 @@
 		FA83A6D023A1A9C400BF5ABD /* GroupCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCache.swift; sourceTree = "<group>"; };
 		FA9922B82415713500796EDC /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		FA9922BA241571E800796EDC /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		FAA6A2F424561AFA0015B9B5 /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAA6A2F7245635870015B9B5 /* NewsSubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSubscriptionsViewController.swift; sourceTree = "<group>"; };
+		FAA6A2F9245635900015B9B5 /* NewsSubscriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSubscriptionsViewModel.swift; sourceTree = "<group>"; };
 		FAA7F71923A22D540095783E /* RecordBookCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBookCache.swift; sourceTree = "<group>"; };
 		FAA7F71B23A22D760095783E /* SemesterCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterCache.swift; sourceTree = "<group>"; };
 		FAA7F71D23A22DC40095783E /* MarkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCache.swift; sourceTree = "<group>"; };
@@ -417,6 +423,7 @@
 		FA3260ED23945BD7004B1410 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				FAA6A2F6245635610015B9B5 /* NewsSubscriptions */,
 				FAB05901239CF00E00664358 /* NewsTable */,
 				FAB058FC239CEF2C00664358 /* NewsDetails */,
 				FAB058FB239CEF1C00664358 /* NewsFilter */,
@@ -563,6 +570,15 @@
 			path = IIS;
 			sourceTree = "<group>";
 		};
+		FAA6A2F6245635610015B9B5 /* NewsSubscriptions */ = {
+			isa = PBXGroup;
+			children = (
+				FAA6A2F7245635870015B9B5 /* NewsSubscriptionsViewController.swift */,
+				FAA6A2F9245635900015B9B5 /* NewsSubscriptionsViewModel.swift */,
+			);
+			path = NewsSubscriptions;
+			sourceTree = "<group>";
+		};
 		FAA7F71823A22D400095783E /* RecordBookCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3260F623946085004B1410 /* NewsTableViewCell.swift */,
+				FAA6A2F424561AFA0015B9B5 /* NewsCollectionViewCell.swift */,
 			);
 			path = NewsTable;
 			sourceTree = "<group>";
@@ -841,6 +858,8 @@
 				FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */,
 				FAA7F72723A23D270095783E /* SemesterView.swift in Sources */,
 				FA3260C523941455004B1410 /* Config.swift in Sources */,
+				FAA6A2FA245635900015B9B5 /* NewsSubscriptionsViewModel.swift in Sources */,
+				FAA6A2F8245635870015B9B5 /* NewsSubscriptionsViewController.swift in Sources */,
 				FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */,
 				FA64D385239DC10700E96C11 /* AuditoriumsListViewController.swift in Sources */,
 				FAA7F71C23A22D760095783E /* SemesterCache.swift in Sources */,
@@ -866,6 +885,7 @@
 				FA3260B62394133D004B1410 /* AuditoriumsProvider.swift in Sources */,
 				FA3260DD23943E31004B1410 /* RecordBook.swift in Sources */,
 				FA1AA73A23950E680092559B /* MenuViewController.swift in Sources */,
+				FAA6A2F524561AFA0015B9B5 /* NewsCollectionViewCell.swift in Sources */,
 				FAB0590F239D57CB00664358 /* FreeAuditoriumsViewModel.swift in Sources */,
 				FAA7F72323A234160095783E /* RecordBookViewController.swift in Sources */,
 				FA9922BB241571E800796EDC /* Filter.swift in Sources */,

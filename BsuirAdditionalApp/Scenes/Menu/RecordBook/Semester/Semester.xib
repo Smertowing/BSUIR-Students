@@ -16,34 +16,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5mq-3l-kbf">
-                    <rect key="frame" x="0.0" y="142" width="414" height="720"/>
+                    <rect key="frame" x="0.0" y="134" width="414" height="728"/>
                     <color key="backgroundColor" name="BackgroundColor"/>
                     <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <color key="separatorColor" name="PrimaryColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fid-Bq-p1j">
-                    <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="82"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Семестр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TES-KJ-6HS">
-                            <rect key="frame" x="24" y="16" width="71" height="21"/>
+                            <rect key="frame" x="24" y="12" width="71" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="AccentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTm-4U-oZ2">
-                            <rect key="frame" x="381.5" y="16" width="8.5" height="21"/>
+                            <rect key="frame" x="381.5" y="12" width="8.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="TextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Средний балл за семестр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTV-GY-92c">
-                            <rect key="frame" x="24" y="53" width="208" height="21"/>
+                            <rect key="frame" x="24" y="49" width="208" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="AccentColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljw-i2-nf8">
-                            <rect key="frame" x="382" y="53" width="8" height="21"/>
+                            <rect key="frame" x="382" y="49" width="8" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" name="TextColor"/>
                             <nil key="highlightedColor"/>
@@ -54,15 +54,15 @@
                     <constraints>
                         <constraint firstItem="cTV-GY-92c" firstAttribute="leading" secondItem="fid-Bq-p1j" secondAttribute="leading" constant="24" id="14d-Qv-SKZ"/>
                         <constraint firstAttribute="trailing" secondItem="Ljw-i2-nf8" secondAttribute="trailing" constant="24" id="4Ne-VX-0Er"/>
-                        <constraint firstItem="TES-KJ-6HS" firstAttribute="top" secondItem="fid-Bq-p1j" secondAttribute="top" constant="16" id="CSH-JU-1cN"/>
+                        <constraint firstItem="TES-KJ-6HS" firstAttribute="top" secondItem="fid-Bq-p1j" secondAttribute="top" constant="12" id="CSH-JU-1cN"/>
                         <constraint firstItem="cTV-GY-92c" firstAttribute="top" secondItem="TES-KJ-6HS" secondAttribute="bottom" constant="16" id="Dld-u7-bK1"/>
                         <constraint firstItem="Ljw-i2-nf8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cTV-GY-92c" secondAttribute="trailing" constant="8" id="Fq9-md-N9T"/>
-                        <constraint firstAttribute="bottom" secondItem="cTV-GY-92c" secondAttribute="bottom" constant="16" id="LIr-Xa-gPl"/>
+                        <constraint firstAttribute="bottom" secondItem="cTV-GY-92c" secondAttribute="bottom" constant="12" id="LIr-Xa-gPl"/>
                         <constraint firstItem="TES-KJ-6HS" firstAttribute="leading" secondItem="fid-Bq-p1j" secondAttribute="leading" constant="24" id="LK3-cJ-Lh3"/>
-                        <constraint firstAttribute="bottom" secondItem="Ljw-i2-nf8" secondAttribute="bottom" constant="16" id="OR7-MS-T0t"/>
+                        <constraint firstAttribute="bottom" secondItem="Ljw-i2-nf8" secondAttribute="bottom" constant="12" id="OR7-MS-T0t"/>
                         <constraint firstItem="NTm-4U-oZ2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TES-KJ-6HS" secondAttribute="trailing" constant="8" id="QF2-gp-lVz"/>
                         <constraint firstItem="Ljw-i2-nf8" firstAttribute="top" secondItem="NTm-4U-oZ2" secondAttribute="bottom" constant="16" id="ZUw-sT-vf6"/>
-                        <constraint firstItem="NTm-4U-oZ2" firstAttribute="top" secondItem="fid-Bq-p1j" secondAttribute="top" constant="16" id="gQO-09-Pqx"/>
+                        <constraint firstItem="NTm-4U-oZ2" firstAttribute="top" secondItem="fid-Bq-p1j" secondAttribute="top" constant="12" id="gQO-09-Pqx"/>
                         <constraint firstAttribute="trailing" secondItem="NTm-4U-oZ2" secondAttribute="trailing" constant="24" id="xyT-JG-WQB"/>
                     </constraints>
                 </view>
