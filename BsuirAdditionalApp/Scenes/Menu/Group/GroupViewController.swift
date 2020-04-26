@@ -86,7 +86,7 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
       cell.set(.none)
     }
 
-    cell.layer.borderColor = AppColors.barsColor.cgColor()
+    cell.layer.borderColor = AppColors.backgroundColor.cgColor()
     cell.layer.borderWidth = 4.0
     cell.layer.masksToBounds = true
 

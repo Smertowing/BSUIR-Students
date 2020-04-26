@@ -11,7 +11,6 @@ import UIKit
 class RecordBookViewController: UIViewController {
   private let viewModel = RecordBookViewModel()
 
-  @IBOutlet weak var numberLabel: UILabel!
   @IBOutlet weak var averageMarkLabel: UILabel!
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var pageControl: UIPageControl!
@@ -54,7 +53,7 @@ class RecordBookViewController: UIViewController {
   }
 
   func setupValues() {
-    numberLabel.text = viewModel.numberString
+    navigationItem.title = viewModel.numberString
     averageMarkLabel.text = viewModel.avarageMarkString
 
     let views = viewModel.semesters
@@ -69,6 +68,7 @@ class RecordBookViewController: UIViewController {
 
     pageControl.numberOfPages = views.count
     pageControl.currentPage = 0
+    pageControl.transform = CGAffineTransform(scaleX: 2, y: 2)
     view.bringSubviewToFront(pageControl)
   }
 

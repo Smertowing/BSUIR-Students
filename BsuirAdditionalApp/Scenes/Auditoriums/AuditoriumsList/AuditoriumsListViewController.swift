@@ -30,8 +30,7 @@ class AuditoriumsListViewController: UIViewController {
     auditoriumsTable.delegate = self
     auditoriumsTable.dataSource = self
     auditoriumsTable.tableFooterView = UIView()
-    auditoriumsTable.backgroundView = UIView()
-    auditoriumsTable.backgroundColor = AppColors.backgroundColor.uiColor()
+    auditoriumsTable.backgroundView = EmptyBackgroundView.instanceFromNib()
     auditoriumsTable.separatorColor = AppColors.textFieldColor.uiColor()
   }
 
@@ -68,7 +67,8 @@ extension AuditoriumsListViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     cell.set(auditoriums[indexPath.row])
-    cell.layer.borderColor = AppColors.barsColor.cgColor()
+    
+    cell.layer.borderColor = AppColors.backgroundColor.cgColor()
     cell.layer.borderWidth = 4.0
     cell.layer.masksToBounds = true
     return cell

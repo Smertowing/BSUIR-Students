@@ -70,7 +70,7 @@ extension SemesterView: UITableViewDelegate, UITableViewDataSource {
 
     cell.set(currentSem?.marks[indexPath.row] ?? nil)
 
-    cell.layer.borderColor = AppColors.primaryColor.cgColor()
+    cell.layer.borderColor = AppColors.backgroundColor.cgColor()
     cell.layer.borderWidth = 4.0
     cell.layer.masksToBounds = true
 
