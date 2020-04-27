@@ -20,6 +20,7 @@ class NewsViewController: UIViewController {
     navigationItem.title = "Новости"
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
+    self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "subscriptions"), style: .plain, target: self, action: #selector(self.subscriptionsButtonClicked)), animated: false)
     //self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "filter_off"), style: .plain, target: self, action: #selector(self.filterButtonClicked)), animated: false)
     setupViewModel()
     configureEventsTable()
@@ -61,6 +62,12 @@ class NewsViewController: UIViewController {
   @objc func filterButtonClicked() {
     let storyBoard = UIStoryboard(name: "News", bundle: nil)
     let filterNewsViewController = storyBoard.instantiateViewController(withIdentifier: "filterNewsVC")
+    self.show(filterNewsViewController, sender: self)
+  }
+  
+  @objc func subscriptionsButtonClicked() {
+    let storyBoard = UIStoryboard(name: "News", bundle: nil)
+    let filterNewsViewController = storyBoard.instantiateViewController(withIdentifier: "subscriptionsTableVC")
     self.show(filterNewsViewController, sender: self)
   }
 }

@@ -25,4 +25,5 @@ struct Source: Codable {
   let alias: String
   let type: String
   let name: String
+  var subscribed: Bool?
 }

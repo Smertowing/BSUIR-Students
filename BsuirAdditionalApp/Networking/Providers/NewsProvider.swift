@@ -28,7 +28,7 @@ extension NewsProvider: TargetType {
     case .searchNews:
       return "/news/search"
     case .getSources:
-      return "/sources"
+      return "/news/sources"
     case .getSubscriptions:
       return "/news/sources/subscriptions"
     case .subscribe:
@@ -108,7 +108,8 @@ extension NewsProvider: TargetType {
     case .searchNews:
       return ["Content-Type": "application/json"]
     case .getSources:
-      return ["Content-Type": "application/json"]
+      return ["Content-Type": "application/json",
+              "Authorization": "Bearer " + ProfileManager.shared.token]
     case .getSubscriptions:
       return ["Content-Type": "application/json",
               "Authorization": "Bearer " + ProfileManager.shared.token]

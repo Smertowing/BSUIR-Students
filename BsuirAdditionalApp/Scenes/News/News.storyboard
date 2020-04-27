@@ -296,6 +296,80 @@
             </objects>
             <point key="canvasLocation" x="974" y="868"/>
         </scene>
+        <!--News Subscriptions View Controller-->
+        <scene sceneID="uZd-eh-VjU">
+            <objects>
+                <viewController storyboardIdentifier="subscriptionsTableVC" id="BlW-P1-ivr" customClass="NewsSubscriptionsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="11D-6w-fI2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UH8-h4-psS">
+                                <rect key="frame" x="0.0" y="52" width="414" height="810"/>
+                                <color key="backgroundColor" name="BackgroundColor"/>
+                                <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" name="PrimaryColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscribtionCell" rowHeight="66" id="hVI-2e-Pvj" customClass="NewsSubscriptionsTableViewCell" customModule="Bsuir_Student" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hVI-2e-Pvj" id="t1Z-4X-iTq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Источник" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL5-B4-G3o">
+                                                    <rect key="frame" x="20" y="19" width="81" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lo0-U0-ywv">
+                                                    <rect key="frame" x="341" y="17.5" width="51" height="31"/>
+                                                    <color key="onTintColor" name="AccentColor"/>
+                                                    <connections>
+                                                        <action selector="onSubsribeChange:" destination="hVI-2e-Pvj" eventType="valueChanged" id="sOu-sC-p2J"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <color key="backgroundColor" name="PrimaryColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Lo0-U0-ywv" firstAttribute="centerY" secondItem="t1Z-4X-iTq" secondAttribute="centerY" id="7sD-Wd-hYY"/>
+                                                <constraint firstItem="vL5-B4-G3o" firstAttribute="top" secondItem="t1Z-4X-iTq" secondAttribute="topMargin" constant="8" id="U63-QM-pYS"/>
+                                                <constraint firstItem="vL5-B4-G3o" firstAttribute="centerY" secondItem="t1Z-4X-iTq" secondAttribute="centerY" id="aEh-Gp-Rzw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vL5-B4-G3o" secondAttribute="bottom" constant="8" id="pA7-SG-GaQ"/>
+                                                <constraint firstItem="vL5-B4-G3o" firstAttribute="leading" secondItem="t1Z-4X-iTq" secondAttribute="leadingMargin" id="xmd-gJ-WLY"/>
+                                                <constraint firstItem="Lo0-U0-ywv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vL5-B4-G3o" secondAttribute="trailing" constant="8" id="y76-hq-b3U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lo0-U0-ywv" secondAttribute="trailing" constant="4" id="yCw-Pd-whh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="PrimaryColor"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="vL5-B4-G3o" id="MUF-sH-7IA"/>
+                                            <outlet property="subscribeSwitch" destination="Lo0-U0-ywv" id="BDE-MG-ABB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="UH8-h4-psS" firstAttribute="top" secondItem="Tds-35-llD" secondAttribute="top" constant="8" id="BD3-dZ-Rzu"/>
+                            <constraint firstItem="Tds-35-llD" firstAttribute="trailing" secondItem="UH8-h4-psS" secondAttribute="trailing" id="ETr-ev-hpD"/>
+                            <constraint firstItem="UH8-h4-psS" firstAttribute="leading" secondItem="Tds-35-llD" secondAttribute="leading" id="cYj-xY-UtJ"/>
+                            <constraint firstItem="Tds-35-llD" firstAttribute="bottom" secondItem="UH8-h4-psS" secondAttribute="bottom" id="gLE-84-waJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tds-35-llD"/>
+                    </view>
+                    <connections>
+                        <outlet property="subscriptionsTable" destination="UH8-h4-psS" id="FLT-OL-4XP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8b-x1-dFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="867.85714285714278"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
