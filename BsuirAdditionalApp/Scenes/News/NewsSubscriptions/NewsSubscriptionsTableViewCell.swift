@@ -9,20 +9,23 @@
 import UIKit
 
 class NewsSubscriptionsTableViewCell: UITableViewCell {
-  var currentSource: Source!
+  var currentSource: SourceCache!
+  private var onChange: (Bool) -> Void = { _ in }
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var subscribeSwitch: UISwitch!
   
-  func set(_ source: Source?) {
+  func set(_ source: SourceCache?, onChange: @escaping (Bool) -> Void) {
+    self.onChange = onChange
     guard let source = source else {
       return
     }
     currentSource = source
     nameLabel.text = source.name
-    subscribeSwitch.isOn = source.subscribed ?? false
+    subscribeSwitch.isOn = source.subscribed
   }
   
-  @IBAction func onSubsribeChange(_ sender: Any) {
+  @IBAction func onValueChanged(_ sender: UISwitch) {
+    onChange(sender.isOn)
   }
   
   override func awakeFromNib() {

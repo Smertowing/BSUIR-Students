@@ -16,9 +16,10 @@ protocol NewsSubscriptionsViewModelDelegate: class {
 final class NewsSubscriptionsViewModel {
   weak var delegate: NewsSubscriptionsViewModelDelegate?
   
-  private var sources: [Source] = []
+  private var subscriptions: SubscriptionsCache!
+  private var subscriptionsStrings: [String] = []
   private var categories: [String] = []
-  private var categorizedSources: [String: [Source]] = [:]
+  private var categorizedSources: [String: [SourceCache]] = [:]
   
   private var isFetchInProgress = false
   
@@ -38,7 +39,7 @@ final class NewsSubscriptionsViewModel {
     return categorizedSources[categories[category]]!.count
   }
   
-  func source(at indexPath: IndexPath) -> Source? {
+  func source(at indexPath: IndexPath) -> SourceCache? {
     return categorizedSources[categories[indexPath.section]]?[indexPath.row]
   }
 
@@ -48,6 +49,26 @@ final class NewsSubscriptionsViewModel {
     }
 
     fetchSources()
+  }
+  
+  func getSavedSubscription() {
+    subscriptions = DataManager.shared.subscriptions
+    self.delegate?.onFetchCompleted()
+  }
+  
+  func updateSubcription(indexPath: IndexPath, subscribe: Bool) {
+    categorizedSources[categories[indexPath.section]]?[indexPath.row].subscribed = subscribe
+    guard let alias = categorizedSources[categories[indexPath.section]]?[indexPath.row].alias else {
+      return
+    }
+    if subscribe {
+      subscriptionsStrings.append(alias)
+    } else {
+      subscriptionsStrings.removeAll { (subscribed) -> Bool in
+        return subscribed == alias
+      }
+    }
+    updateSubscriptions(with: subscriptionsStrings)
   }
   
   private func fetchSources(completion: (() -> Void)? = nil) {
@@ -60,18 +81,16 @@ final class NewsSubscriptionsViewModel {
     NetworkingManager.news.getSources { (answer) in
       switch answer {
       case .success(let sources):
-        DispatchQueue.main.async {
-          completion?()
-          self.isFetchInProgress = false
-          self.sources = sources
-          self.fetchSourcesStatus()
-        }
+        completion?()
+        self.isFetchInProgress = false
+        self.subscriptions = SubscriptionsCache(sources: sources)
+        self.delegate?.onFetchCompleted()
+        DataManager.shared.subscriptions = self.subscriptions
+        self.fetchSourcesStatus()
       case .failure(let error):
-        DispatchQueue.main.async {
-          completion?()
-          self.isFetchInProgress = false
-          self.delegate?.onFetchFailed(with: error)
-        }
+        completion?()
+        self.isFetchInProgress = false
+        self.delegate?.onFetchFailed(with: error)
       }
     }
   }
@@ -86,26 +105,38 @@ final class NewsSubscriptionsViewModel {
     NetworkingManager.news.getSubscriptions { (answer) in
       switch answer {
       case .success(let subs):
-        DispatchQueue.main.async {
-          completion?()
-          self.isFetchInProgress = false
-          self.sortSources(with: subs)
-          self.delegate?.onFetchCompleted()
-        }
+        completion?()
+        self.isFetchInProgress = false
+        self.sortSources(with: subs)
+        self.delegate?.onFetchCompleted()
+        DataManager.shared.subscriptions = self.subscriptions
       case .failure(let error):
-        DispatchQueue.main.async {
-          completion?()
-          self.isFetchInProgress = false
-          self.delegate?.onFetchFailed(with: error)
-        }
+        completion?()
+        self.isFetchInProgress = false
+        self.delegate?.onFetchFailed(with: error)
+      }
+    }
+  }
+  
+  private func updateSubscriptions(with subs: [String]) {
+    NetworkingManager.news.subscribe(to: subs) { (answer) in
+      switch answer {
+      case .success(let subs):
+        self.isFetchInProgress = false
+        self.sortSources(with: subs)
+        self.delegate?.onFetchCompleted()
+        DataManager.shared.subscriptions = self.subscriptions
+      case .failure(let error):
+        print(error)
       }
     }
   }
   
   private func sortSources(with subs: [String]) {
+    subscriptionsStrings = subs
     categories = []
     categorizedSources = [:]
-    for var source in sources {
+    for source in self.subscriptions.sources {
       if subs.contains(source.alias)  {
         source.subscribed = true
       } else {

@@ -31,6 +31,7 @@ class NewsSubscriptionsViewController: UIViewController {
   
   private func setupViewModel() {
     viewModel.delegate = self
+    viewModel.getSavedSubscription()
   }
 
   func configureEventsTable() {
@@ -87,7 +88,9 @@ extension NewsSubscriptionsViewController: UITableViewDelegate, UITableViewDataS
       return UITableViewCell()
     }
     
-    cell.set(viewModel.source(at: indexPath))
+    cell.set(viewModel.source(at: indexPath)) { subscribe in
+      self.viewModel.updateSubcription(indexPath: indexPath, subscribe: subscribe)
+    }
     
     cell.layer.borderColor = AppColors.backgroundColor.cgColor()
     cell.layer.masksToBounds = true

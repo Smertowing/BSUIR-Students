@@ -327,7 +327,7 @@
                                                     <rect key="frame" x="341" y="17.5" width="51" height="31"/>
                                                     <color key="onTintColor" name="AccentColor"/>
                                                     <connections>
-                                                        <action selector="onSubsribeChange:" destination="hVI-2e-Pvj" eventType="valueChanged" id="sOu-sC-p2J"/>
+                                                        <action selector="onValueChanged:" destination="hVI-2e-Pvj" eventType="valueChanged" id="ENJ-IC-cgG"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>

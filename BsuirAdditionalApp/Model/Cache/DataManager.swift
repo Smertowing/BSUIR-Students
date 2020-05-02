@@ -23,6 +23,16 @@ final class DataManager {
       DataCache.instance.write(object: newValue, forKey: DataCacheKeys.filter.rawValue)
     }
   }
+  
+  var subscriptions: SubscriptionsCache {
+    get {
+      return (DataCache.instance.readObject(forKey: DataCacheKeys.subscription.rawValue) as? SubscriptionsCache ?? SubscriptionsCache(sources: []))
+    }
+    set {
+      DataCache.instance.clean(byKey: DataCacheKeys.subscription.rawValue)
+      DataCache.instance.write(object: newValue, forKey: DataCacheKeys.subscription.rawValue)
+    }
+  }
 
   var buildings: BuildingsCache {
     get {

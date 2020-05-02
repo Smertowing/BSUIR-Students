@@ -108,7 +108,7 @@ class NewsAdapter {
     }
   }
   
-  func subscribe(to sources: [Source], completion: @escaping (Result<([Source]), NetworkError>) -> Void) {
+  func subscribe(to sources: [String], completion: @escaping (Result<([String]), NetworkError>) -> Void) {
     UIApplication.shared.isNetworkActivityIndicatorVisible = true
     NewsAdapter.provider.request(.subscribe(to: sources)) { (result) in
       UIApplication.shared.isNetworkActivityIndicatorVisible = false

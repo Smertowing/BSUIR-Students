@@ -13,7 +13,7 @@ enum NewsProvider {
   case searchNews(page: Int?, newsAtPage: Int?, sort: Sort?, filters: [Filter]?)
   case getSources
   case getSubscriptions
-  case subscribe(to: [Source])
+  case subscribe(to: [String])
 }
 
 extension NewsProvider: TargetType {
@@ -96,7 +96,7 @@ extension NewsProvider: TargetType {
     case .subscribe(let to):
       return .requestParameters(
         parameters: ["newsSourcesAliases": to],
-        encoding: URLEncoding.default
+        encoding: JSONEncoding.default
       )
     }
   }
