@@ -62,8 +62,7 @@ class MenuViewController: UITableViewController {
   }
 
   func logout() {
-    DataManager.shared.logout()
-    ProfileManager.shared.logout()
+    viewModel.signOut()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let startViewController = storyboard.instantiateViewController(withIdentifier: "firstScreen")
     UIApplication.shared.keyWindow?.rootViewController = startViewController

@@ -50,4 +50,10 @@ final class MenuViewModel {
       }
     }
   }
+  
+  func signOut() {
+    NetworkingManager.notifications.unsubscribe(with: ProfileManager.shared.deviceToken) { _ in }
+    DataManager.shared.logout()
+    ProfileManager.shared.logout()
+  }
 }

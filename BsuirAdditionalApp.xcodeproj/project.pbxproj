@@ -51,6 +51,9 @@
 		FA3260FC239466AF004B1410 /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */; };
 		FA3261032394789B004B1410 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3261022394789B004B1410 /* NewsDetailsViewController.swift */; };
 		FA36D6AC23A2492D00714FCF /* MarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36D6AB23A2492D00714FCF /* MarkCell.swift */; };
+		FA37EDD2245F032400BC502C /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA37EDD1245F032400BC502C /* AuthenticationServices.framework */; };
+		FA37EDD4245F054300BC502C /* NotificationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37EDD3245F054300BC502C /* NotificationsProvider.swift */; };
+		FA37EDD6245F063200BC502C /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37EDD5245F063200BC502C /* NotificationsAdapter.swift */; };
 		FA3B4EA22454570A00F01AC2 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B4EA12454570A00F01AC2 /* UIImageExt.swift */; };
 		FA3B4EA82454B45800F01AC2 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B4EA72454B45800F01AC2 /* NewsDetailsViewModel.swift */; };
 		FA64D385239DC10700E96C11 /* AuditoriumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */; };
@@ -160,6 +163,10 @@
 		FA3260FB239466AF004B1410 /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		FA3261022394789B004B1410 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		FA36D6AB23A2492D00714FCF /* MarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkCell.swift; sourceTree = "<group>"; };
+		FA37EDD0245F031700BC502C /* Bsuir.Student.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bsuir.Student.entitlements; sourceTree = "<group>"; };
+		FA37EDD1245F032400BC502C /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		FA37EDD3245F054300BC502C /* NotificationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsProvider.swift; sourceTree = "<group>"; };
+		FA37EDD5245F063200BC502C /* NotificationsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsAdapter.swift; sourceTree = "<group>"; };
 		FA3B4EA12454570A00F01AC2 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		FA3B4EA72454B45800F01AC2 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
 		FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsListViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA37EDD2245F032400BC502C /* AuthenticationServices.framework in Frameworks */,
 				6B1459C3D513DCDC6F980F3A /* Pods_BsuirAdditionalApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +258,7 @@
 		A87E57A84C711E7CFB20B40D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA37EDD1245F032400BC502C /* AuthenticationServices.framework */,
 				7B1DCCF9E11A81C0BA5FF588 /* Pods_BsuirAdditionalApp.framework */,
 			);
 			name = Frameworks;
@@ -300,6 +309,7 @@
 		FA32609123940BF1004B1410 /* BsuirAdditionalApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA37EDD0245F031700BC502C /* Bsuir.Student.entitlements */,
 				FA32609223940BF1004B1410 /* AppDelegate.swift */,
 				FA3260C32394143E004B1410 /* Config */,
 				FA3260AC2394102E004B1410 /* Extensions */,
@@ -375,6 +385,7 @@
 			children = (
 				FA3260B2239412EB004B1410 /* AuditoriumsAdapter.swift */,
 				FA3260C123941390004B1410 /* NewsAdapter.swift */,
+				FA37EDD5245F063200BC502C /* NotificationsAdapter.swift */,
 				FA3260BF23941383004B1410 /* IISAdapter.swift */,
 				FA3260BD2394137A004B1410 /* FilesAdapter.swift */,
 			);
@@ -386,6 +397,7 @@
 			children = (
 				FA3260B52394133D004B1410 /* AuditoriumsProvider.swift */,
 				FA3260B723941357004B1410 /* NewsProvider.swift */,
+				FA37EDD3245F054300BC502C /* NotificationsProvider.swift */,
 				FA3260B923941365004B1410 /* IISProvider.swift */,
 				FA3260BB2394136F004B1410 /* FilesProvider.swift */,
 			);
@@ -887,6 +899,7 @@
 				FA3260F523945C46004B1410 /* NewsViewModel.swift in Sources */,
 				FAB058FE239CEFFF00664358 /* NewsFilterViewController.swift in Sources */,
 				FA3260EA23944B8C004B1410 /* LoginViewModel.swift in Sources */,
+				FA37EDD4245F054300BC502C /* NotificationsProvider.swift in Sources */,
 				FA3260E4239449AA004B1410 /* LaunchViewController.swift in Sources */,
 				FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */,
 				FAA7F72723A23D270095783E /* SemesterView.swift in Sources */,
@@ -902,6 +915,7 @@
 				FA3260B3239412EB004B1410 /* AuditoriumsAdapter.swift in Sources */,
 				FA3260BC2394136F004B1410 /* FilesProvider.swift in Sources */,
 				FA3260D923943B94004B1410 /* Token.swift in Sources */,
+				FA37EDD6245F063200BC502C /* NotificationsAdapter.swift in Sources */,
 				FA6D4B6323A1B10E00390B9D /* SettingsViewController.swift in Sources */,
 				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA765D0423A18CF3001CC348 /* EducationCache.swift in Sources */,
@@ -1162,6 +1176,7 @@
 			baseConfigurationReference = 6608CE897E25F119F72AB452 /* Pods-BsuirAdditionalApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BsuirAdditionalApp/Bsuir.Student.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
@@ -1170,7 +1185,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.bsuirstudent;
 				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1182,6 +1197,7 @@
 			baseConfigurationReference = 112FDD627729347556FF94E8 /* Pods-BsuirAdditionalApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BsuirAdditionalApp/Bsuir.Student.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
@@ -1190,7 +1206,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.BsuirAdditionalApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.bsuirstudent;
 				PRODUCT_NAME = Bsuir.Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

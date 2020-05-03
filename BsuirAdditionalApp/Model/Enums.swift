@@ -61,4 +61,5 @@ enum DataCacheKeys: String {
 enum ProfileKeys: String {
   case isLogged = "isLogged"
   case token = "token"
+  case deviceToken = "deviceToken"
 }

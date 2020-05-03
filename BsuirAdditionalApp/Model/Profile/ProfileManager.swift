@@ -29,6 +29,15 @@ final class ProfileManager {
       userdefaults.set(newValue, forKey: ProfileKeys.token.rawValue)
     }
   }
+  
+  var deviceToken: String {
+    get {
+      return userdefaults.string(forKey: ProfileKeys.deviceToken.rawValue) ?? ""
+    }
+    set {
+      userdefaults.set(newValue, forKey: ProfileKeys.deviceToken.rawValue)
+    }
+  }
 
   func login() {
     userdefaults.set(true, forKey: ProfileKeys.isLogged.rawValue)

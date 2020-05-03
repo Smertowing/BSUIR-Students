@@ -13,6 +13,7 @@ final class NetworkingManager {
 
   static let auditoriums = AuditoriumsAdapter()
   static let news = NewsAdapter()
+  static let notifications = NotificationsAdapter()
   static let iis = IISAdapter()
   static let files = FilesAdapter()
 }

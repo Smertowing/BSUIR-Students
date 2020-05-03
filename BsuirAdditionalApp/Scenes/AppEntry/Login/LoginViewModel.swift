@@ -22,10 +22,15 @@ final class LoginViewModel {
       case .success(let response):
         ProfileManager.shared.token = response.token
         ProfileManager.shared.login()
+        self.registerToNotifications()
         self.delegate?.loggedIn()
       case .failure(let error):
         self.delegate?.showError(error: error)
       }
     }
+  }
+  
+  private func registerToNotifications() {
+    NetworkingManager.notifications.subscribe(with: ProfileManager.shared.deviceToken) { _ in }
   }
 }
