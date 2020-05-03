@@ -28,7 +28,6 @@ class FreeAuditoriumsViewController: FormViewController {
   private func setupViewModel() {
     viewModel.delegate = self
     viewModel.getSavedBuildings()
-    viewModel.fetchBuildings()
   }
 
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

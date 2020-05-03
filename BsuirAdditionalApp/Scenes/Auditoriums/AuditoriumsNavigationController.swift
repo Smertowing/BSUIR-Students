@@ -17,5 +17,14 @@ class AuditoriumsNavigationController: UINavigationController {
     let navigationBarAppearace = UINavigationBar.appearance()
     navigationBarAppearace.tintColor = AppColors.accentColor.uiColor()
     navigationBarAppearace.barTintColor = AppColors.barsColor.uiColor()
+    
+    NetworkingManager.auditoriums.getBuildings { (answer) in
+      switch answer {
+      case .success(let buildings):
+        DataManager.shared.buildings = BuildingsCache(buildings: buildings)
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
 }

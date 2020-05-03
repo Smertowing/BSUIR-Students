@@ -25,15 +25,19 @@ class LoginViewController: UIViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     signinButton.layer.cornerRadius = 5
+    signinButton.isEnabled = false
+    signinButton.backgroundColor = UIColor.gray
     setupViewModel()
     loginField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
     loginField.attributedPlaceholder = NSAttributedString(string: "Login",
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     loginField.addTarget(self, action: #selector(loginPrimaryAction), for: UIControl.Event.primaryActionTriggered)
+    loginField.addTarget(self, action: #selector(checkSignIn), for: UIControl.Event.editingChanged)
     passwordField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
     passwordField.attributedPlaceholder = NSAttributedString(string: "Password",
                                                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
     passwordField.addTarget(self, action: #selector(passwordPrimaryAction), for: UIControl.Event.primaryActionTriggered)
+    passwordField.addTarget(self, action: #selector(checkSignIn), for: UIControl.Event.editingChanged)
   }
 
   private func setupViewModel() {
@@ -59,6 +63,16 @@ class LoginViewController: UIViewController {
   
   @objc func passwordPrimaryAction(textField: UITextField) {
     signinClicked(self)
+  }
+  
+  @objc func checkSignIn(textField: UITextField) {
+    if !(loginField.text?.isEmpty ?? true) && !(passwordField.text?.isEmpty ?? true) {
+      signinButton.isEnabled = true
+      self.signinButton.backgroundColor = AppColors.accentColor.uiColor()
+    } else {
+      signinButton.isEnabled = false
+      signinButton.backgroundColor = UIColor.gray
+    }
   }
 }
 

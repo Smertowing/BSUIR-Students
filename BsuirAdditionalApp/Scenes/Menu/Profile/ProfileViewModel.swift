@@ -60,7 +60,9 @@ final class ProfileViewModel {
       for skill in user.skills {
         result.append("\(skill.name), ")
       }
-      result.removeLast(2)
+      if !result.isEmpty {
+        result.removeLast(2)
+      }
       return result
     } else {
       return " "

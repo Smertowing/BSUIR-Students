@@ -51,18 +51,6 @@ final class FreeAuditoriumsViewModel {
     self.delegate?.refreshForm()
   }
 
-  func fetchBuildings() {
-    NetworkingManager.auditoriums.getBuildings { (answer) in
-      switch answer {
-      case .success(let buildings):
-        DataManager.shared.buildings = BuildingsCache(buildings: buildings)
-        self.getSavedBuildings()
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
-
   func findAuditories(building: String?, floor: String?, date: Date?, time: Date?) {
     guard let building = building, let buildimgNumber = Int(building), let date = date, let time = time else {
       self.delegate.searchFailed(with: NetworkError.invalidRequest)
