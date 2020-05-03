@@ -31,7 +31,7 @@ class NewsSubscriptionsViewController: UIViewController {
   
   private func setupViewModel() {
     viewModel.delegate = self
-    viewModel.getSavedSubscription()
+    viewModel.getSavedSubscriptions()
   }
 
   func configureEventsTable() {

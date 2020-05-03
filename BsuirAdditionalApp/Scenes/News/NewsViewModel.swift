@@ -58,7 +58,8 @@ final class NewsViewModel {
     return news[index]
   }
   
-  private var tabs: [Source] = []
+  private var subscriptions: SubscriptionsCache!
+  private var tabs: [SourceCache] = []
   private var currentTabNumber = 0
 
   var numberOfTabs: Int {
@@ -69,13 +70,24 @@ final class NewsViewModel {
     return currentTabNumber
   }
   
-  func tab(at index: Int) -> Source {
+  func tab(at index: Int) -> SourceCache {
     return tabs[index]
   }
   
   func updateTab(to index: Int) {
     currentTabNumber = index
+    refresh(refresher: false)
+  }
+  
+  func getSavedSubscriptions() {
+    subscriptions = DataManager.shared.subscriptions
+    for source in subscriptions.sources {
+      if source.subscribed  {
+        tabs.append(source)
+      }
+    }
     delegate?.reloadTabs()
+    fetchSources()
   }
   
   var fetching: Bool {
@@ -107,8 +119,23 @@ final class NewsViewModel {
     }
 
     isFetchInProgress = true
-
-    NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, sort: nil, filters: []) { (answer) in
+    
+    var filters: [Filter] = []
+    if currentTab == 1 {
+      filters.append(Filter(type: .string,
+                            comparison: .includes,
+                            value: tabs.map({ (tab) -> String in
+                              return tab.alias
+                            }),
+                            field: "source.alias"))
+    } else if currentTab > 1 {
+      filters.append(Filter(type: .string,
+                            comparison: .equels,
+                            value: [tabs[currentTab-2].alias],
+                            field: "source.alias"))
+    }
+    
+    NetworkingManager.news.getNewsList(page: page, newsAtPage: perPage, sort: nil, filters: filters) { (answer) in
       switch answer {
       case .success(let newsList):
         DispatchQueue.main.async {
@@ -123,6 +150,52 @@ final class NewsViewModel {
           self.isFetchInProgress = false
           self.delegate?.onFetchFailed(with: error)
         }
+      }
+    }
+  }
+  
+  private func fetchSources(completion: (() -> Void)? = nil) {
+    NetworkingManager.news.getSources { (answer) in
+      switch answer {
+      case .success(let sources):
+        DispatchQueue.main.async {
+          completion?()
+          self.subscriptions = SubscriptionsCache(sources: sources)
+          DataManager.shared.subscriptions = self.subscriptions
+          self.fetchSourcesStatus()
+        }
+      case .failure(let error):
+        completion?()
+        print(error)
+      }
+    }
+  }
+  
+  private func fetchSourcesStatus(completion: (() -> Void)? = nil) {
+    NetworkingManager.news.getSubscriptions { (answer) in
+      switch answer {
+      case .success(let subs):
+        DispatchQueue.main.async {
+          completion?()
+          self.sortSources(with: subs)
+          DataManager.shared.subscriptions = self.subscriptions
+          self.delegate?.reloadTabs()
+        }
+      case .failure(let error):
+        completion?()
+        print(error)
+      }
+    }
+  }
+  
+  private func sortSources(with subs: [String]) {
+    tabs = []
+    for source in self.subscriptions.sources {
+      if subs.contains(source.alias)  {
+        source.subscribed = true
+        tabs.append(source)
+      } else {
+        source.subscribed = false
       }
     }
   }

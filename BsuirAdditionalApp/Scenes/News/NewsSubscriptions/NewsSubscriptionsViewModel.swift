@@ -21,12 +21,6 @@ final class NewsSubscriptionsViewModel {
   private var categories: [String] = []
   private var categorizedSources: [String: [SourceCache]] = [:]
   
-  private var isFetchInProgress = false
-  
-  var fetching: Bool {
-    return isFetchInProgress
-  }
-  
   var categoriesCount: Int {
     return categories.count
   }
@@ -44,14 +38,10 @@ final class NewsSubscriptionsViewModel {
   }
 
   func refresh(refresher: Bool) {
-    guard !isFetchInProgress else {
-      return
-    }
-
     fetchSources()
   }
   
-  func getSavedSubscription() {
+  func getSavedSubscriptions() {
     subscriptions = DataManager.shared.subscriptions
     self.delegate?.onFetchCompleted()
   }
@@ -72,48 +62,40 @@ final class NewsSubscriptionsViewModel {
   }
   
   private func fetchSources(completion: (() -> Void)? = nil) {
-    guard !isFetchInProgress else {
-      return
-    }
-
-    isFetchInProgress = true
-
     NetworkingManager.news.getSources { (answer) in
       switch answer {
       case .success(let sources):
-        completion?()
-        self.isFetchInProgress = false
-        self.subscriptions = SubscriptionsCache(sources: sources)
-        self.delegate?.onFetchCompleted()
-        DataManager.shared.subscriptions = self.subscriptions
+        DispatchQueue.main.async {
+          completion?()
+          self.subscriptions = SubscriptionsCache(sources: sources)
+          self.delegate?.onFetchCompleted()
+          DataManager.shared.subscriptions = self.subscriptions
+        }
         self.fetchSourcesStatus()
       case .failure(let error):
-        completion?()
-        self.isFetchInProgress = false
-        self.delegate?.onFetchFailed(with: error)
+        DispatchQueue.main.async {
+          completion?()
+          self.delegate?.onFetchFailed(with: error)
+        }
       }
     }
   }
   
   private func fetchSourcesStatus(completion: (() -> Void)? = nil) {
-    guard !isFetchInProgress else {
-      return
-    }
-
-    isFetchInProgress = true
-    
     NetworkingManager.news.getSubscriptions { (answer) in
       switch answer {
       case .success(let subs):
-        completion?()
-        self.isFetchInProgress = false
-        self.sortSources(with: subs)
-        self.delegate?.onFetchCompleted()
-        DataManager.shared.subscriptions = self.subscriptions
+        DispatchQueue.main.async {
+          completion?()
+          self.sortSources(with: subs)
+          self.delegate?.onFetchCompleted()
+          DataManager.shared.subscriptions = self.subscriptions
+        }
       case .failure(let error):
-        completion?()
-        self.isFetchInProgress = false
-        self.delegate?.onFetchFailed(with: error)
+        DispatchQueue.main.async {
+          completion?()
+          self.delegate?.onFetchFailed(with: error)
+        }
       }
     }
   }
@@ -122,10 +104,11 @@ final class NewsSubscriptionsViewModel {
     NetworkingManager.news.subscribe(to: subs) { (answer) in
       switch answer {
       case .success(let subs):
-        self.isFetchInProgress = false
-        self.sortSources(with: subs)
-        self.delegate?.onFetchCompleted()
-        DataManager.shared.subscriptions = self.subscriptions
+        DispatchQueue.main.async {
+          self.sortSources(with: subs)
+          self.delegate?.onFetchCompleted()
+          DataManager.shared.subscriptions = self.subscriptions
+        }
       case .failure(let error):
         print(error)
       }

@@ -30,6 +30,7 @@ class NewsViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     self.view.isUserInteractionEnabled = true
+    viewModel.getSavedSubscriptions()
     viewModel.refresh(refresher: false)
   }
 
@@ -44,7 +45,7 @@ class NewsViewController: UIViewController {
     newsTable.tableFooterView = UIView()
     newsTable.backgroundView = EmptyBackgroundView.instanceFromNib()
     newsTable.separatorColor = AppColors.textFieldColor.uiColor()
-
+    
     newsTable.refreshControl = UIRefreshControl()
     newsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...")
     newsTable.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
@@ -133,21 +134,29 @@ extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    if let cell = collectionView.cellForItem(at: indexPath) as? NewsCollectionViewCell {
+      cell.accentView.backgroundColor = AppColors.accentColor.uiColor()
+    }
     viewModel.updateTab(to: indexPath.row)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    if let cell = collectionView.cellForItem(at: indexPath) as? NewsCollectionViewCell {
+      cell.accentView.backgroundColor = UIColor.clear
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tabCell", for: indexPath) as! NewsCollectionViewCell
-    
-    if indexPath.row == 0 {
+    if indexPath.row == 1 {
       cell.tabNameLabel.text = "Подписки"
-    } else if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 {
+    } else if indexPath.row == 0 {
       cell.tabNameLabel.text = "Все новости"
     } else {
-      cell.tabNameLabel.text = viewModel.tab(at: indexPath.row - 1).name
+      cell.tabNameLabel.text = viewModel.tab(at: indexPath.row - 2).name
     }
     
-    if indexPath.row == viewModel.currentTab {
+    if cell.isSelected {
       cell.accentView.backgroundColor = AppColors.accentColor.uiColor()
     } else {
       cell.accentView.backgroundColor = UIColor.clear
@@ -175,7 +184,7 @@ private extension NewsViewController {
 extension NewsViewController: NewsViewModelDelegate {
   func reloadTabs() {
     newsTabCollection.reloadData()
-    newsTable.reloadData()
+    newsTabCollection.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
   }
   
   func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {

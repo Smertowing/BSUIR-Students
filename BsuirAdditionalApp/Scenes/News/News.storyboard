@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnE-ff-sQM">
-                                <rect key="frame" x="8" y="44" width="414" height="44"/>
+                                <rect key="frame" x="8" y="44" width="398" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Tbk-52-1ei"/>
@@ -56,6 +56,7 @@
                                                 <constraint firstItem="CpE-y1-6X0" firstAttribute="leading" secondItem="jVD-ra-DUh" secondAttribute="leading" constant="8" id="EOU-Fy-HKT"/>
                                                 <constraint firstItem="5TR-iu-lqu" firstAttribute="top" secondItem="CpE-y1-6X0" secondAttribute="bottom" constant="7" id="NCg-et-tdb"/>
                                                 <constraint firstItem="CpE-y1-6X0" firstAttribute="centerX" secondItem="jVD-ra-DUh" secondAttribute="centerX" id="PKf-1K-0Cg"/>
+                                                <constraint firstAttribute="trailing" secondItem="CpE-y1-6X0" secondAttribute="trailing" constant="8" id="PdF-KD-6pr"/>
                                                 <constraint firstAttribute="trailing" secondItem="5TR-iu-lqu" secondAttribute="trailing" constant="6" id="U99-7p-vwZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="5TR-iu-lqu" secondAttribute="bottom" id="da3-Wl-zdt"/>
                                                 <constraint firstItem="5TR-iu-lqu" firstAttribute="leading" secondItem="jVD-ra-DUh" secondAttribute="leading" constant="6" id="fEj-Mj-OYe"/>
@@ -158,9 +159,9 @@
                             <constraint firstAttribute="bottom" secondItem="Ut6-8u-VEk" secondAttribute="bottom" id="0ba-Ym-8rx"/>
                             <constraint firstItem="VnE-ff-sQM" firstAttribute="leading" secondItem="83I-Dv-uSN" secondAttribute="leading" constant="8" id="DSn-bh-8pK"/>
                             <constraint firstItem="Ut6-8u-VEk" firstAttribute="leading" secondItem="83I-Dv-uSN" secondAttribute="leading" id="drO-FL-HuI"/>
+                            <constraint firstItem="VnE-ff-sQM" firstAttribute="centerX" secondItem="gZR-Jy-qy3" secondAttribute="centerX" id="ezh-1Q-ltq"/>
                             <constraint firstItem="VnE-ff-sQM" firstAttribute="top" secondItem="83I-Dv-uSN" secondAttribute="top" id="hPp-EJ-SfQ"/>
                             <constraint firstAttribute="trailing" secondItem="Ut6-8u-VEk" secondAttribute="trailing" id="mfa-c6-e0h"/>
-                            <constraint firstItem="VnE-ff-sQM" firstAttribute="trailing" secondItem="83I-Dv-uSN" secondAttribute="trailing" constant="8" id="osc-yX-aif"/>
                             <constraint firstItem="Ut6-8u-VEk" firstAttribute="top" secondItem="VnE-ff-sQM" secondAttribute="bottom" id="rxj-7N-Nog"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="83I-Dv-uSN"/>
