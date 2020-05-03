@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Подзаголовок"; ObjectID = "AWr-0h-TgJ"; */
+"AWr-0h-TgJ.text" = "Подзаголовок";
+
+/* Class = "UILabel"; text = "Все новости"; ObjectID = "CpE-y1-6X0"; */
+"CpE-y1-6X0.text" = "Все новости";
+
+/* Class = "UIButton"; normalTitle = "Открыть в источнике"; ObjectID = "UFD-Ua-Llg"; */
+"UFD-Ua-Llg.normalTitle" = "Открыть в источнике";
+
+/* Class = "UILabel"; text = "Заголовок"; ObjectID = "h1q-Xi-Ma2"; */
+"h1q-Xi-Ma2.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Подзаголовок"; ObjectID = "mFf-Er-9zh"; */
+"mFf-Er-9zh.text" = "Подзаголовок";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "oLA-wi-XdW"; */
+"oLA-wi-XdW.text" = "Дата";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "qum-Cc-Uxy"; */
+"qum-Cc-Uxy.text" = "Дата";
+
+/* Class = "UILabel"; text = "Источник"; ObjectID = "vL5-B4-G3o"; */
+"vL5-B4-G3o.text" = "Источник";
+
+/* Class = "UILabel"; text = "Заголовок"; ObjectID = "zIJ-AB-doo"; */
+"zIJ-AB-doo.text" = "Заголовок";

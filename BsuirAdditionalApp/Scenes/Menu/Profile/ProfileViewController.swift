@@ -23,7 +23,7 @@ class ProfileViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Меню"
+    navigationItem.title = "Меню".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     loadSpinner()

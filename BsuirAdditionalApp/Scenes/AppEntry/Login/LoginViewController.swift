@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
     if let username = loginField.text, let password = passwordField.text, (username.trimmingCharacters(in: .whitespacesAndNewlines) != "") && (password.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
       viewModel.auth(login: username, password: password)
     } else {
-      showAlert(title: "Ошибка", message: "Некорректные данные в полях ввода") {
+      showAlert(title: "Ошибка".localized, message: "Некорректные данные в полях ввода".localized) {
         self.signinButton.isEnabled = true
         self.signinButton.backgroundColor = AppColors.accentColor.uiColor()
       }

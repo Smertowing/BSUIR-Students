@@ -16,7 +16,7 @@ class NewsSubscriptionsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Подписки"
+    navigationItem.title = "Подписки".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     setupViewModel()
@@ -43,7 +43,7 @@ class NewsSubscriptionsViewController: UIViewController {
     
     
     subscriptionsTable.refreshControl = UIRefreshControl()
-    subscriptionsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...")
+    subscriptionsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...".localized)
     subscriptionsTable.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
   }
   

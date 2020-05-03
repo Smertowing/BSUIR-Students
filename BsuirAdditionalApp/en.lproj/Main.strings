@@ -1,9 +1,9 @@
 
 /* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "J0Y-kl-IBT"; */
-"J0Y-kl-IBT.normalTitle" = "Войти";
+"J0Y-kl-IBT.normalTitle" = "Log In";
 
 /* Class = "UILabel"; text = "Студент БГУИР"; ObjectID = "gew-WP-tAd"; */
-"gew-WP-tAd.text" = "Студент БГУИР";
+"gew-WP-tAd.text" = "BSUIR Student";
 
 /* Class = "UILabel"; text = "Студент БГУИР"; ObjectID = "tzy-D4-lZe"; */
-"tzy-D4-lZe.text" = "Студент БГУИР";
+"tzy-D4-lZe.text" = "BSUIR Student";

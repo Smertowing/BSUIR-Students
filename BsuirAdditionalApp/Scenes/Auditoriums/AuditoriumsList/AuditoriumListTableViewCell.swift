@@ -23,11 +23,11 @@ class AuditoriumListTableViewCell: UITableViewCell {
     nameLabel.text = "\(currentAuditorium.name)-\(currentAuditorium.building)"
     switch currentAuditorium.type {
     case .lecture:
-      subNameLabel.text = "Лекционный зал"
+      subNameLabel.text = "Лекционный зал".localized
     case .lab:
-      subNameLabel.text = "Лабораторные занятия"
+      subNameLabel.text = "Лабораторные занятия".localized
     case .practice:
-      subNameLabel.text = "Практические занятия"
+      subNameLabel.text = "Практические занятия".localized
     }
   }
 

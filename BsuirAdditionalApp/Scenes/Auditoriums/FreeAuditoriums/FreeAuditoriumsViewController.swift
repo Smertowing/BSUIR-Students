@@ -15,8 +15,8 @@ class FreeAuditoriumsViewController: FormViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    title = "Свободные аудитории"
-    self.navigationItem.setRightBarButton(UIBarButtonItem(title: "Искать", style: .plain, target: self, action: #selector(self.createButtonClicked)), animated: false)
+    title = "Свободные аудитории".localized
+    self.navigationItem.setRightBarButton(UIBarButtonItem(title: "Искать".localized, style: .plain, target: self, action: #selector(self.createButtonClicked)), animated: false)
     navigationController?.title = nil
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
@@ -41,8 +41,8 @@ class FreeAuditoriumsViewController: FormViewController {
 
     form
       +++
-      Section("Корпус")
-      <<< SegmentedRow<String>("Корпус") {
+      Section("Корпус".localized)
+      <<< SegmentedRow<String>("Корпус".localized) {
         $0.options = viewModel.buildingsNames
         $0.value = "1"
       }.cellSetup { cell, _ in
@@ -51,16 +51,16 @@ class FreeAuditoriumsViewController: FormViewController {
         cell.backgroundColor = AppColors.primaryColor.uiColor()
         cell.tintColor = AppColors.accentColor.uiColor()
       }.onChange({ (row) in
-        let secondRow = self.form.rowBy(tag: "Этаж") as? SegmentedRow<String>
+        let secondRow = self.form.rowBy(tag: "Этаж".localized) as? SegmentedRow<String>
         secondRow?.options = self.viewModel.floors(by: row.value ?? "")
         secondRow?.value = nil
         secondRow?.reload()
       })
 
       +++
-      Section("Этаж")
-      <<< SegmentedRow<String>("Этаж") {
-        let firstRow = self.form.rowBy(tag: "Корпус") as? SegmentedRow<String>
+      Section("Этаж".localized)
+      <<< SegmentedRow<String>("Этаж".localized) {
+        let firstRow = self.form.rowBy(tag: "Корпус".localized) as? SegmentedRow<String>
         $0.options = viewModel.floors(by: firstRow?.value ?? "")
         $0.value = nil
       }.cellSetup { cell, _ in
@@ -71,8 +71,8 @@ class FreeAuditoriumsViewController: FormViewController {
       }
 
       +++
-      Section("Когда ")
-      <<< DateRow("Дата") {
+      Section("Когда".localized)
+      <<< DateRow("Дата".localized) {
         $0.title = $0.tag
         $0.value = Date()
       }.cellSetup { cell, _ in
@@ -82,7 +82,7 @@ class FreeAuditoriumsViewController: FormViewController {
         cell.tintColor = AppColors.accentColor.uiColor()
       }
 
-      <<< TimeRow("Время") {
+      <<< TimeRow("Время".localized) {
         $0.title = $0.tag
         $0.value = Date()
       }.cellSetup { cell, _ in
@@ -94,8 +94,8 @@ class FreeAuditoriumsViewController: FormViewController {
 
       +++
       Section()
-      <<< ButtonRow("Искать") { (row: ButtonRow) -> Void in
-        row.title = "Искать"
+      <<< ButtonRow("Искать".localized) { (row: ButtonRow) -> Void in
+        row.title = "Искать".localized
       }
       .onCellSelection { (_, _) in
         self.createButtonClicked()
@@ -110,10 +110,10 @@ class FreeAuditoriumsViewController: FormViewController {
 
   @objc func createButtonClicked() {
     if form.validate().isEmpty {
-      let building: SegmentedRow<String>! = form.rowBy(tag: "Корпус") as? SegmentedRow<String>
-      let floor: SegmentedRow<String>! = form.rowBy(tag: "Этаж") as? SegmentedRow<String>
-      let date: DateRow! = form.rowBy(tag: "Дата")
-      let time: TimeRow! = form.rowBy(tag: "Время")
+      let building: SegmentedRow<String>! = form.rowBy(tag: "Корпус".localized) as? SegmentedRow<String>
+      let floor: SegmentedRow<String>! = form.rowBy(tag: "Этаж".localized) as? SegmentedRow<String>
+      let date: DateRow! = form.rowBy(tag: "Дата".localized)
+      let time: TimeRow! = form.rowBy(tag: "Время".localized)
       viewModel.findAuditories(building: building.value,
                                floor: floor.value,
                                date: date.value,
@@ -125,7 +125,7 @@ class FreeAuditoriumsViewController: FormViewController {
 extension FreeAuditoriumsViewController: FreeAuditoriumsViewModelDelegate {
   func found(auditoriums: [Auditorium]) {
     if auditoriums.isEmpty {
-      self.showAlert(title: "Неудача", message: "По выбранным параметрам не найдено ни одной аудитории")
+      self.showAlert(title: "Неудача".localized, message: "По выбранным параметрам не найдено ни одной аудитории".localized)
     } else {
       let storyBoard = UIStoryboard(name: "Auditoriums", bundle: nil)
       let auditoriumsListViewController = storyBoard.instantiateViewController(withIdentifier: "auditoriumTableVC") as! AuditoriumsListViewController

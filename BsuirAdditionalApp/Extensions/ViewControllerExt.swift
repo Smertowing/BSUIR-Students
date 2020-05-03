@@ -21,7 +21,7 @@ extension UIViewController {
 
   func showAlert(title: String, message: String, action: (() -> Void)? = nil) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
+    alert.addAction(UIAlertAction(title: "ОК".localized, style: UIAlertAction.Style.default) { _ in
       if let action = action {
         action()
       }
@@ -32,25 +32,25 @@ extension UIViewController {
   func showErrorAlert(_ error: NetworkError, action: (() -> Void)? = nil) {
     switch error {
     case .unknownError:
-      self.showAlert(title: "Ошибка", message: "Произошла неизвестная ошибка", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Произошла неизвестная ошибка".localized, action: action)
     case .connectionError:
-      self.showAlert(title: "Ошибка", message: "Нет соединения с интернетом", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Нет соединения с интернетом".localized, action: action)
     case .invalidCredentials:
-      self.showAlert(title: "Ошибка", message: "Нет прав доступа, проверьте валидность своего аккаунта или заново авторизуйтесь", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Нет прав доступа, проверьте валидность своего аккаунта или заново авторизуйтесь".localized, action: action)
     case .invalidRequest:
-      self.showAlert(title: "Ошибка", message: "Неверные данные", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Неверные данные".localized, action: action)
     case .notFound:
-      self.showAlert(title: "Ошибка", message: "Не найдено", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Не найдено".localized, action: action)
     case .invalidResponse:
-      self.showAlert(title: "Ошибка", message: "Неправильное поведение сервиса", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Неправильное поведение сервиса".localized, action: action)
     case .serverError:
-      self.showAlert(title: "Ошибка", message: "Ошибка сервера", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Ошибка сервера".localized, action: action)
     case .serverUnavailable:
-      self.showAlert(title: "Ошибка", message: "Сервис недоступен", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Сервис недоступен".localized, action: action)
     case .timeOut:
-      self.showAlert(title: "Ошибка", message: "Время ожидания истекло", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Время ожидания истекло".localized, action: action)
     default:
-      self.showAlert(title: "Ошибка", message: "Как это могло произойти?", action: action)
+      self.showAlert(title: "Ошибка".localized, message: "Как это могло произойти?".localized, action: action)
     }
   }
 

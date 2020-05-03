@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  BsuirAdditionalApp
+
+  Created by Kiryl Holubeu on 5/3/20.
+  Copyright © 2020 Kiryl Holubeu. All rights reserved.
+*/
+
+// Common
+"ОК" = "OK";
+"Загрузка..." = "Loading...";
+"Неудача" = "Failure";
+"Отмена" = "Cancel";
+"Ошибка" = "Error";
+
+// ViewControllerExt
+"Произошла неизвестная ошибка" = "An unknown error has occurred.";
+"Нет соединения с интернетом" = "No internet connection";
+"Нет прав доступа, проверьте валидность своего аккаунта или заново авторизуйтесь" = "No access rights, check the validity of your account or log in again";
+"Неверные данные" = "Wrong data";
+"Не найдено" = "Not found";
+"Неправильное поведение сервиса" = "Incorrect service behavior";
+"Ошибка сервера" = "Server error";
+"Сервис недоступен" = "Service is unavailable";
+"Время ожидания истекло" = "Timed out";
+"Как это могло произойти?" = "How could this happen?";
+
+// News
+"Подписки" = "Subscriptions";
+"Новости" = "News";
+"Все новости" = "All";
+
+// Auditoriums
+"Результат поиска" = "Search results";
+"Лекционный зал" = "Lecture hall";
+"Лабораторные занятия" = "Laboratory classes";
+"Практические занятия" = "Practical lessons";
+"Свободные аудитории" = "Free audiences";
+"Искать" = "Search";
+"Корпус" = "Building";
+"Этаж" = "Floor";
+"Когда" = "When";
+"Дата" = "Date";
+"Время" = "Time";
+"По выбранным параметрам не найдено ни одной аудитории" = "No audience found for the selected options";
+"Аудитории" = "Audiences";
+
+// Menu
+"Меню" = "Menu";
+"курс" = "course";
+"Группа" = "Group";
+"Телефон" = "Phone";
+"Email" = "Email";
+"Моя группа" = "My group";
+"Настройки" = "Settings";
+"Моя зачетка" = "My record book";
+"Выйти из профиля?" = "Exit profile?";
+
+// App Entry
+"Некорректные данные в полях ввода" = "Invalid data in input fields";

@@ -17,7 +17,7 @@ class MenuViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Меню"
+    navigationItem.title = "Меню".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     setupViewModel()
@@ -48,12 +48,12 @@ class MenuViewController: UITableViewController {
   }
 
   func showLogoutConfirmationAlert() {
-    let alert = UIAlertController(title: nil, message: "Выйти из профиля?", preferredStyle: .alert)
-    let okAction = UIAlertAction(title: "ОК", style: .destructive) { _ in
+    let alert = UIAlertController(title: nil, message: "Выйти из профиля?".localized, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "ОК".localized, style: .destructive) { _ in
       alert.dismiss(animated: true, completion: nil)
       self.logout()
     }
-    let cancelAction = UIAlertAction(title: "Отмена", style: .default) { _ in
+    let cancelAction = UIAlertAction(title: "Отмена".localized, style: .default) { _ in
       alert.dismiss(animated: true, completion: nil)
     }
     alert.addAction(cancelAction)

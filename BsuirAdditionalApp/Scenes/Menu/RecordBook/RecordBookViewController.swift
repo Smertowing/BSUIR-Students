@@ -20,7 +20,7 @@ class RecordBookViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Моя зачетка"
+    navigationItem.title = "Моя зачетка".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     loadSpinner()

@@ -14,7 +14,13 @@ extension String {
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
     return dateFormatter.date(from: self)
   }
+  
+
+  var localized: String {
+    return NSLocalizedString(self, comment: "")
+  }
 }
+
 
 extension NSAttributedString {
   func attributedStringWithResizedImages(with maxWidth: CGFloat) -> NSAttributedString {

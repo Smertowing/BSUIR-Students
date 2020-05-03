@@ -32,7 +32,7 @@ final class ProfileViewModel {
 
   var mainInfo: String {
     if let user = currentUser {
-      return "\(user.education.speciality), \(user.education.course) курс, \(user.education.faculty)\n Группа \(user.education.group)"
+      return "\(user.education.speciality), \(user.education.course) \("курс".localized), \(user.education.faculty)\n \("Группа".localized) \(user.education.group)"
     } else {
       return " "
     }

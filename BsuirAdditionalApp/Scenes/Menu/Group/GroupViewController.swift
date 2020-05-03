@@ -17,7 +17,7 @@ class GroupViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Моя группа"
+    navigationItem.title = "Моя группа".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     loadSpinner()

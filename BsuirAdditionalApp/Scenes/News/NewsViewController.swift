@@ -17,7 +17,7 @@ class NewsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Новости"
+    navigationItem.title = "Новости".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
     self.navigationItem.setRightBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "subscriptions"), style: .plain, target: self, action: #selector(self.subscriptionsButtonClicked)), animated: false)
@@ -47,7 +47,7 @@ class NewsViewController: UIViewController {
     newsTable.separatorColor = AppColors.textFieldColor.uiColor()
     
     newsTable.refreshControl = UIRefreshControl()
-    newsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...")
+    newsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...".localized)
     newsTable.refreshControl?.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
   }
   
@@ -149,9 +149,9 @@ extension NewsViewController: UICollectionViewDelegate, UICollectionViewDataSour
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tabCell", for: indexPath) as! NewsCollectionViewCell
     if indexPath.row == 1 {
-      cell.tabNameLabel.text = "Подписки"
+      cell.tabNameLabel.text = "Подписки".localized
     } else if indexPath.row == 0 {
-      cell.tabNameLabel.text = "Все новости"
+      cell.tabNameLabel.text = "Все новости".localized
     } else {
       cell.tabNameLabel.text = viewModel.tab(at: indexPath.row - 2).name
     }

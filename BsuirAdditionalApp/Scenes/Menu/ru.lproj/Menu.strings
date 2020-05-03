@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Моя группа"; ObjectID = "2Pz-wo-Zya"; */
+"2Pz-wo-Zya.text" = "Моя группа";
+
+/* Class = "UILabel"; text = " "; ObjectID = "2YR-Vk-AEN"; */
+"2YR-Vk-AEN.text" = " ";
+
+/* Class = "UILabel"; text = "Профиль"; ObjectID = "2q8-SW-K5S"; */
+"2q8-SW-K5S.text" = "Профиль";
+
+/* Class = "UILabel"; text = " "; ObjectID = "3ik-JA-o6x"; */
+"3ik-JA-o6x.text" = " ";
+
+/* Class = "UILabel"; text = "В поиске работы"; ObjectID = "4z2-4K-1Rh"; */
+"4z2-4K-1Rh.text" = "В поиске работы";
+
+/* Class = "UILabel"; text = "Средний балл"; ObjectID = "6XJ-5y-273"; */
+"6XJ-5y-273.text" = "Средний балл";
+
+/* Class = "UILabel"; text = "Студент"; ObjectID = "7dK-QX-SHW"; */
+"7dK-QX-SHW.text" = "Студент";
+
+/* Class = "UILabel"; text = "Рейтинг"; ObjectID = "Bob-u4-Gne"; */
+"Bob-u4-Gne.text" = "Рейтинг";
+
+/* Class = "UILabel"; text = " "; ObjectID = "FQt-gg-U6L"; */
+"FQt-gg-U6L.text" = " ";
+
+/* Class = "UILabel"; text = "Перейти в профиль"; ObjectID = "LRv-IQ-3A0"; */
+"LRv-IQ-3A0.text" = "Перейти в профиль";
+
+/* Class = "UILabel"; text = "Моя зачетка"; ObjectID = "PWi-Ri-LDv"; */
+"PWi-Ri-LDv.text" = "Моя зачетка";
+
+/* Class = "UILabel"; text = "Настройки доступа:"; ObjectID = "SS0-UO-oCC"; */
+"SS0-UO-oCC.text" = "Настройки доступа:";
+
+/* Class = "UILabel"; text = "Настройки"; ObjectID = "XPl-yO-HOd"; */
+"XPl-yO-HOd.text" = "Настройки";
+
+/* Class = "UITextView"; text = " "; ObjectID = "agh-CC-hUP"; */
+"agh-CC-hUP.text" = " ";
+
+/* Class = "UILabel"; text = "Ключевые навыки"; ObjectID = "lNN-KC-EPa"; */
+"lNN-KC-EPa.text" = "Ключевые навыки";
+
+/* Class = "UILabel"; text = "–"; ObjectID = "pCZ-J6-OkT"; */
+"pCZ-J6-OkT.text" = "–";
+
+/* Class = "UILabel"; text = "Основная информация"; ObjectID = "ph1-eK-INF"; */
+"ph1-eK-INF.text" = "Основная информация";
+
+/* Class = "UILabel"; text = "Выход"; ObjectID = "rni-2A-bN1"; */
+"rni-2A-bN1.text" = "Выход";
+
+/* Class = "UILabel"; text = " "; ObjectID = "uiT-gh-EQP"; */
+"uiT-gh-EQP.text" = " ";
+
+/* Class = "UILabel"; text = "Мои ссылки"; ObjectID = "yD2-KL-hWy"; */
+"yD2-KL-hWy.text" = "Мои ссылки";

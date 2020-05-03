@@ -12,7 +12,7 @@ class AuditoriumsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
-    navigationItem.title = "Аудитории"
+    navigationItem.title = "Аудитории".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
   }

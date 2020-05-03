@@ -21,10 +21,10 @@ class GroupMemberCell: UITableViewCell {
     contentTextView.text = ""
     contentTextView.text.append(mate.name)
     if let phone = mate.phone {
-      contentTextView.text.append("\nТелефон: \(phone)")
+      contentTextView.text.append("\n\("Телефон".localized): \(phone)")
     }
     if let email = mate.email {
-      contentTextView.text.append("\nEmail: \(email)")
+      contentTextView.text.append("\n\("Email".localized): \(email)")
     }
     if let role = mate.role {
       contentTextView.text.append("\n\(role)")
