@@ -43,8 +43,10 @@ final class MenuViewModel {
     NetworkingManager.iis.getProfile { (answer) in
       switch answer {
       case .success(let user):
-        DataManager.shared.user = UserCache(user: user)
-        self.getSavedUser()
+        DispatchQueue.main.async {
+          DataManager.shared.user = UserCache(user: user)
+          self.getSavedUser()
+        }
       case .failure(let error):
         print(error)
       }

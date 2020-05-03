@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
 
   @IBOutlet weak var signinButton: UIButton!
 
+  var spinner = UIActivityIndicatorView(style: .whiteLarge)
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     hideKeyboardWhenTappedAround()
@@ -28,6 +30,7 @@ class LoginViewController: UIViewController {
     signinButton.isEnabled = false
     signinButton.backgroundColor = UIColor.gray
     setupViewModel()
+    loadSpinner()
     loginField.addPaddingToTextField(rect: CGRect(x: 0, y: 0, width: 48, height: 0))
     loginField.attributedPlaceholder = NSAttributedString(string: "Login",
                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
@@ -39,6 +42,13 @@ class LoginViewController: UIViewController {
     passwordField.addTarget(self, action: #selector(passwordPrimaryAction), for: UIControl.Event.primaryActionTriggered)
     passwordField.addTarget(self, action: #selector(checkSignIn), for: UIControl.Event.editingChanged)
   }
+  
+  func loadSpinner() {
+    spinner.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(spinner)
+    spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+  }
 
   private func setupViewModel() {
     viewModel.delegate = self
@@ -49,6 +59,7 @@ class LoginViewController: UIViewController {
     signinButton.backgroundColor = UIColor.gray
     if let username = loginField.text, let password = passwordField.text, (username.trimmingCharacters(in: .whitespacesAndNewlines) != "") && (password.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
       viewModel.auth(login: username, password: password)
+      spinner.startAnimating()
     } else {
       showAlert(title: "Ошибка".localized, message: "Некорректные данные в полях ввода".localized) {
         self.signinButton.isEnabled = true
@@ -78,12 +89,14 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewModelDelegate {
   func loggedIn() {
+    spinner.stopAnimating()
     signinButton.isEnabled = true
     signinButton.backgroundColor = AppColors.accentColor.uiColor()
     segueToAppllication()
   }
 
   func showError(error: NetworkError) {
+    spinner.stopAnimating()
     signinButton.isEnabled = true
     signinButton.backgroundColor = AppColors.accentColor.uiColor()
     showErrorAlert(error)

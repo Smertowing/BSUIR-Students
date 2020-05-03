@@ -37,7 +37,12 @@ class MenuViewController: UITableViewController {
 
   func setupValues() {
     nameLabel.text = viewModel.name
-    photoImageView.kf.setImage(with: URL(string: viewModel.image ?? ""), placeholder: #imageLiteral(resourceName: "photo_small"))
+    photoImageView.kf.cancelDownloadTask()
+    photoImageView.kf.setImage(with: URL(string: viewModel.image ?? ""),
+                               placeholder: #imageLiteral(resourceName: "photo_small"),
+                               options: [.transition(.fade(0.5)),
+                                         .downloadPriority(1),
+                                         .backgroundDecode])
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
