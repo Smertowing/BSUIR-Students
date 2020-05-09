@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class NewsSubscriptionsViewController: UIViewController {
   private let viewModel = NewsSubscriptionsViewModel()
@@ -40,7 +41,8 @@ class NewsSubscriptionsViewController: UIViewController {
     subscriptionsTable.tableFooterView = UIView()
     subscriptionsTable.backgroundView = EmptyBackgroundView.instanceFromNib()
     subscriptionsTable.separatorColor = AppColors.textFieldColor.uiColor()
-    
+    subscriptionsTable.estimatedRowHeight = 66
+    subscriptionsTable.showAnimatedSkeleton()
     
     subscriptionsTable.refreshControl = UIRefreshControl()
     subscriptionsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...".localized)
@@ -98,13 +100,25 @@ extension NewsSubscriptionsViewController: UITableViewDelegate, UITableViewDataS
   }
 }
 
+extension NewsSubscriptionsViewController: SkeletonTableViewDataSource {
+  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    return "subscribtionCell"
+  }
+  
+  func numSections(in collectionSkeletonView: UITableView) -> Int {
+    return 2
+  }
+}
+
 extension NewsSubscriptionsViewController: NewsSubscriptionsViewModelDelegate {
   func onFetchCompleted() {
+    subscriptionsTable.hideSkeleton()
     subscriptionsTable.refreshControl?.endRefreshing()
     subscriptionsTable.reloadData()
   }
   
   func onFetchFailed(with reason: NetworkError) {
+    subscriptionsTable.hideSkeleton()
     subscriptionsTable.refreshControl?.endRefreshing()
     subscriptionsTable.reloadData()
   }

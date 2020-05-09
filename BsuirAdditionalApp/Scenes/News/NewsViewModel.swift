@@ -101,10 +101,10 @@ final class NewsViewModel {
 
     getSavedFilter()
 
-    currentPage = 1
+    currentPage = 0
     total = 0
 
-    fetchNews(page: 1, perPage: perPage) {
+    fetchNews(page: 0, perPage: perPage) {
       self.news = []
     }
   }

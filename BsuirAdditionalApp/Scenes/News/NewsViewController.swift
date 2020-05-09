@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class NewsViewController: UIViewController {
   private let viewModel = NewsViewModel()
@@ -45,6 +46,8 @@ class NewsViewController: UIViewController {
     newsTable.tableFooterView = UIView()
     newsTable.backgroundView = EmptyBackgroundView.instanceFromNib()
     newsTable.separatorColor = AppColors.textFieldColor.uiColor()
+    newsTable.estimatedRowHeight = 300
+    newsTable.showAnimatedSkeleton()
     
     newsTable.refreshControl = UIRefreshControl()
     newsTable.refreshControl?.attributedTitle = NSAttributedString(string: "Загрузка...".localized)
@@ -113,6 +116,12 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     cell.layer.masksToBounds = true
 
     return cell
+  }
+}
+
+extension NewsViewController: SkeletonTableViewDataSource {
+  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+    return "newsCell"
   }
 }
 
@@ -188,6 +197,7 @@ extension NewsViewController: NewsViewModelDelegate {
   }
   
   func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
+    newsTable.hideSkeleton()
     newsTable.refreshControl?.endRefreshing()
     guard let newIndexPathsToReload = newIndexPathsToReload else {
       newsTable.reloadData()
@@ -199,6 +209,7 @@ extension NewsViewController: NewsViewModelDelegate {
   }
 
   func onFetchFailed(with reason: NetworkError) {
+    newsTable.hideSkeleton()
     newsTable.refreshControl?.endRefreshing()
     newsTable.reloadData()
   }

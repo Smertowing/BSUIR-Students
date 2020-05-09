@@ -14,6 +14,7 @@ target 'BsuirAdditionalApp' do
   pod 'Eureka'
   pod 'Cosmos', '~> 21.0'
   pod 'Down'
+  pod "SkeletonView"
 
   #Others
   pod 'DataCache'

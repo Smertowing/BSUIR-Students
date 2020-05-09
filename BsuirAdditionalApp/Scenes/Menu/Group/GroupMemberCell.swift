@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class GroupMemberCell: UITableViewCell {
   @IBOutlet weak var contentTextView: UITextView!
@@ -17,6 +18,7 @@ class GroupMemberCell: UITableViewCell {
     guard let mate = mate else {
       return
     }
+    hideSkeleton()
     self.mate = mate
     contentTextView.text = ""
     contentTextView.text.append(mate.name)

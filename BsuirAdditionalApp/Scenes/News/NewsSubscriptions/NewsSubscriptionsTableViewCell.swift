@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class NewsSubscriptionsTableViewCell: UITableViewCell {
   var currentSource: SourceCache!
@@ -19,6 +20,7 @@ class NewsSubscriptionsTableViewCell: UITableViewCell {
     guard let source = source else {
       return
     }
+    hideSkeleton()
     currentSource = source
     nameLabel.text = source.name
     subscribeSwitch.isOn = source.subscribed

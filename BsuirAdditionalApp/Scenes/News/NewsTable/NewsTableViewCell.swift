@@ -9,11 +9,11 @@
 import UIKit
 import Kingfisher
 import Down
+import SkeletonView
 
 class NewsTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var subtitleLabel: UILabel!
-  @IBOutlet weak var shortContentView: UITextView!
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var newsImageView: UIImageView!
   @IBOutlet weak var newsImageViewBackground: UIImageView!
@@ -22,12 +22,9 @@ class NewsTableViewCell: UITableViewCell {
   
   func set(_ news: News?) {
     guard let news = news else {
-      titleLabel.text = ""
-      subtitleLabel.text = ""
-      dateLabel.text = ""
-      newsImageView.image = nil
       return
     }
+    hideSkeleton()
     self.currentNews = news
     newsImageView.kf.cancelDownloadTask()
     newsImageView.kf.indicatorType = .activity
@@ -51,7 +48,7 @@ class NewsTableViewCell: UITableViewCell {
                                 .downloadPriority(1),
                                 .backgroundDecode,
                               ])
-    titleLabel.text = news.title
+    titleLabel.text = news.title != "" ? news.title : news.url
     subtitleLabel.text = news.source.name + " / " + news.source.type
     dateLabel.text = news.publishedAt.defaultDate()?.newsFormat
   }

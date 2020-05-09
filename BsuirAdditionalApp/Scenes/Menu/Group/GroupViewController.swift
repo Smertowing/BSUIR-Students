@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import SkeletonView
 
 class GroupViewController: UIViewController {
   private let viewModel = GroupViewModel()
 
   @IBOutlet weak var groupTable: UITableView!
-  var spinner = UIActivityIndicatorView(style: .whiteLarge)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,7 +20,6 @@ class GroupViewController: UIViewController {
     navigationItem.title = "Моя группа".localized
     navigationController?.navigationBar.isTranslucent = false
     tabBarController?.tabBar.isTranslucent = false
-    loadSpinner()
     setupViewModel()
     configureGroupTable()
   }
@@ -31,21 +30,9 @@ class GroupViewController: UIViewController {
     viewModel.fetchGroup()
   }
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    viewModel.getSavedGroup()
-  }
-
   private func setupViewModel() {
     viewModel.delegate = self
-  }
-
-  func loadSpinner() {
-    spinner.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(spinner)
-    spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    spinner.startAnimating()
+    viewModel.getSavedGroup()
   }
 
   func configureGroupTable() {
@@ -54,6 +41,8 @@ class GroupViewController: UIViewController {
     groupTable.tableFooterView = UIView()
     groupTable.backgroundView = UIView()
     groupTable.separatorColor = AppColors.textFieldColor.uiColor()
+    groupTable.estimatedRowHeight = 150
+    groupTable.showAnimatedSkeleton()
   }
 }
 
@@ -93,14 +82,20 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
   }
 }
 
+extension GroupViewController: SkeletonTableViewDataSource {
+  func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+     return "memberCell"
+  }
+}
+
 extension GroupViewController: GroupViewModelDelegate {
   func refresh() {
-    spinner.stopAnimating()
+    groupTable.hideSkeleton()
     self.groupTable.reloadData()
   }
 
   func failed(with reason: NetworkError) {
-    spinner.stopAnimating()
+    groupTable.hideSkeleton()
     self.showErrorAlert(reason)
   }
 }
