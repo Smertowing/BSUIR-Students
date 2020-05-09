@@ -55,6 +55,7 @@
 "Настройки" = "Settings";
 "Моя зачетка" = "My record book";
 "Выйти из профиля?" = "Exit profile?";
+"Невозможно отправить электронное сообщение. Проверьте доступность своей почты" = "Unable to send email. Check your mail accounts availability";
 
 // App Entry
 "Некорректные данные в полях ввода" = "Invalid data in input fields";

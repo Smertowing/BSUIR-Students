@@ -56,6 +56,8 @@
 		FA37EDD6245F063200BC502C /* NotificationsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA37EDD5245F063200BC502C /* NotificationsAdapter.swift */; };
 		FA3B4EA22454570A00F01AC2 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B4EA12454570A00F01AC2 /* UIImageExt.swift */; };
 		FA3B4EA82454B45800F01AC2 /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3B4EA72454B45800F01AC2 /* NewsDetailsViewModel.swift */; };
+		FA4357AC2466E066008C4010 /* DeviceExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4357AB2466E066008C4010 /* DeviceExt.swift */; };
+		FA4357AE2466E094008C4010 /* BundleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4357AD2466E094008C4010 /* BundleExt.swift */; };
 		FA64D385239DC10700E96C11 /* AuditoriumsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */; };
 		FA64D387239DC22E00E96C11 /* AuditoriumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64D386239DC22E00E96C11 /* AuditoriumListTableViewCell.swift */; };
 		FA69F55E239D9652006A953E /* BuildingsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69F55D239D9652006A953E /* BuildingsCache.swift */; };
@@ -169,6 +171,10 @@
 		FA37EDD5245F063200BC502C /* NotificationsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsAdapter.swift; sourceTree = "<group>"; };
 		FA3B4EA12454570A00F01AC2 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
 		FA3B4EA72454B45800F01AC2 /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
+		FA4357AB2466E066008C4010 /* DeviceExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceExt.swift; sourceTree = "<group>"; };
+		FA4357AD2466E094008C4010 /* BundleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExt.swift; sourceTree = "<group>"; };
+		FA4357B02466E22D008C4010 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Menu.strings; sourceTree = "<group>"; };
+		FA4357B22466E290008C4010 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Menu.strings; sourceTree = "<group>"; };
 		FA64D384239DC10700E96C11 /* AuditoriumsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumsListViewController.swift; sourceTree = "<group>"; };
 		FA64D386239DC22E00E96C11 /* AuditoriumListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoriumListTableViewCell.swift; sourceTree = "<group>"; };
 		FA69F55D239D9652006A953E /* BuildingsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingsCache.swift; sourceTree = "<group>"; };
@@ -197,8 +203,6 @@
 		FA92A532245ECC2900511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FA92A534245ECC5000511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA92A536245ECC6C00511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
-		FA92A539245ECC7000511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Menu.strings; sourceTree = "<group>"; };
-		FA92A53B245ECC7300511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Menu.strings; sourceTree = "<group>"; };
 		FA92A53D245ECDA000511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auditoriums.storyboard; sourceTree = "<group>"; };
 		FA92A540245ECDA400511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Auditoriums.strings; sourceTree = "<group>"; };
 		FA92A542245ECDA500511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Auditoriums.strings; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 				FA3260F8239463CC004B1410 /* DateExt.swift */,
 				FAB05909239D471600664358 /* StringExt.swift */,
 				FA3B4EA12454570A00F01AC2 /* UIImageExt.swift */,
+				FA4357AB2466E066008C4010 /* DeviceExt.swift */,
+				FA4357AD2466E094008C4010 /* BundleExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -866,6 +872,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA83A6C623A1A48800BF5ABD /* GroupViewController.swift in Sources */,
+				FA4357AE2466E094008C4010 /* BundleExt.swift in Sources */,
 				FA92A52E245DD1D300511BDA /* SourceCache.swift in Sources */,
 				FAA7F71A23A22D540095783E /* RecordBookCache.swift in Sources */,
 				FAA7F72023A22DE80095783E /* SubjectStatisticsCache.swift in Sources */,
@@ -923,6 +930,7 @@
 				FAA7F72523A234200095783E /* RecordBookViewModel.swift in Sources */,
 				FA83A6C823A1A49500BF5ABD /* GroupViewModel.swift in Sources */,
 				FAB0590D239D57C200664358 /* AuditoriumsViewController.swift in Sources */,
+				FA4357AC2466E066008C4010 /* DeviceExt.swift in Sources */,
 				FA9922B92415713500796EDC /* Sort.swift in Sources */,
 				FA765D0823A18D0B001CC348 /* ReferenceCache.swift in Sources */,
 				FA1AA73623950E450092559B /* MenuNavigationController.swift in Sources */,
@@ -985,8 +993,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA92A536245ECC6C00511BDA /* Base */,
-				FA92A539245ECC7000511BDA /* en */,
-				FA92A53B245ECC7300511BDA /* ru */,
+				FA4357B02466E22D008C4010 /* en */,
+				FA4357B22466E290008C4010 /* ru */,
 			);
 			name = Menu.storyboard;
 			sourceTree = "<group>";

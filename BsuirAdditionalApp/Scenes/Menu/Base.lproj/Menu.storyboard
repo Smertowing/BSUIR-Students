@@ -298,8 +298,29 @@
                                     <constraint firstItem="4z2-4K-1Rh" firstAttribute="leading" secondItem="flQ-NC-kAt" secondAttribute="leading" constant="24" id="zPb-3Y-lQE"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-ZP-6dG">
+                                <rect key="frame" x="0.0" y="344" width="414" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2s-WO-qs7">
+                                        <rect key="frame" x="24" y="4" width="366" height="69"/>
+                                        <state key="normal" title="Сообщить об ошибке"/>
+                                        <connections>
+                                            <action selector="reportProblem:" destination="eLI-sS-OVy" eventType="touchUpInside" id="sv5-8B-FSt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstItem="L2s-WO-qs7" firstAttribute="top" secondItem="UHF-ZP-6dG" secondAttribute="top" constant="4" id="Aht-Aj-lAg"/>
+                                    <constraint firstItem="L2s-WO-qs7" firstAttribute="centerY" secondItem="UHF-ZP-6dG" secondAttribute="centerY" id="IZH-Wd-5Ae"/>
+                                    <constraint firstItem="L2s-WO-qs7" firstAttribute="leading" secondItem="UHF-ZP-6dG" secondAttribute="leading" constant="24" id="LhU-Qx-d4e"/>
+                                    <constraint firstAttribute="trailing" secondItem="L2s-WO-qs7" secondAttribute="trailing" constant="24" id="T6R-da-GOy"/>
+                                    <constraint firstAttribute="bottom" secondItem="L2s-WO-qs7" secondAttribute="bottom" constant="4" id="jhN-bA-hW8"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="NYL-Wj-f8Z">
-                                <rect key="frame" x="188.5" y="400" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="485" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                         </subviews>
@@ -307,7 +328,9 @@
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
                             <constraint firstItem="ONi-ha-Vsy" firstAttribute="trailing" secondItem="4eP-xs-ejU" secondAttribute="trailing" id="0mz-Dr-Jec"/>
+                            <constraint firstItem="UHF-ZP-6dG" firstAttribute="height" secondItem="flQ-NC-kAt" secondAttribute="height" id="4ed-Fn-Mte"/>
                             <constraint firstItem="ONi-ha-Vsy" firstAttribute="leading" secondItem="4eP-xs-ejU" secondAttribute="leading" id="6lI-jc-ul2"/>
+                            <constraint firstItem="UHF-ZP-6dG" firstAttribute="trailing" secondItem="4eP-xs-ejU" secondAttribute="trailing" id="8ML-Gp-g5n"/>
                             <constraint firstItem="AY9-7y-ijR" firstAttribute="top" secondItem="4eP-xs-ejU" secondAttribute="top" id="9ps-U1-TOF"/>
                             <constraint firstItem="AY9-7y-ijR" firstAttribute="trailing" secondItem="4eP-xs-ejU" secondAttribute="trailing" id="A6d-An-Dlx"/>
                             <constraint firstItem="NYL-Wj-f8Z" firstAttribute="centerX" secondItem="jwd-Gh-pkO" secondAttribute="centerX" id="D5K-oM-iiZ"/>
@@ -319,7 +342,9 @@
                             <constraint firstItem="ONi-ha-Vsy" firstAttribute="top" secondItem="AY9-7y-ijR" secondAttribute="bottom" constant="16" id="Xna-ax-09Q"/>
                             <constraint firstItem="lC1-vg-ivM" firstAttribute="leading" secondItem="4eP-xs-ejU" secondAttribute="leading" id="YqK-1z-0Rd"/>
                             <constraint firstItem="AY9-7y-ijR" firstAttribute="leading" secondItem="4eP-xs-ejU" secondAttribute="leading" id="jwK-VS-uCa"/>
-                            <constraint firstItem="NYL-Wj-f8Z" firstAttribute="top" secondItem="flQ-NC-kAt" secondAttribute="bottom" constant="64" id="pmQ-8h-5A4"/>
+                            <constraint firstItem="UHF-ZP-6dG" firstAttribute="top" secondItem="flQ-NC-kAt" secondAttribute="bottom" constant="8" id="mlI-22-wfq"/>
+                            <constraint firstItem="UHF-ZP-6dG" firstAttribute="leading" secondItem="4eP-xs-ejU" secondAttribute="leading" id="oBP-ov-1kn"/>
+                            <constraint firstItem="NYL-Wj-f8Z" firstAttribute="top" secondItem="UHF-ZP-6dG" secondAttribute="bottom" constant="64" id="qSz-H4-4vT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4eP-xs-ejU"/>
                     </view>

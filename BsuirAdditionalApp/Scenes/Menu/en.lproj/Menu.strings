@@ -26,6 +26,9 @@
 /* Class = "UILabel"; text = " "; ObjectID = "FQt-gg-U6L"; */
 "FQt-gg-U6L.text" = " ";
 
+/* Class = "UIButton"; normalTitle = "Сообщить об ошибке"; ObjectID = "L2s-WO-qs7"; */
+"L2s-WO-qs7.normalTitle" = "Report a problem";
+
 /* Class = "UILabel"; text = "Перейти в профиль"; ObjectID = "LRv-IQ-3A0"; */
 "LRv-IQ-3A0.text" = "Go to profile";
 

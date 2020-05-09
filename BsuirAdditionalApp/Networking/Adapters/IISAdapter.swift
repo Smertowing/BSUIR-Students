@@ -25,6 +25,8 @@ class IISAdapter {
         switch error.response?.statusCode {
         case 400:
           return completion(.failure(.invalidRequest))
+        case 401:
+          return completion(.failure(.invalidCredentials))
         case 500:
           return completion(.failure(.serverError))
         default:
