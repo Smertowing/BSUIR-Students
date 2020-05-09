@@ -20,12 +20,16 @@ final class LoginViewModel {
     NetworkingManager.iis.auth(login: login, password: password) { (answer) in
       switch answer {
       case .success(let response):
-        ProfileManager.shared.token = response.token
-        ProfileManager.shared.login()
-        self.registerToNotifications()
-        self.delegate?.loggedIn()
+        DispatchQueue.main.async {
+          ProfileManager.shared.token = response.token
+          ProfileManager.shared.login()
+          self.registerToNotifications()
+          self.delegate?.loggedIn()
+        }
       case .failure(let error):
-        self.delegate?.showError(error: error)
+        DispatchQueue.main.async {
+          self.delegate?.showError(error: error)
+        }
       }
     }
   }
