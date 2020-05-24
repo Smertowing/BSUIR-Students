@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +13,7 @@
         <!--News View Controller-->
         <scene sceneID="a1e-2S-bKy">
             <objects>
-                <viewController storyboardIdentifier="newsVC" id="twp-1c-t0W" customClass="NewsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsVC" id="twp-1c-t0W" customClass="NewsViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZR-Jy-qy3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tabCell" id="5js-lX-L9o" customClass="NewsCollectionViewCell" customModule="Bsuir_Student" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tabCell" id="5js-lX-L9o" customClass="NewsCollectionViewCell" customModule="Student" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2" width="128" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jVD-ra-DUh">
@@ -77,7 +77,7 @@
                                 <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" name="PrimaryColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="300" id="L3c-M0-4Wf" customClass="NewsTableViewCell" customModule="Bsuir_Student" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="300" id="L3c-M0-4Wf" customClass="NewsTableViewCell" customModule="Student" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L3c-M0-4Wf" id="ScL-Zv-nek">
@@ -196,7 +196,7 @@
         <!--News Details View Controller-->
         <scene sceneID="VIu-Re-fCw">
             <objects>
-                <viewController storyboardIdentifier="newsDetailsVC" id="HO0-De-Rcb" customClass="NewsDetailsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsDetailsVC" id="HO0-De-Rcb" customClass="NewsDetailsViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f7k-oZ-JF2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -305,7 +305,7 @@
         <!--News Filter View Controller-->
         <scene sceneID="EfS-X2-4bc">
             <objects>
-                <viewController storyboardIdentifier="filterNewsVC" id="7B7-D4-3P9" customClass="NewsFilterViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="filterNewsVC" id="7B7-D4-3P9" customClass="NewsFilterViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cEV-BX-R3E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,7 +321,7 @@
         <!--News Subscriptions View Controller-->
         <scene sceneID="uZd-eh-VjU">
             <objects>
-                <viewController storyboardIdentifier="subscriptionsTableVC" id="BlW-P1-ivr" customClass="NewsSubscriptionsViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="subscriptionsTableVC" id="BlW-P1-ivr" customClass="NewsSubscriptionsViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="11D-6w-fI2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,7 +332,7 @@
                                 <color key="tintColor" red="0.36470588240000001" green="0.71372549019999998" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" name="PrimaryColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscribtionCell" rowHeight="66" id="hVI-2e-Pvj" customClass="NewsSubscriptionsTableViewCell" customModule="Bsuir_Student" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscribtionCell" rowHeight="66" id="hVI-2e-Pvj" customClass="NewsSubscriptionsTableViewCell" customModule="Student" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hVI-2e-Pvj" id="t1Z-4X-iTq">

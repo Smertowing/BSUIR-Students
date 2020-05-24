@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXL-id-0uw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXL-id-0uw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -35,7 +35,7 @@
         <!--News Navigation Controller-->
         <scene sceneID="n00-Dv-azJ">
             <objects>
-                <navigationController id="w7X-Hi-CVC" customClass="NewsNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="w7X-Hi-CVC" customClass="NewsNavigationController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="feed_off" id="tPT-sL-hgW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M88-Bw-sNg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -51,7 +51,7 @@
         <!--Menu Navigation Controller-->
         <scene sceneID="FJ5-9z-g2U">
             <objects>
-                <navigationController id="fRF-Yy-x0h" customClass="MenuNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="fRF-Yy-x0h" customClass="MenuNavigationController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="3" title="" image="profile_off" id="JNw-dy-4a8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z6A-Xk-YR4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -67,7 +67,7 @@
         <!--Auditoriums Navigation Controller-->
         <scene sceneID="TpN-98-ebg">
             <objects>
-                <navigationController id="XyF-7f-PDC" customClass="AuditoriumsNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="XyF-7f-PDC" customClass="AuditoriumsNavigationController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="" image="zachetka_off" id="sdV-vY-xyx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E37-NE-UBf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -83,7 +83,7 @@
         <!--Login View Controller-->
         <scene sceneID="MBQ-IH-H9G">
             <objects>
-                <viewController storyboardIdentifier="loginVC" id="0e8-Ps-e1R" customClass="LoginViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="0e8-Ps-e1R" customClass="LoginViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FC6-Mk-asx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,7 +105,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0Y-kl-IBT">
-                                        <rect key="frame" x="32" y="557" width="256" height="40"/>
+                                        <rect key="frame" x="32" y="587" width="256" height="40"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Xdc-KT-6eh"/>
@@ -119,7 +119,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XjF-RO-GMN">
-                                        <rect key="frame" x="32" y="501" width="256" height="40"/>
+                                        <rect key="frame" x="32" y="531" width="256" height="40"/>
                                         <color key="backgroundColor" name="TextFieldColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3q0-ow-th2"/>
@@ -129,7 +129,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChZ-Fw-nfb">
-                                        <rect key="frame" x="32" y="445" width="256" height="40"/>
+                                        <rect key="frame" x="32" y="475" width="256" height="40"/>
                                         <color key="backgroundColor" name="TextFieldColor"/>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                         <constraints>
@@ -140,30 +140,38 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login" translatesAutoresizingMaskIntoConstraints="NO" id="Sza-xv-i0R">
-                                        <rect key="frame" x="56" y="459" width="12" height="12"/>
+                                        <rect key="frame" x="56" y="489" width="12" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Sza-xv-i0R" secondAttribute="height" multiplier="1:1" id="ykc-r6-hMv"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-Cs-ejy">
-                                        <rect key="frame" x="56" y="515" width="12" height="12"/>
+                                        <rect key="frame" x="56" y="545" width="12" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j2d-Cs-ejy" secondAttribute="height" multiplier="1:1" id="LwJ-s5-foO"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Для входа используйте данные iis.bsuir.by" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rC-Tk-4w8">
+                                        <rect key="frame" x="32" y="415" width="256" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="TextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" name="BackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="3rC-Tk-4w8" firstAttribute="leading" secondItem="kT6-zZ-UNl" secondAttribute="leading" constant="32" id="2uB-l9-2Ya"/>
                                     <constraint firstItem="j2d-Cs-ejy" firstAttribute="top" secondItem="XjF-RO-GMN" secondAttribute="top" constant="14" id="32Z-YF-uE6"/>
-                                    <constraint firstItem="ChZ-Fw-nfb" firstAttribute="centerY" secondItem="kT6-zZ-UNl" secondAttribute="centerY" constant="56" id="3Da-Xb-piJ"/>
                                     <constraint firstItem="XjF-RO-GMN" firstAttribute="centerX" secondItem="kT6-zZ-UNl" secondAttribute="centerX" id="3uN-pc-WQ5"/>
                                     <constraint firstItem="j2d-Cs-ejy" firstAttribute="centerY" secondItem="XjF-RO-GMN" secondAttribute="centerY" id="46B-0Z-V20"/>
                                     <constraint firstItem="J0Y-kl-IBT" firstAttribute="top" secondItem="XjF-RO-GMN" secondAttribute="bottom" constant="16" id="4DY-dM-8uG"/>
                                     <constraint firstItem="Sza-xv-i0R" firstAttribute="top" secondItem="ChZ-Fw-nfb" secondAttribute="top" constant="14" id="8Ja-fJ-uf0"/>
+                                    <constraint firstItem="3rC-Tk-4w8" firstAttribute="centerX" secondItem="kT6-zZ-UNl" secondAttribute="centerX" id="9RD-xL-urr"/>
                                     <constraint firstItem="j2d-Cs-ejy" firstAttribute="bottom" secondItem="XjF-RO-GMN" secondAttribute="bottom" constant="-14" id="AXl-dV-V5A"/>
                                     <constraint firstItem="Sza-xv-i0R" firstAttribute="bottom" secondItem="ChZ-Fw-nfb" secondAttribute="bottom" constant="-14" id="AzE-Uq-Xh0"/>
                                     <constraint firstItem="ChZ-Fw-nfb" firstAttribute="centerX" secondItem="kT6-zZ-UNl" secondAttribute="centerX" id="Gpk-WT-wnO"/>
                                     <constraint firstItem="Sza-xv-i0R" firstAttribute="centerY" secondItem="ChZ-Fw-nfb" secondAttribute="centerY" id="H4O-hE-W3a"/>
+                                    <constraint firstItem="ChZ-Fw-nfb" firstAttribute="top" secondItem="3rC-Tk-4w8" secondAttribute="bottom" constant="24" id="ICy-FE-e73"/>
                                     <constraint firstItem="nRz-Wj-lVz" firstAttribute="centerX" secondItem="kT6-zZ-UNl" secondAttribute="centerX" id="LXk-US-WAN"/>
                                     <constraint firstAttribute="width" constant="320" id="PwO-CC-TEY"/>
                                     <constraint firstItem="nRz-Wj-lVz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="kT6-zZ-UNl" secondAttribute="top" constant="48" id="T6h-t9-DkO"/>
@@ -177,6 +185,7 @@
                                     <constraint firstItem="tzy-D4-lZe" firstAttribute="top" secondItem="nRz-Wj-lVz" secondAttribute="bottom" id="m9X-II-sDH"/>
                                     <constraint firstItem="tzy-D4-lZe" firstAttribute="centerY" secondItem="kT6-zZ-UNl" secondAttribute="centerY" constant="-64" id="oel-os-iui"/>
                                     <constraint firstItem="XjF-RO-GMN" firstAttribute="top" secondItem="ChZ-Fw-nfb" secondAttribute="bottom" constant="16" id="rS1-Jb-mG1"/>
+                                    <constraint firstItem="3rC-Tk-4w8" firstAttribute="centerY" secondItem="kT6-zZ-UNl" secondAttribute="centerY" constant="24" id="v0Y-Rn-gDY"/>
                                     <constraint firstItem="XjF-RO-GMN" firstAttribute="leading" secondItem="j2d-Cs-ejy" secondAttribute="trailing" constant="-36" id="xcC-7f-mCW"/>
                                 </constraints>
                             </view>
@@ -206,7 +215,7 @@
         <!--Launch View Controller-->
         <scene sceneID="ekP-bD-WEN">
             <objects>
-                <viewController storyboardIdentifier="firstScreen" id="aXL-id-0uw" customClass="LaunchViewController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstScreen" id="aXL-id-0uw" customClass="LaunchViewController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gIk-al-U6D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +270,7 @@
         <!--Files Navigation Controller-->
         <scene sceneID="qTM-Yp-ydy">
             <objects>
-                <navigationController id="JGB-1i-4Di" customClass="FilesNavigationController" customModule="Bsuir_Student" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="JGB-1i-4Di" customClass="FilesNavigationController" customModule="Student" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="2" title="" image="rating_off" id="fAR-Pu-v0s"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lkD-lO-JGu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

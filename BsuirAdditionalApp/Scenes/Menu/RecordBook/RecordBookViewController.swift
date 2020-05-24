@@ -63,6 +63,7 @@ class RecordBookViewController: UIViewController {
 
     for i in 0 ..< views.count {
       views[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+      views[i].addParent(parent: self)
       scrollView.addSubview(views[i])
     }
 

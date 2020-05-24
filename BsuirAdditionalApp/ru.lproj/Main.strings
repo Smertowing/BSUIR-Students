@@ -1,4 +1,7 @@
 
+/* Class = "UILabel"; text = "Для входа используйте данные iis.bsuir.by"; ObjectID = "3rC-Tk-4w8"; */
+"3rC-Tk-4w8.text" = "Для входа используйте данные iis.bsuir.by";
+
 /* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "J0Y-kl-IBT"; */
 "J0Y-kl-IBT.normalTitle" = "Войти";
 

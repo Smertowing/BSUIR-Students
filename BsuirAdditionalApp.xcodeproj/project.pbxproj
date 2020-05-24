@@ -12,6 +12,9 @@
 		FA1AA73623950E450092559B /* MenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA73523950E450092559B /* MenuNavigationController.swift */; };
 		FA1AA73A23950E680092559B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA73923950E680092559B /* MenuViewController.swift */; };
 		FA1AA73C23950E720092559B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1AA73B23950E720092559B /* MenuViewModel.swift */; };
+		FA28F9B1247A7A6500395A26 /* MarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28F9B0247A7A6500395A26 /* MarkTableViewController.swift */; };
+		FA28F9B5247A7AA000395A26 /* MarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28F9B4247A7AA000395A26 /* MarkTableViewCell.swift */; };
+		FA28F9B8247A7AC100395A26 /* MarkTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA28F9B7247A7AC100395A26 /* MarkTableViewModel.swift */; };
 		FA32609323940BF1004B1410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA32609223940BF1004B1410 /* AppDelegate.swift */; };
 		FA32609A23940BF1004B1410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA32609823940BF1004B1410 /* Main.storyboard */; };
 		FA32609C23940BF2004B1410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA32609B23940BF2004B1410 /* Assets.xcassets */; };
@@ -122,7 +125,14 @@
 		FA1AA73523950E450092559B /* MenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationController.swift; sourceTree = "<group>"; };
 		FA1AA73923950E680092559B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FA1AA73B23950E720092559B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
-		FA32608F23940BF1004B1410 /* Bsuir.Student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bsuir.Student.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA28F9B0247A7A6500395A26 /* MarkTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTableViewController.swift; sourceTree = "<group>"; };
+		FA28F9B4247A7AA000395A26 /* MarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTableViewCell.swift; sourceTree = "<group>"; };
+		FA28F9B7247A7AC100395A26 /* MarkTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkTableViewModel.swift; sourceTree = "<group>"; };
+		FA28F9BA247A8CD200395A26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MarkCell.strings; sourceTree = "<group>"; };
+		FA28F9BC247A8CD400395A26 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MarkCell.strings; sourceTree = "<group>"; };
+		FA28F9BE247A900400395A26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		FA28F9C0247A900600395A26 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FA32608F23940BF1004B1410 /* Student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Student.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA32609223940BF1004B1410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA32609923940BF1004B1410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA32609B23940BF2004B1410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,9 +208,7 @@
 		FA83A6D023A1A9C400BF5ABD /* GroupCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCache.swift; sourceTree = "<group>"; };
 		FA92A52B245DCE2100511BDA /* SubscriptionsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsCache.swift; sourceTree = "<group>"; };
 		FA92A52D245DD1D300511BDA /* SourceCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCache.swift; sourceTree = "<group>"; };
-		FA92A52F245ECC0A00511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FA92A530245ECC0A00511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		FA92A532245ECC2900511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		FA92A534245ECC5000511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FA92A536245ECC6C00511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
 		FA92A53D245ECDA000511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auditoriums.storyboard; sourceTree = "<group>"; };
@@ -215,8 +223,6 @@
 		FA92A554245ECF4200511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA92A556245ECF4400511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA92A558245ED6C700511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MarkCell.xib; sourceTree = "<group>"; };
-		FA92A55B245ED6CA00511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MarkCell.strings; sourceTree = "<group>"; };
-		FA92A55D245ED6CB00511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MarkCell.strings; sourceTree = "<group>"; };
 		FA92A55F245ED71B00511BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Semester.xib; sourceTree = "<group>"; };
 		FA92A562245ED71E00511BDA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Semester.strings; sourceTree = "<group>"; };
 		FA92A564245ED71F00511BDA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Semester.strings; sourceTree = "<group>"; };
@@ -292,6 +298,16 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		FA28F9AF247A7A4700395A26 /* MarkDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FA28F9B4247A7AA000395A26 /* MarkTableViewCell.swift */,
+				FA28F9B0247A7A6500395A26 /* MarkTableViewController.swift */,
+				FA28F9B7247A7AC100395A26 /* MarkTableViewModel.swift */,
+			);
+			path = MarkDetails;
+			sourceTree = "<group>";
+		};
 		FA32608623940BF1004B1410 = {
 			isa = PBXGroup;
 			children = (
@@ -305,7 +321,7 @@
 		FA32609023940BF1004B1410 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA32608F23940BF1004B1410 /* Bsuir.Student.app */,
+				FA32608F23940BF1004B1410 /* Student.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -638,6 +654,7 @@
 		FAA7F72123A234060095783E /* RecordBook */ = {
 			isa = PBXGroup;
 			children = (
+				FA28F9AF247A7A4700395A26 /* MarkDetails */,
 				FA36D6A623A248DA00714FCF /* Mark */,
 				FAA7F72823A23D390095783E /* Semester */,
 				FAA7F72223A234160095783E /* RecordBookViewController.swift */,
@@ -749,7 +766,7 @@
 			);
 			name = BsuirAdditionalApp;
 			productName = BsuirAdditionalApp;
-			productReference = FA32608F23940BF1004B1410 /* Bsuir.Student.app */;
+			productReference = FA32608F23940BF1004B1410 /* Student.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -923,6 +940,7 @@
 				FA3260BC2394136F004B1410 /* FilesProvider.swift in Sources */,
 				FA3260D923943B94004B1410 /* Token.swift in Sources */,
 				FA37EDD6245F063200BC502C /* NotificationsAdapter.swift in Sources */,
+				FA28F9B8247A7AC100395A26 /* MarkTableViewModel.swift in Sources */,
 				FA6D4B6323A1B10E00390B9D /* SettingsViewController.swift in Sources */,
 				FA3260F723946085004B1410 /* NewsTableViewCell.swift in Sources */,
 				FA765D0423A18CF3001CC348 /* EducationCache.swift in Sources */,
@@ -933,9 +951,11 @@
 				FA4357AC2466E066008C4010 /* DeviceExt.swift in Sources */,
 				FA9922B92415713500796EDC /* Sort.swift in Sources */,
 				FA765D0823A18D0B001CC348 /* ReferenceCache.swift in Sources */,
+				FA28F9B1247A7A6500395A26 /* MarkTableViewController.swift in Sources */,
 				FA1AA73623950E450092559B /* MenuNavigationController.swift in Sources */,
 				FA765D0D23A19740001CC348 /* ProfileViewController.swift in Sources */,
 				FA3260EC239453EB004B1410 /* TextFieldExt.swift in Sources */,
+				FA28F9B5247A7AA000395A26 /* MarkTableViewCell.swift in Sources */,
 				FA36D6AC23A2492D00714FCF /* MarkCell.swift in Sources */,
 				FA3260B62394133D004B1410 /* AuditoriumsProvider.swift in Sources */,
 				FA3260DD23943E31004B1410 /* RecordBook.swift in Sources */,
@@ -973,8 +993,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA32609923940BF1004B1410 /* Base */,
-				FA92A52F245ECC0A00511BDA /* ru */,
-				FA92A532245ECC2900511BDA /* en */,
+				FA28F9BE247A900400395A26 /* en */,
+				FA28F9C0247A900600395A26 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1042,8 +1062,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA92A558245ED6C700511BDA /* Base */,
-				FA92A55B245ED6CA00511BDA /* en */,
-				FA92A55D245ED6CB00511BDA /* ru */,
+				FA28F9BA247A8CD200395A26 /* en */,
+				FA28F9BC247A8CD400395A26 /* ru */,
 			);
 			name = MarkCell.xib;
 			sourceTree = "<group>";
@@ -1186,7 +1206,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BsuirAdditionalApp/Bsuir.Student.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1194,8 +1214,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.bsuirstudent;
-				PRODUCT_NAME = Bsuir.Student;
+				PRODUCT_NAME = Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1208,7 +1229,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BsuirAdditionalApp/Bsuir.Student.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 47K9CVZBFJ;
 				INFOPLIST_FILE = BsuirAdditionalApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1216,8 +1237,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.holubeu.bsuirstudent;
-				PRODUCT_NAME = Bsuir.Student;
+				PRODUCT_NAME = Student;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -63,3 +63,14 @@ enum ProfileKeys: String {
   case token = "token"
   case deviceToken = "deviceToken"
 }
+
+enum MarkFields: String, CaseIterable {
+  case subject = "Предмет"
+  case mark = "Оценка"
+  case teacher = "Преподаватель"
+  case retakes = "Пересдачи"
+  case avRetakes = "Ср. пересдач"
+  case studyHours = "Академ. часы"
+  case date = "Дата"
+  case avMark = "Ср. оценка"
+}

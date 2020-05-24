@@ -1,48 +1,6 @@
 
-/* Class = "UILabel"; text = "Ср. оценка"; ObjectID = "6Sl-ON-GVv"; */
-"6Sl-ON-GVv.text" = "Av. mark";
+/* Class = "UILabel"; text = "–"; ObjectID = "3dA-zC-Gvf"; */
+"3dA-zC-Gvf.text" = "–";
 
-/* Class = "UILabel"; text = "–"; ObjectID = "AM5-wq-Cwt"; */
-"AM5-wq-Cwt.text" = "–";
-
-/* Class = "UILabel"; text = "Предмет"; ObjectID = "AOS-eJ-qa6"; */
-"AOS-eJ-qa6.text" = "Subject";
-
-/* Class = "UILabel"; text = "Дата"; ObjectID = "BLT-o3-M01"; */
-"BLT-o3-M01.text" = "Date";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "IuE-GW-E4L"; */
-"IuE-GW-E4L.text" = "–";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "Jlt-1W-vp0"; */
-"Jlt-1W-vp0.text" = "–";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "QL6-x9-KWz"; */
-"QL6-x9-KWz.text" = "–";
-
-/* Class = "UILabel"; text = "Ср. пересдач"; ObjectID = "VRt-uJ-KqI"; */
-"VRt-uJ-KqI.text" = "Av. retakes";
-
-/* Class = "UILabel"; text = "Пересдачи"; ObjectID = "VT0-kM-qkm"; */
-"VT0-kM-qkm.text" = "Retakes";
-
-/* Class = "UILabel"; text = "Академ. часы"; ObjectID = "Vid-Tz-pxn"; */
-"Vid-Tz-pxn.text" = "Study hours";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "WqE-ew-sqr"; */
-"WqE-ew-sqr.text" = "–";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "XpO-TG-1AR"; */
-"XpO-TG-1AR.text" = "–";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "YJg-8A-Pxs"; */
-"YJg-8A-Pxs.text" = "–";
-
-/* Class = "UILabel"; text = "–"; ObjectID = "a3r-Ee-741"; */
-"a3r-Ee-741.text" = "–";
-
-/* Class = "UILabel"; text = "Оценка"; ObjectID = "fcL-6R-biU"; */
-"fcL-6R-biU.text" = "Mark";
-
-/* Class = "UILabel"; text = "Преподаватель"; ObjectID = "w15-ke-V01"; */
-"w15-ke-V01.text" = "Teacher";
+/* Class = "UILabel"; text = "–"; ObjectID = "yUe-rn-ekr"; */
+"yUe-rn-ekr.text" = "–";

@@ -20,16 +20,22 @@ class SemesterView: UIView {
   @IBOutlet weak var tableView: UITableView!
 
   var currentSem: SemesterCache?
-
+  weak var parent: UIViewController!
+  
   func set(_ semester: SemesterCache?) {
     guard let semester = semester else {
       return
     }
+    
     self.currentSem = semester
 
     semesterNumberLabel.text = "\(semester.number)"
     averageMarkLabel.text = String(format: "%.2f", semester.averageMark)
     tableView.reloadData()
+  }
+  
+  func addParent(parent: UIViewController) {
+    self.parent = parent
   }
 
   override func awakeFromNib() {
@@ -63,6 +69,10 @@ extension SemesterView: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    let storyBoard = UIStoryboard(name: "Menu", bundle: nil)
+    let markTableViewController = storyBoard.instantiateViewController(withIdentifier: "markTableVC") as! MarkTableViewController
+    markTableViewController.set(currentSem?.marks[indexPath.row] ?? nil, semester: currentSem?.number ?? nil)
+    parent.show(markTableViewController, sender: self)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
